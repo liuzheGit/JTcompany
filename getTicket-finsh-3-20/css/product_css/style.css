@@ -1,0 +1,2568 @@
+body,html {
+    height: 100%;
+    background: #FAFAFA;
+    /*border: solid 1px #000;*/
+}
+
+.gg-page-content:before{
+    content: " ";
+    display: block;
+}
+
+.gg-page-content:after{
+    content: " ";
+    display: table;
+    height: 54px;
+    clear: both;
+}
+.gg-divider{
+    width: 100%;
+    border-bottom: dashed 1px #9e9e9e;
+}
+
+.gg-dot{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    margin-right: 5px;
+    background: #F5A623;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.gg-h-divider{
+    margin-top: 1px;
+    width: 100%;
+    height: 1px;
+    content: "";
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.gg-star-full{
+     content: "";
+     display: inline-block;
+     background: url("../images/drivingSchool/star-full-icon.svg") no-repeat;
+     background-position: center;
+     width: 16px;
+     height: 16px;
+}
+
+.gg-star-half{
+    content: "";
+    display: inline-block;
+    background: url("../images/drivingSchool/star-half-icon.svg") no-repeat;
+    background-position: left;
+    width: 16px;
+    height: 16px;
+}
+
+/*--------------------------------modal-----------------------------------*/
+.modal{
+    max-height: 90%;
+}
+
+.modal .modal-content{
+    border-top: solid 1px #9e9e9e;
+    padding: 16px !important;
+}
+
+.modal .modal-content .title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.modal .modal-content .text-label{
+    color: #9e9e9e;
+}
+.modal .modal-content img{
+    margin-right: 4px;
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.modal .modal-footer{
+    padding: 16px;
+    border-top: solid 1px #9e9e9e;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+}
+
+.modal .modal-footer .gg-btn{
+    width: 64px;
+    height: 32px;
+    margin-left: 16px;
+    line-height: 32px;
+    text-align: center;
+}
+.modal .modal-footer .gg-btn.solid{
+    background-color: #F8BA2A;
+    color: #fff;
+}
+.modal .modal-footer .gg-btn.hollow{
+    background-color: #FFF;
+    color: #F8BA2A;
+    border: solid 1px #F8BA2A;
+}
+
+
+    /*--------------------------------nav-----------------------------------*/
+.gg-nav {
+    height: 54px;
+    width: 100%;
+    background: #F5A81F;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    z-index: 99;
+}
+
+.gg-nav-item {
+    border-top: solid 4px #F5A81F;
+    height: 100%;
+    opacity: .7;
+}
+.gg-nav-item.active{
+    border-top: solid 4px #FBCC37;
+    opacity: 1;
+}
+
+.gg-nav-item-content{
+    position: relative;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 44px;
+    margin-top: 4px;
+}
+
+.gg-nav-item-img{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: calc(50% - 12px);
+}
+
+
+
+.gg-nav-item p{
+    display: block;
+    position: relative;
+    bottom: 10px;
+    font-size: 10px;
+    color: #fff;
+}
+/*-------------------------------------header------------------------------*/
+
+.gg-header {
+    content: " ";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FBCC37;
+}
+
+
+
+
+
+
+/*-------------------------------------page-title------------------------------*/
+.gg-page-title{
+    width: 100%;
+    height: 48px;
+    position: absolute;
+}
+.gg-page-title-back{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gg-page-title-back img{
+    height: 16px;
+}
+
+.gg-page-title-text{
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+    color: #616161;
+}
+
+
+
+
+
+
+/*
+-----------------------------------index----------------------------------*/
+.gg-page-content.index:before{
+    height: 200px;
+}
+
+
+
+.slider{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 98;
+}
+
+.slider .indicators {
+    bottom: 0;
+    z-index: 99;
+}
+
+.slider .indicators .indicator-item {
+    height: 6px;
+    width: 6px;
+    margin: 0 4px;
+    background-color: #fff;
+    transition: all .3s;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #fff;
+    height: 8px;
+    width: 8px;
+}
+
+/*
+---avatar---*/
+
+.gg-index-avatar {
+    position: fixed;
+    right: 16px;
+    top: 168px;
+    z-index: 99;
+}
+
+.gg-index-avatar img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+/*
+main-btn*/
+.gg-index-main-btn {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.gg-index-main-btn .gg-index-main-btn-item {
+    margin-bottom: 11px;
+    width: 90%;
+    width: calc(100% - 32px);
+    display: inline-block;
+}
+
+.gg-index-main-btn img{
+    width: 100%;
+}
+
+/*
+-------------------------------------member--------------------------------------*/
+.gg-page-content.member:before{
+    height: 144px;
+}
+
+.gg-header.member {
+    height: 144px;
+}
+
+.gg-header.member .col{
+    padding: 0 16px;
+}
+
+.gg-member-main-btn {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.gg-member-avatar {
+    display: inline-block;
+    width: 72px;
+    padding-top: 24px;
+}
+
+
+.gg-member-avatar p{
+    margin: 0;
+    color: #fff;
+}
+
+.gg-member-avatar img{
+    width: 72px;
+    border-radius: 50%;
+}
+
+.gg-member-card {
+    margin-top: 16px;
+    height: 112px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.gg-member-card-title{
+    text-align: center;
+    height: 32px;
+    border-bottom: dashed 1px #9E9E9E;
+}
+
+.gg-member-card-title p{
+    line-height: 32px;
+    font-size: 14px;
+    color: #9E9E9E;
+}
+
+.gg-member-card-content{
+    height: 80px;
+}
+.gg-member-card-content-text{
+    width: 55%;
+    margin-top: 8px;
+    display: inline-block;
+    text-align: center;
+}
+.gg-member-card-content-text p{
+    margin: 8px 0;
+    color: #616161;
+}
+.gg-member-card-content img{
+    width: 64px;
+    float: right;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+
+
+
+
+.gg-member-main-btn-item {
+    margin-bottom: 11px;
+    width: 90%;
+    width: calc(100% - 32px);
+    display: inline-block;
+}
+
+.gg-member-main-btn img{
+    width: 100%;
+}
+
+
+
+/*---------------------login---------------------*/
+
+.gg-page-content.member-login:before{
+    height: 48px;
+}
+
+
+.gg-login-tabs{
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    z-index: 98;
+    font-size: 16px;
+}
+
+.gg-login-form{
+    width: 264px;
+    margin: 0 auto;
+}
+
+.gg-login-input{
+    height: 40px;
+    border: solid 1px #BDBDBD;
+    margin-top: 24px;
+}
+
+.gg-login-input-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 40px;
+    height: 39px;
+    margin-right: 8px;
+    border-right: solid 1px #bdbdbd;
+}
+
+
+.gg-login-input input{
+    width: calc(100% - 48px);
+    height: 40px;
+    margin: 0;
+    border-bottom: 0;
+    display: block;
+    float: left;
+}
+.gg-login-input input:focus{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.gg-login-lost-pw{
+    text-align: right;
+    margin: 8px 0;
+}
+.gg-login-lost-pw a{
+    color: #F8BA2A;
+    font-size: 12px;
+}
+
+
+.gg-login-btn{
+    display: block;
+    width: 200px;
+    height: 48px;
+    margin: 0 auto 16px;
+}
+
+.gg-login-btn.solid{
+    background-color: #F8BA2A;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+}
+.gg-login-btn.hollow{
+    background-color: #fff;
+    border: solid 1px #F8BA2A;
+    color: #F8BA2A;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+}
+
+.gg-login-input.auth-code input{
+    width: calc(100% - 48px - 96px);
+}
+
+.gg-login-input.auth-code .auth-code-btn{
+    float: left;
+    display: block;
+    width: 96px;
+    height: 38px;
+    background-color: #F8BA2A;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+.gg-login-btn.reg{
+    margin-top: 24px;
+}
+
+.gg-login-readme{
+    text-align: center;
+    color: #616161;
+}
+
+
+
+/*---------------------------------------video-----------------------------------------------*/
+
+.gg-page-content.video:before{
+    height: 216px;
+}
+
+
+.gg-tabs {
+    position: fixed;
+    top: 152px;
+    width: 100%;
+    z-index: 98;
+}
+
+/*card*/
+.gg-video-content .col {
+    padding: 0 16px;
+}
+
+.gg-video-card {
+    height: 112px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 8px !important;
+    margin-bottom: 16px;
+}
+
+.gg-video-card-thumb{
+    float: left;
+    width: 120px;
+    margin-right: 8px;
+}
+
+.gg-video-card-text{
+    float: left;
+    position: relative;
+    height: 100%;
+    width: calc(100% - 128px);
+}
+
+.gg-video-card-title{
+    position: absolute;
+    top:0;
+    left: 0;
+    font-size: 16px;
+    color: #616161;
+}
+
+.gg-video-card-dru{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    color: #9E9E9E;
+}
+
+.gg-video-card-des{
+    position: absolute;
+    top: 24px;
+    font-size: 12px;
+    color: #9E9E9E;
+}
+
+.gg-video-card-play-count{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    font-size: 12px;
+    color: #9E9E9E;
+}
+
+.gg-video-card-play-count img{
+    margin-right: 4px;
+}
+
+
+
+
+
+
+/*-----------------------------------------exam-------------------------------------*/
+
+.gg-page-content.exam{
+    padding: 0 16px;
+}
+
+.gg-page-content.exam:before{
+     height: 64px;
+
+ }
+
+.gg-exam-tabs{
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    font-size: 16px;
+}
+
+.gg-exam-main-btn{
+    width: 90%;
+    width: calc(100% - 32px);
+    height: 200px;
+    border: solid 1px #E0E0E0;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.gg-exam-main-btn-item{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.gg-exam-main-btn-item-title{
+    margin-top: 8px;
+    font-size: 16px;
+    color: #616161;
+}
+.gg-exam-main-btn-item-des{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 4px;
+    font-size: 14px;
+    color: #9e9e9e;
+}
+.gg-exam-main-btn-item-des img{
+    margin-right: 4px;
+}
+
+.gg-exam-sub-btn{
+    width: 100%;
+    border: solid 1px #E0E0E0;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 16px auto;
+}
+
+.gg-exam-sub-btn-item{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 48px;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.gg-exam-sub-btn-item-title{
+    display: flex;
+    align-items:center;
+    color: #616161;
+}
+.gg-exam-sub-btn-item-title img{
+    margin-right: 16px;
+}
+
+.gg-exam-sub-btn-item-count{
+    display: flex;
+    align-items:center;
+    color: #9e9e9e;
+}
+.gg-exam-sub-btn-item-count .switch .lever{
+    margin: 0;
+}
+
+.gg-exam-sub-btn-item-count .switch label input[type=checkbox]:checked + .lever{
+    background-color: #F8C87A !important;
+}
+.gg-exam-sub-btn-item-count .switch label input[type=checkbox]:checked + .lever:after{
+    background-color: #F5A623 !important;
+}
+/*-----------------------------------------exam-training-------------------------------------*/
+
+#submit-alert.modal{
+    border-radius: 4px;
+    top:50% !important;
+    transform: translateY(-50%)!important;
+}
+#submit-alert.modal .modal-content{
+    padding: 32px !important;
+}
+
+#submit-alert.modal .modal-footer a{
+    width: 50%;
+    text-align: center;
+    color: #616161;
+}
+
+
+.modal.answer-card .close-btn{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.modal.answer-card .modal-header{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal.answer-card .modal-header .answer-card-info{
+    margin-top: 8px;
+    width: 100%;
+    color: #9e9e9e;
+}
+.modal.answer-card .modal-header .answer-card-info .text{
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+.modal.answer-card .modal-content{
+    padding: 4px !important;
+    height: calc(100% - 103px);
+}
+.modal.answer-card .modal-content .topics{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.modal.answer-card .modal-content .topic{
+    display: block;
+    margin: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #616161;
+    background-color: #F5F5F5;
+    border: solid 1px #9e9e9e;
+}
+
+.modal.answer-card .modal-content .topic.wrong{
+    background-color: #fff;
+    border-color: #CB4F5E;
+    color: #CB4F5E;
+}
+.modal.answer-card .modal-content .topic.correct{
+    background-color: #F5A623;
+    border: none;
+    color: #FFF;
+}
+
+.gg-page-content.exam.training{
+    padding: 16px;
+}
+
+.gg-exam-training-header{
+    background-color: #fff;
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    margin: 0;
+    padding: 0 16px;
+    color: #9e9e9e;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 99;
+
+}
+.gg-exam-training-header .topic-kind{
+    float: left;
+}
+.gg-exam-training-header .topic-kind span{
+    margin-left: 8px;
+    padding: 1px 8px;
+    background-color: #F5A623;
+    color: #FFF;
+    border-radius: 2px;
+}
+.gg-exam-training-header .topic-count{
+    float: right;
+}
+.gg-exam-training-header .topic-count a{
+    color: #9e9e9e;
+}
+.gg-exam-training-header .topic-count img{
+    margin: 0 8px 0 16px;
+    vertical-align: -3%;
+}
+
+.gg-exam-training-header .topic-time{
+    float: right;
+    color: #F5A623;
+}
+.gg-exam-training-header .topic-time a{
+    color: #F5A623;
+}
+.gg-exam-training-header .topic-time img{
+    margin-right: 8px;
+    vertical-align: -3%;
+}
+
+
+.gg-page-content.exam.training .topic-text{
+    margin-bottom: 16px;
+}
+
+.gg-page-content.exam.training .topic-img img {
+    width: 100%;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.gg-page-content.exam.training .option-btn{
+    position: relative;
+    width: 100%;
+    padding: 16px 48px 16px 0;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #616161;
+}
+.gg-page-content.exam.training .option-btn .name{
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 100%;
+    border-right: 1px solid #E0E0E0;
+}
+.gg-page-content.exam.training .option-btn .text{
+    display: inline-block;
+    margin: -16px 0;
+    padding: 16px 0 16px 72px;
+    width: calc(100% + 32px);
+
+}
+.gg-page-content.exam.training .option-btn.correct{
+    border: none;
+    background-color: #F5A623;
+    color: #FFF;
+}
+.gg-page-content.exam.training .option-btn.correct .text{
+    width: 100%;
+}
+.gg-page-content.exam.training .option-btn.correct:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 48px;
+    height: 100%;
+    background: url("../images/exam/exam-check-icon.svg") no-repeat center;
+}
+.gg-page-content.exam.training .option-btn.correct .name{
+    border-color: #fff;
+}
+
+.gg-page-content.exam.training .option-btn.wrong{
+    border: none;
+    background-color: #CB4F5E;
+    color: #FFF;
+}
+.gg-page-content.exam.training .option-btn.wrong .text{
+    width: 100%;
+}
+.gg-page-content.exam.training .option-btn.wrong:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 48px;
+    height: 100%;
+    background: url("../images/exam/exam-close-icon.svg") no-repeat center;
+}
+.gg-page-content.exam.training .option-btn.wrong .name{
+    border-color: #fff;
+}
+
+.gg-page-content.exam.training .answer{
+    color: #F5A623;
+    margin-bottom: 16px;
+}
+
+
+
+.gg-page-content.exam.training .solution{
+    padding-top: 8px;
+    position: relative;
+}
+.gg-page-content.exam.training .solution .text{
+    text-align: justify;
+    background-color: #616161;
+    border-radius: 4px;
+    padding: 16px;
+    color: #fff;
+}
+.gg-page-content.exam.training .solution .text:before{
+    position: absolute;
+    top:0;
+    left: 32px;
+    content: "";
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    background-color: #616161;
+}
+.gg-page-content.exam.training .sim-exam-info{
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gg-page-content.exam.training .sim-exam-info .item{
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #FFF;
+    border: solid 1px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gg-page-content.exam.training .sim-exam-info .item.wrong{
+    border-color: #CB4F5E;
+    color: #CB4F5E;
+}
+.gg-page-content.exam.training .sim-exam-info .item.correct{
+    border-color: #F5A623;
+    color: #F5A623;
+}
+.gg-page-content.exam.training .sim-exam-info .item.not-done{
+    border-color: #9e9e9e;
+    color: #9e9e9e;
+}
+.gg-page-content.exam.training.sim::after{
+    height: 0;
+}
+/*-----------------------------------------exam-project-------------------------------------*/
+.gg-page-content.exam.project {
+    padding-top: 16px;
+}
+
+.gg-page-content.exam.project:before{
+    height: 0;
+}
+.gg-page-content.exam.project.wrong-topic:before{
+    height: 38px;
+}
+.gg-page-content.exam.project .title{
+    color: #9e9e9e;
+    margin: 0 16px;
+}
+.gg-page-content.exam.project .exam-full-width-btn {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border-radius: 2px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #F5A623;
+    color: #FFF;
+}
+
+.gg-page-content.exam.project.record .record-info{
+    margin: 16px 0 32px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.gg-page-content.exam.project.record .record-info .project-pic p{
+    margin: 8px 0 0 0;
+    text-align: center;
+    color: #9e9e9e;
+}
+
+.gg-page-content.exam.project.record .record-info .text-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.gg-page-content.exam.project.record .record-info .text-field .text{
+    display: flex;
+    justify-content: space-between;
+}
+.gg-page-content.exam.project.record .record-info .text-field .text span{
+    margin-left: 16px;
+}
+.gg-page-content.exam.project.record .gg-exam-sub-btn-item .order-id{
+    color: #9e9e9e;
+}
+.gg-page-content.exam.project.record .gg-exam-sub-btn-item .date{
+    color: #616161;
+}
+.gg-page-content.exam.project.record .gg-exam-sub-btn-item .score-time{
+    color: #F5A623;
+}
+.gg-page-content.exam.project.record .gg-exam-sub-btn-item .evaluate{
+    color: #9e9e9e;
+    margin-right: -8px;
+    display: flex;
+    align-items: center;
+}
+.gg-page-content.exam.project.record .gg-exam-sub-btn-item .evaluate:after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../images/exam/arrow-right-icon.svg");
+}
+
+
+
+.gg-page-content.exam.project.sim-exam-init .avatar{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gg-page-content.exam.project.sim-exam-init .avatar img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid #9e9e9e;
+    margin-bottom: 8px;
+}
+
+.gg-page-content.exam.project.sim-exam-init .attention{
+    margin-top: 16px;
+    padding: 0 16px;
+    text-align: center;
+    color: #9e9e9e;
+}
+.gg-page-content.exam.project.sim-exam-init .attention .span{
+    float: left;
+}
+.gg-page-content.exam.project.sim-exam-init .attention.with-icon:before{
+    content: "";
+    float: left;
+    display: block;
+    width: 16px;
+    height:19px;
+    margin-right: 8px;
+    background: url("../images/exam/exam-attention-icon.svg") no-repeat center 2px;
+}
+
+    /*-------------------------------driving-school-product-class---------------------------------*/
+
+.gg-page-content.driving-school-product-class{
+    padding: 0 16px;
+}
+
+.gg-page-content.driving-school-product-class:after{
+    content: " ";
+    display: block;
+    height: 54px;
+}
+
+.gg-page-content.driving-school-product-class .main-btn{
+    margin: 16px 0;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item{
+    display: block;
+    width: 100%;
+    height: 234px;
+    border: solid 1px #F5A81F;
+    padding: 24px 16px;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item .img{
+    width: 40%;
+    float: left;
+}
+.gg-page-content.driving-school-product-class .main-btn-item .img img{
+    width: 100%;
+    max-width: 130px;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item.right-align{
+    margin-top: 16px;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item.right-align .img{
+    float: right;
+    margin: 0;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item .text{
+    width: 60%;
+    float: left;
+    padding-left: 24px;
+}
+.gg-page-content.driving-school-product-class .main-btn-item.right-align .text{
+    float: right;
+    padding-right: 24px;
+}
+
+.gg-page-content.driving-school-product-class .main-btn-item .text .title{
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 47px;
+    color: #F5A623;
+}
+.gg-page-content.driving-school-product-class .main-btn-item .text .en{
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 200;
+    color: #F5A623;
+}
+.gg-page-content.driving-school-product-class .main-btn-item .text .price{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #F5A623;
+}
+.gg-page-content.driving-school-product-class .main-btn-item .text .des{
+    margin-top: 16px;
+}
+.gg-page-content.driving-school-product-class .main-btn-item .text .des p{
+    margin: 0;
+    color: #616161;
+}
+
+/*-------------------------------driving-school-product-list---------------------------------*/
+
+
+.gg-page-content.driving-school-product-list:after{
+    height: 54px;
+}
+.gg-page-content.driving-school-product-list {
+    padding: 0 16px 16px;
+}
+
+.gg-page-content.driving-school-product-list .search{
+    margin-top: 16px;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+}
+.gg-page-content.driving-school-product-list .search input{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 8px;
+    border: none;
+}
+.gg-page-content.driving-school-product-list .search input:focus{
+    box-shadow: none;
+}
+
+.gg-page-content.driving-school-product-list .search .search-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    background-color: #F8BA2A;
+    border-radius: 0 1px 1px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-page-content.driving-school-product-list .main-card{
+    width: 100%;
+    background-color: #fff;
+    border:solid 1px #F8BA2A;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .header{
+    height: 48px;
+    background-color: #F8BA2A;
+    border-radius: 1px 1px 0 0;
+    line-height: 48px;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.gg-page-content.driving-school-product-list .main-card .content{
+    width: 100%;
+    position: relative;
+    padding: 7px 16px 0;
+    border-bottom: dashed 1px #BDBDBD;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gg-page-content.driving-school-product-list .main-card .content .img{
+    width: 96px;
+    height: 96px;
+    float: left;
+}
+.gg-page-content.driving-school-product-list .main-card .content .img img{
+    width: 100px;
+    height: auto;
+    max-width: 96px;
+    max-height: 96px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .content .text-field{
+    padding-left: 16px;
+    float: left;
+}
+.gg-page-content.driving-school-product-list .main-card .content .text-field .text{
+    margin-bottom: 4px;
+}
+.gg-page-content.driving-school-product-list .main-card .content .text-field .title{
+    color: #9e9e9e;
+    margin-right: 8px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .content .text-field .des{
+    font-size: 12px;
+    color: #F5A623;
+}
+
+.gg-page-content.driving-school-product-list .main-card .detail{
+    padding: 0 16px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .footer{
+    height: 48px;
+    padding: 8px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .footer .status{
+    float: left;
+    margin-left: 8px;
+    line-height: 32px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .footer .gg-btn{
+    float: right;
+    height: 32px;
+    width: 64px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.gg-page-content.driving-school-product-list .main-card .footer .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-page-content.driving-school-product-list .main-card .footer .gg-btn.grey{
+    background-color: #fff !important;
+    border:solid 1px #9E9E9E;
+    color: #9E9E9E;
+}
+
+/*----------------------------------------.gg-page-content.driving-school-detail-------------------------------------------*/
+.driving-school-detail.header{
+    height: 152px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+
+.driving-school-detail.header img{
+    width: 100%;
+    height: 152px;
+}
+
+.driving-school-detail.header .title{
+    position: absolute;
+    top: 0;
+    height: 152px;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    color: #FFF;
+    font-size: 20px;
+    padding: 8px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.gg-page-content.driving-school-detail:before{
+    height: 200px;
+}
+
+.gg-page-content.driving-school-detail{
+    width: 100%;
+    padding: 0 16px;
+}
+
+/*
+.gg-page-content.driving-school-detail.detail
+*/
+
+
+.gg-page-content.driving-school-detail.detail .main-card{
+    background-color: #fff;
+    margin: 16px 0;
+    width: 100%;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+}
+.gg-page-content.driving-school-detail.detail .main-card .header{
+    width: 100%;
+    padding: 8px;
+    display: table;
+    content: "";
+    clear: both;
+    border-bottom: dashed 1px #9e9e9e;
+}
+.gg-page-content.driving-school-detail.detail .main-card .header .logo{
+    border: solid 1px #9e9e9e;
+    width: 96px;
+    height: 96px;
+    float: left;
+}
+.gg-page-content.driving-school-detail.detail .main-card .header .logo img{
+    width: 100%;
+}
+.gg-page-content.driving-school-detail.detail .main-card .header .text-field{
+    padding: 4px 0 0 8px;
+    width: calc(100% - 96px);
+    float: left;
+}
+
+.gg-page-content.driving-school-detail.detail .main-card .header .text-field .title-icon{
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.gg-page-content.driving-school-detail.detail .main-card .header .text-field .text .add-text{
+    display: inline-block;
+    width: calc(100% - 30px);
+    text-align: justify;
+}
+.gg-page-content.driving-school-detail.detail .main-card .content{
+    padding: 8px;
+    text-align: justify;
+}
+.gg-page-content.driving-school-detail.detail .main-card .content .title{
+    color: #F8BA2A;
+}
+
+/*gg-page-content.driving-school-detail.product*/
+
+.gg-page-content.driving-school-detail.product{
+    padding-bottom: 16px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card{
+    width: 100%;
+    background-color: #fff;
+    border:solid 1px #F8BA2A;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .header{
+    height: 48px;
+    background-color: #F8BA2A;
+    border-radius: 1px 1px 0 0;
+    line-height: 48px;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .content{
+    width: 100%;
+    position: relative;
+    padding: 7px 16px 8px;
+    border-bottom: dashed 1px #BDBDBD;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .content .img{
+    width: 96px;
+    height: 96px;
+    float: left;
+    vertical-align: middle;
+}
+.gg-page-content.driving-school-detail.product .main-card .content .img img{
+    width: 100px;
+    height: auto;
+    max-width: 96px;
+    max-height: 96px;
+
+}
+
+.gg-page-content.driving-school-detail.product .main-card .content .text-field{
+    width: calc(100% - 96px);
+    padding-left: 16px;
+    float: left;
+}
+.gg-page-content.driving-school-detail.product .main-card .content .text-field .text{
+    margin-bottom: 4px;
+}
+.gg-page-content.driving-school-detail.product .main-card .content .text-field .title{
+    color: #9e9e9e;
+    margin-right: 8px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .content .text-field .des{
+    font-size: 12px;
+    color: #F5A623;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .detail{
+    padding: 0 16px;
+}
+.gg-page-content.driving-school-detail.product .main-card .detail ul{
+    margin: 8px 0 0 0;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .footer{
+    height: 48px;
+    padding: 8px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .footer .status{
+    float: left;
+    margin-left: 8px;
+    line-height: 32px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .footer .gg-btn{
+    float: right;
+    height: 32px;
+    width: 64px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.gg-page-content.driving-school-detail.product .main-card .footer .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-page-content.driving-school-detail.product .main-card .footer .gg-btn.grey{
+    background-color: #fff !important;
+    border:solid 1px #9E9E9E;
+    color: #9E9E9E;
+}
+
+
+/*.gg-page-content.driving-school-detail.coach*/
+
+
+.gg-page-content.driving-school-detail.coach{
+    padding: 16px 16px 0;
+}
+
+.gg-page-content.driving-school-detail.coach .main-card{
+    background-color: #fff;
+    width: 100%;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+    padding: 8px;
+    display: table;
+    clear: both;
+}
+.gg-page-content.driving-school-detail.coach .main-card .img{
+    float: left;
+    max-width: 80px;
+    max-height: 104px;
+}
+.gg-page-content.driving-school-detail.coach .main-card .img img{
+    width: 100%;
+}
+
+.gg-page-content.driving-school-detail.coach .main-card .text-field{
+    padding-left: 8px;
+    width: calc(100% - 80px);
+    float: left;
+    position: relative;
+}
+.gg-page-content.driving-school-detail.coach .main-card .text-field .info{
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+    border-bottom: dashed 1px #9e9e9e;
+    padding-bottom: 2px;
+}
+.gg-page-content.driving-school-detail.coach .main-card .text-field .info .skill{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.gg-page-content.driving-school-detail.coach .main-card .text-field .evaluate{
+    margin-top: 2px;
+    font-size: 12px;
+    color: #9e9e9e;
+}
+.gg-page-content.driving-school-detail.coach .main-card .text-field .evaluate span{
+    line-height: 18px;
+    margin-right: 4px;
+    vertical-align:top;
+}
+.gg-page-content.driving-school-detail.coach .main-card .text-field .evaluate .gg-star-full{
+    width: 12px;
+    height: 12px;
+    background-size: cover;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+
+
+/*.gg-page-content.driving-school-detail.evaluate*/
+
+
+.gg-page-content.driving-school-detail.evaluate{
+    padding-bottom: 16px;
+}
+
+.gg-page-content.driving-school-detail.evaluate .main-card{
+    background-color: #fff;
+    margin-top: 16px;
+    width: 100%;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+    padding: 0 8px;
+    display: table;
+    clear: both;
+}
+
+.gg-page-content.driving-school-detail.evaluate .main-card .header {
+    height: 48px;
+    border-bottom: dashed 1px #9e9e9e;
+    display: flex;
+    align-items: center;
+}
+.gg-page-content.driving-school-detail.evaluate .main-card .header span{
+}
+
+.gg-page-content.driving-school-detail.evaluate .main-card .header img{
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 50px;
+    border: solid 1px #9e9e9e;
+    margin-right: 8px;
+}
+
+.gg-page-content.driving-school-detail.evaluate .main-card .content{
+    padding: 8px 0;
+}
+
+
+.gg-page-content.driving-school-detail.evaluate .main-card .content .info{
+    color: #9e9e9e;
+    margin: 4px 0;
+}
+.gg-page-content.driving-school-detail.evaluate .main-card .content .pics{
+    margin-top: 8px;
+}
+.gg-page-content.driving-school-detail.evaluate .main-card .content .pics img{
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 8px;
+/*    max-width: 64px;
+    max-height: 64px;*/
+}
+
+/*
+.gg-page-content.driving-school-detail.photo
+*/
+
+.gg-page-content.driving-school-detail.photo{
+    padding: 16px 8px;
+}
+
+.gg-page-content.driving-school-detail.photo .item {
+    width: 50%;
+    float: left;
+    padding: 0 8px;
+}
+
+.gg-page-content.driving-school-detail.photo .item img{
+    width: 100%;
+    border-radius: 2px;
+}
+.gg-page-content.driving-school-detail.photo .item p{
+    text-align: center;
+    margin: 4px 0;
+}
+/*----------------------------------------driving-school-list-------------------------------------------*/
+
+.gg-page-header.driving-school-list{
+
+}
+.gg-page-header.driving-school-list{
+    display: block;
+    width: 100%;
+    height: 104px;
+    background-color: #FBCC37;
+    padding: 8px 16px 16px;
+    position: fixed;
+    top:0;
+}
+
+.gg-page-header.driving-school-list .position span{
+    display: block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+}
+
+.gg-page-header.driving-school-list .position .img{
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gg-page-header.driving-school-list .search{
+    position: absolute;
+    bottom: 16px;
+    width: calc(100% - 32px);
+    height: 40px;
+    border-radius: 2px;
+}
+.gg-page-header.driving-school-list .search input{
+    width: calc(100% - 48px);
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 8px;
+    border: none;
+}
+.gg-page-header.driving-school-list .search input:focus{
+    box-shadow: none;
+}
+
+.gg-page-header.driving-school-list .search .search-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #F8BA2A;
+    border-radius: 0 1px 1px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-page-content.driving-school-list{
+    padding: 0 16px;
+}
+
+.gg-page-content.driving-school-list:before{
+    height: 104px;
+}
+
+
+.gg-page-content.driving-school-list .main-card{
+    width: 100%;
+    background-color: #fff;
+    border:solid 1px #F8BA2A;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.gg-page-content.driving-school-list .main-card .title{
+    height: 48px;
+    background-color: #F8BA2A;
+    border-radius: 1px 1px 0 0;
+    line-height: 48px;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.gg-page-content.driving-school-list .main-card{
+    margin: 16px 0;
+    width: 100%;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+}
+.gg-page-content.driving-school-list .main-card .content{
+    width: 100%;
+    padding: 8px;
+    display: table;
+    content: "";
+    clear: both;
+    border-bottom: dashed 1px #9e9e9e;
+}
+.gg-page-content.driving-school-list .main-card .content .logo{
+    border: solid 1px #9e9e9e;
+    width: 96px;
+    height: 96px;
+    float: left;
+}
+.gg-page-content.driving-school-list .main-card .content .logo img{
+    width: 100%;
+}
+.gg-page-content.driving-school-list .main-card .content .text-field{
+    padding: 4px 0 0 8px;
+    width: calc(100% - 96px);
+    float: left;
+}
+
+.gg-page-content.driving-school-list .main-card .content .text-field .title-icon{
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.gg-page-content.driving-school-list .main-card .content .text-field .text .add-text{
+    display: inline-block;
+    width: calc(100% - 30px);
+    text-align: justify;
+}
+
+.gg-page-content.driving-school-list .main-card .footer{
+    height: 48px;
+    padding: 8px;
+}
+
+.gg-page-content.driving-school-list .main-card .footer .gg-btn{
+    float: right;
+    height: 32px;
+    width: 64px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.gg-page-content.driving-school-list .main-card .footer .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-page-content.driving-school-list .main-card .footer .gg-btn.grey{
+    background-color: #fff !important;
+    border:solid 1px #9E9E9E;
+    color: #9E9E9E;
+}
+
+
+
+/*----------------------------------------appointment-coach-------------------------------------------*/
+.gg-page-content.appointment-coach{
+    padding: 0 16px;
+}
+
+
+
+.gg-page-content.appointment-coach{
+    padding-bottom: 16px;
+}
+
+.gg-page-content.appointment-coach .main-card{
+    background-color: #fff;
+    margin-top: 16px;
+    width: 100%;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+    display: table;
+    clear: both;
+}
+.gg-page-content.appointment-coach .main-card .content{
+    padding: 8px;
+    width: 100%;
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.gg-page-content.appointment-coach .main-card .img{
+    float: left;
+    max-width: 80px;
+    max-height: 104px;
+}
+.gg-page-content.appointment-coach .main-card .img img{
+    width: 100%;
+}
+
+.gg-page-content.appointment-coach .main-card .text-field{
+    padding-left: 8px;
+    width: calc(100% - 80px);
+    float: left;
+    position: relative;
+}
+.gg-page-content.appointment-coach .main-card .text-field .info{
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+    border-bottom: dashed 1px #9e9e9e;
+    padding-bottom: 2px;
+}
+.gg-page-content.appointment-coach .main-card .text-field .info .skill{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.gg-page-content.appointment-coach .main-card .text-field .evaluate{
+    margin-top: 2px;
+    font-size: 12px;
+    color: #9e9e9e;
+}
+.gg-page-content.appointment-coach .main-card .text-field .evaluate span{
+    line-height: 18px;
+    margin-right: 4px;
+    vertical-align:top;
+}
+.gg-page-content.appointment-coach .main-card .text-field .evaluate .gg-star-full{
+    width: 12px;
+    height: 12px;
+    background-size: cover;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+
+.gg-page-content.appointment-coach .main-card .footer{
+    height: 48px;
+    padding: 8px;
+    border-top: dashed 1px #9e9e9e;
+}
+
+.gg-page-content.appointment-coach .main-card .footer .gg-btn{
+    float: right;
+    height: 32px;
+    width: 64px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.gg-page-content.appointment-coach .main-card .footer .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-page-content.appointment-coach .main-card .footer .gg-btn.grey{
+    background-color: #fff !important;
+    border:solid 1px #9E9E9E;
+    color: #9E9E9E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*----------------------------------------driving-school-appointment-------------------------------------------*/
+
+.gg-page-content.appointment:before{
+    height: 200px;
+}
+
+.gg-header.appointment{
+    height: 152px;
+}
+
+.gg-header.appointment .coach-pic{
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 64px;
+    height: 80px;
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 99;
+}
+
+.gg-header.appointment .coach-pic img{
+    width: 100%;
+}
+
+.gg-header.appointment .coach-info{
+    position: absolute;
+    top: 16px;
+    left: 56px;
+    width: calc(100% - 80px);
+    height: 120px;
+    padding: 16px 8px 8px 56px;
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 98;
+}
+.gg-header.appointment .coach-info p{
+    margin: 0;
+    font-size: 16px;
+    color: #616161;
+}
+
+.gg-header.appointment .coach-info .name{
+    font-size: 24px;
+}
+
+.gg-header.appointment .coach-plate{
+    position: absolute;
+    top: 112px;
+    right: 32px;
+    width: 88px;
+    height: 32px;
+    border-radius: 2px;
+    padding: 2px;
+    background-color: #F9C337;
+    z-index: 99;
+}
+
+.gg-header.appointment .coach-plate p{
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+    border: solid 1px #fff;
+}
+
+.gg-appointment-tabs {
+    position: fixed;
+    top: 152px;
+    width: 100%;
+}
+
+
+.gg-appointment-tabs .day{
+    margin-top: 6px;
+    line-height: 19px;
+}
+.gg-appointment-tabs .date{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.gg-appointment-tab-content{
+    width: calc(100% - 32px);
+    margin: 16px auto 0;
+}
+
+.gg-appointment-tab-item{
+    width: 100%;
+    height: 64px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gg-appointment-tab-item .info p{
+    margin: 0;
+}
+
+.gg-appointment-tab-item.unable{
+    border-color: #9E9E9E;
+}
+.gg-appointment-tab-item.unable .status {
+    color: #9E9E9E;
+}
+
+.gg-appointment-tab-item.able{
+    border-color: #7ED321;
+}
+.gg-appointment-tab-item.able .status {
+    color: #7ED321;
+}
+
+.gg-appointment-tab-item.ordered{
+    border-color: #F5A81F;
+}
+.gg-appointment-tab-item.ordered .status {
+    color: #F5A81F;
+}
+
+
+
+/*------------------------------------------management-------------------------------------------*/
+
+.gg-page-content.member-manage:after{
+    height: 54px;
+}
+.gg-page-content.member-manage {
+    padding: 0 16px 16px;
+}
+
+.gg-page-content.member-manage .main-card{
+    width: 100%;
+    background-color: #fff;
+    border:solid 1px #F8BA2A;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.gg-page-content.member-manage .main-card .header{
+    height: 48px;
+    background-color: #F8BA2A;
+    border-radius: 1px 1px 0 0;
+    line-height: 48px;
+    padding-left: 16px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.gg-page-content.member-manage .main-card .content{
+    position: relative;
+    padding: 7px 16px 0;
+    border-bottom: dashed 1px #BDBDBD;
+}
+
+.gg-page-content.member-manage .main-card .content .text{
+    margin-bottom: 13px;
+}
+
+.gg-page-content.member-manage .main-card .content .title{
+    color: #9E9E9E;
+    margin-right: 16px;
+    vertical-align: top;
+}
+.gg-page-content.member-manage .main-card .content .text .add-text{
+    display: inline-block;
+    width: calc(100% - 78px);
+    text-align: justify;
+    word-break:break-all;
+}
+
+.gg-page-content.member-manage .main-card .content .pic{
+    position: absolute;
+    width: 64px;
+    top: 8px;
+    right: 8px;
+    text-align: center;
+}
+
+.gg-page-content.member-manage .main-card .content .pic img{
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.gg-page-content.member-manage .main-card .footer{
+    height: 48px;
+    padding: 8px;
+}
+
+.gg-page-content.member-manage .main-card .footer .status{
+    float: left;
+    margin-left: 8px;
+    line-height: 32px;
+}
+
+.gg-page-content.member-manage .main-card .footer .gg-btn{
+    float: right;
+    height: 32px;
+    width: 64px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.gg-page-content.member-manage .main-card .footer .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-page-content.member-manage .main-card .footer .gg-btn.grey{
+    background-color: #fff !important;
+    border:solid 1px #9E9E9E;
+    color: #9E9E9E;
+}
+
+
+/*------------------------------------------my-share-------------------------------------------*/
+
+
+.gg-header.member-my-share{
+    height: 112px;
+    padding: 16px;
+}
+.gg-page-content.member-my-share:before{
+    height: 112px;
+}
+
+
+.gg-header.member-my-share .code-btn img{
+    width: 80px;
+    border-radius: 2px;
+}
+.gg-header.member-my-share .text{
+    font-size: 16px;
+    height: 80px;
+    width: calc(100% - 96px);
+    padding: 4px 0;
+    margin-left: 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.gg-header.member-my-share .text .gg-row{
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.gg-header.member-my-share .text .divider{
+    background-color: #fff;
+}
+
+
+.gg-page-content.member-my-share .main-btn{
+    padding: 0 16px 16px;
+}
+
+.gg-page-content.member-my-share .main-btn-item{
+    display: block;
+    margin-top: 16px;
+    width: 100%;
+    height: 64px;
+    border: solid 1px #F5A81F;
+    border-radius: 2px;
+    padding: 16px;
+}
+.gg-page-content.member-my-share .main-btn-item .icon{
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+.gg-page-content.member-my-share .main-btn-item img{
+    max-width: 32px;
+    max-height: 32px;
+}
+.gg-page-content.member-my-share .main-btn-item .text{
+    margin-left: 16px;
+}
+
+.gg-page-content.member-my-share .main-btn-item p{
+    margin: 0 !important;
+    color: #616161;
+}
+.gg-page-content.member-my-share .main-btn-item p.zh{
+    font-size: 16px;
+    line-height: 16px;
+}
+.gg-page-content.member-my-share .main-btn-item p.en{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+}
+
+
+/*------------------------------------------member-setting-------------------------------------------*/
+
+
+
+.gg-page-content.member-setting{
+    padding: 16px 16px 0;
+}
+.gg-page-content.member-setting .main-btn .main-btn-item{
+    display: block;
+    height: 48px;
+    margin-bottom: 16px;
+}
+
+.gg-page-content.member-setting .main-btn .main-btn-item img{
+    width: 100%;
+}
+.gg-page-content.member-setting .version{
+    font-size: 16px;
+    position: absolute;
+    bottom: 134px;
+    width: calc(100% - 32px);
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+}
+
+.gg-page-content.member-setting .gg-btn{
+    font-size: 16px;
+    position: absolute;
+    bottom: 70px;
+    display: block;
+    width: calc(100% - 32px);
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    background-color: #F8BA2A;
+}
+
+/*------------------------------------------record-------------------------------------------*/
+
+.gg-page-content.member-record:after{
+    height: 54px;
+}
+
+.gg-page-content.member-record{
+    padding: 16px 16px 0;
+}
+
+.gg-page-content.member-record .main-btn-item{
+    height: 64px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: solid 1px #F8BA2A;
+}
+
+.gg-page-content.member-record .main-btn-item img{
+    float: left;
+}
+
+.gg-page-content.member-record .main-btn-item .text{
+    float: left;
+    margin-left: 16px;
+    width: calc(100% - 48px);
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.gg-page-content.member-record .main-btn-item .text .time{
+    color: #9e9e9e;
+}
+
+
+
+/*------------------------------------------mem-progress-------------------------------------------*/
+
+.gg-page-content.member-progress:after{
+    height: 54px;
+}
+
+.gg-page-content.member-progress .main-btn{
+    padding: 16px 16px 0;
+}
+
+.gg-page-content.member-progress .main-btn-item{
+    margin-bottom: 16px;
+    width: 100%;
+    background-color: #fff;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+}
+
+.gg-page-content.member-progress .main-btn-item .header{
+    padding: 0 16px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+.gg-page-content.member-progress .main-btn-item .header .name{
+    margin-right: 16px;
+}
+
+.gg-page-content.member-progress .main-btn-item .header .status{
+    color: #F8BA2A;
+}
+
+.gg-page-content.member-progress .main-btn-item .header .time{
+    color: #9e9e9e;
+}
+
+.gg-page-content.member-progress .main-btn-item .content{
+    border-top: dashed 1px #9E9E9E;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gg-page-content.member-progress .main-btn-item .content .text{
+    color: #F8BA2A;
+    font-size: 16px;
+}
+
+.gg-page-content.member-progress .main-btn-item .content .img{
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------------------------------share-code-------------------------------------------*/
+
+.gg-page-content.share-code{
+    padding: 56px 48px 0;
+}
+.gg-page-content.share-code:after{
+    height: 16px;
+}
+
+.gg-page-content.share-code .main-card{
+    background-color: #fff;
+    border: solid 1px #F8BA2A;
+    border-radius: 2px;
+    color: #fff;
+}
+.gg-page-content.share-code .main-card .avatar{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 16px;
+    left: calc(50% - 40px);
+}
+
+.gg-page-content.share-code .main-card .avatar img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.gg-page-content.share-code .main-card .header{
+    height: 104px;
+    background-color: #F8BA2A;
+    border-radius: 1px 1px 0 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.gg-page-content.share-code .main-card .header .name{
+    font-size: 16px;
+}
+.gg-page-content.share-code .main-card .header .gg-title{
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.gg-page-content.share-code .main-card .qr-code{
+    margin: 16px auto;
+    width: 168px;
+    height: 168px;
+}
+
+.gg-page-content.share-code .main-card .qr-code img{
+    width: 168px;
+    height: 168px;
+}
+
+.gg-page-content.share-code .tips{
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    text-align: center;
+}
+.gg-page-content.share-code .intro{
+    position: relative;
+}
+
+.gg-page-content.share-code .intro img.share-code-intro{
+    width: 100%;
+}
+
+.gg-page-content.share-code .intro img.gg-face{
+    position: absolute;
+    bottom: 20%;
+    right: -30px;
+    width: 64px;
+}
+
+
+
+/*------------------------------------------coach-------------------------------------------*/
+
+
+.gg-header.coach{
+    height: 152px;
+}
+
+.gg-header.coach .coach-pic{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 72px;
+    height: 96px;
+    border-radius: 2px;
+    z-index: 99;
+}
+
+.gg-header.coach .coach-pic img{
+    width: 100%;
+}
+
+.gg-header.coach .coach-pic p{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+
+.gg-header.coach .coach-info-card{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: calc(100% - 120px);
+    height: 120px;
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 98;
+}
+
+.gg-header.coach .coach-info-card .tabs{
+    height: 32px;
+    border-bottom: solid 1px #9e9e9e;
+}
+.gg-header.coach .coach-info-card .tabs li{
+    height: 32px;
+    line-height: 32px;
+}
+.gg-header.coach .coach-info-card .content{
+    position: relative;
+    padding: 8px;
+    height: calc(100% - 32px);
+}
+
+.gg-header.coach .coach-info-card .content .materialize-textarea{
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+.gg-header.coach .coach-info-card .content .materialize-textarea:focus{
+    box-shadow: none;
+}
+
+.gg-header.coach .coach-info-card .content .gg-btn{
+    display: block;
+    font-size: 12px;
+    height: 24px;
+    width: 64px;
+    line-height: 24px;
+    text-align: center;
+}
+.gg-header.coach .coach-info-card .content.public .gg-btn{
+    position: absolute;
+    bottom:8px;
+    right: 8px;
+}
+.gg-header.coach .coach-info-card .content.setting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-header.coach .coach-info-card .content.setting .gg-btn{
+    margin: 0 8px;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+}
+
+
+.gg-header.coach .coach-info-card .content .gg-btn.orange{
+    background-color: #fff !important;
+    border:solid 1px #F8BA2A;
+    color: #F8BA2A;
+}
+
+
+.gg-coach-tabs {
+    position: fixed;
+    top: 152px;
+    width: 100%;
+}
+
+
+.gg-coach-tabs .day{
+    margin-top: 6px;
+    line-height: 19px;
+}
+.gg-coach-tabs .date{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.gg-page-content.coach{
+    padding: 16px;
+}
+
+.gg-page-content.coach:before{
+    height: 200px;
+}
+
+.gg-page-content.coach .main-card{
+    background-color: #fff;
+    border: solid 1px #F8BA2A;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.gg-page-content.coach .main-card .title{
+    height: 40px;
+    background-color: #F8BA2A;
+    color: #fff;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gg-page-content.coach .main-card .content{
+    width: 100%;
+    display: table;
+}
+
+.gg-page-content.coach .main-card .content .item{
+    padding: 8px;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    border-bottom: solid 1px #9e9e9e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gg-page-content.coach .main-card .content .item a{
+    height: 32px;
+}
+
+.gg-page-content.coach .main-card .content .item .text{
+    display: flex;
+    align-items: center;
+}
+
+.gg-page-content.coach .main-card .content .item .text span{
+    margin: 0 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

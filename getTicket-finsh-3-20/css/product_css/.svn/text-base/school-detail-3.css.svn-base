@@ -1,0 +1,316 @@
+body,html{
+	width:100%;
+	height:100%;
+}
+body{
+	display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	-webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    position:relative;
+}
+.school-detail-outer{
+	width:100%;
+	height:40%;
+	box-shadow: 2px 2px 2px 2px #ccc;
+}
+.school-info{
+	width:100%;
+	height:auto;
+}
+.school-pic{
+	width:100%;
+	height:250px;
+	overflow: hidden;
+}
+.school-pic img{
+	width:100%;
+	height:250px;
+}
+.school-name{
+	line-height: 40px;
+	margin-left:20px;
+	font-size:26px;
+}
+.tit-diff{
+	color:#918F8F;
+}
+.tit-info{
+	color:#F5A521;
+	font-weight: bold;
+}
+.school-eva{
+	display:inline-block;
+	width:140px;
+    height:23px;
+    position:relative;
+    overflow:hidden;
+}
+.school-eva>span{
+	display:inline-block;
+    position:absolute;
+    width:140px;
+    height:23px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    left:0px;
+    top:0px;
+}
+.school-eva>.add-star{
+    background:url(../../images/star.png);
+}
+.school-eva>.del-star{
+    background:url(../../images/star-pra.png);
+    background-color:white;
+}
+/*以下是主要内容*/
+.school-about-outer{
+	box-flex:1;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	flex:1;
+	-webkit-flex:1;
+    overflow: auto;
+    position:relative;
+}
+.school-iscroll{
+	height:auto;
+}
+/*以下是产品列表*/
+.detail-list{
+	width:100%;
+	height:450px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+.detail-pic{
+	width:40%;
+	height:450px;
+	float:left;
+	box-sizing: border-box;
+	padding:10px 8px;
+}
+.detail-pic img{
+	width:250px;
+	height:250px;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	margin-top:10px;
+}
+.detail-cont{
+	width:60%;
+	height:450px;
+	float:left;
+	box-sizing: border-box;
+	padding:10px 10px;
+}
+.detail-cont p{
+	line-height:32px;
+	font-size:24px;
+}
+
+.school-price{
+	color:red;
+}
+.school-pri{
+	color:red;
+}
+.appoint-btn{
+	width:200px;
+	height:45px;
+	margin-left:80px;
+	border:0;
+	background:#F5A521;
+	color:#fff;
+	border-radius: 10px;
+	font-size:26px;
+	letter-spacing: 5px;
+	margin-top:10px;
+}
+.cut-price{
+	color:red;
+}
+.cut-info{
+	color:#F5A521;
+}
+.cut-info b{
+	color:red;
+}
+.service-txt span{
+	color:#D36F6F;
+}
+/*以下是教练列表*/
+.coach-info{
+	width:100%;
+	height:230px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+.coach-pic{
+	width:40%;
+	height:230px;
+	float:left;
+}
+.coach-pic img{
+	width:220px;
+	height:180px;
+	margin-left:18px;
+	margin-top:10px;
+}
+.coach-cont{
+	width:60%;
+	height:230px;
+	float:left;
+	box-sizing: border-box;
+	line-height:40px;
+	font-size:26px;
+}
+.skill-box,.attitude-box,.health-box{
+	display:inline-block;
+	width:140px;
+    height:23px;
+    position:relative;
+    overflow:hidden;
+}
+/*服务态度*/
+.attitude-box>span{
+	display:inline-block;
+    position:absolute;
+    width:140px;
+    height:23px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    left:0px;
+    top:0px;
+}
+.attitude-box>.add-star{
+    background:url(../../images/star.png);
+}
+.attitude-box>.del-star{
+    background:url(../../images/star-pra.png);
+    background-color:white;
+}
+/*技术*/
+.skill-box>span{
+	display:inline-block;
+    position:absolute;
+    width:140px;
+    height:23px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    left:0px;
+    top:0px;
+}
+.skill-box>.add-star{
+    background:url(../../images/star.png);
+}
+.skill-box>.del-star{
+    background:url(../../images/star-pra.png);
+    background-color:white;
+}
+/*卫生*/
+.health-box>span{
+	display:inline-block;
+    position:absolute;
+    width:140px;
+    height:23px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    left:0px;
+    top:0px;
+}
+.health-box>.add-star{
+    background:url(../../images/star.png);
+}
+.health-box>.del-star{
+    background:url(../../images/star-pra.png);
+    background-color:white;
+}
+/*以下是底部*/
+.school-about-list{
+	width:100%;
+	height:80px;
+	background:#F5A521;
+	position:relative;
+}
+.about-list{
+	width:100%;
+	height:80px;
+	overflow: hidden;
+}
+.list-tit{
+	float:left;
+	width:25%;
+	height:80px;
+	text-align: center;
+	line-height:80px;
+	color:#fff;
+	font-size:26px;
+	box-sizing: border-box;
+	border-right:1px solid #fff;
+	border-radius: 10px;
+}
+.list-tit:nth-child(4){
+	border:0;
+}
+.school-menu-diff{
+	background:#D36F6F;
+}
+.hidden{ display:none;}
+/*以下是驾校简介*/
+.jianjie-cont{
+	line-height:40px;
+	font-size:26px;
+	box-sizing: border-box;
+	padding:20px;
+}
+/*以下是驾校评价*/
+.school-eva-num{
+	width:100%;
+	height:80px;
+	line-height:80px;
+	box-sizing: border-box;
+	padding-left:20px;
+	font-size:26px;
+	font-weight:bold;
+	color:#F5A521;
+	border-bottom:1px solid #ccc;
+}
+.school-eva-box{
+	width:100%;
+	height:300px;
+	overflow: hidden;
+	border-bottom:1px dotted #ccc;
+}
+.eva-per{
+	width:100%;
+	height:100px;
+	line-height:100px;
+	font-size:24px;
+	box-sizing: border-box;
+	padding:8px;
+}
+.eva-person{
+	font-weight:bold;
+}
+.per-product{
+	color:#F5A521;
+}
+.eva-time{
+	font-size:24px;
+	float:right;
+}
+.eva-cont{
+	width:100%;
+	height:200px;
+	line-height:50px;
+	box-sizing: border-box;
+	padding:8px;
+	font-size:24px;
+}
+

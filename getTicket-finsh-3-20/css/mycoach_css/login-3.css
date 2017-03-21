@@ -1,0 +1,41 @@
+	html,body{height:100%;}
+	.login-box{width:100%;}
+	.login-header{width:100px;height:100px;margin:60px auto 30px auto;};
+	.login-header img{width:100%;height:100%;}
+	.login-cont-box{width:100%;height: auto;}
+	.error-box{
+		width:90%;
+		height:24px;
+		margin:0 auto;
+		font-size:14px;
+		color:red;
+		text-align: center;
+		line-height:24px;
+	}
+	.reg-tel-box,.reg-pwd-box{
+		width:90%;
+		height:50px;
+		margin:0 auto;
+		box-sizing: border-box;
+	}
+	.reg-tel-box img,.reg-pwd-box img{
+		width:30px;height:30px;margin:10px;float: left;
+	}
+	.reg-tel-box input,.reg-pwd-box input{
+		float:left;width:70%;height:26px;margin:12px;border:none;border-bottom: 1px solid #666666;
+	}
+	.reg-btn-box{
+		width:90%;
+		height:60px;
+		margin:0 auto;
+	}
+	.reg-btn-box input{
+		width:100%;
+		height:40px;
+		background:#f5a721;
+		color:#fff;
+		letter-spacing: 5px;
+		border:0;
+		border-radius: 8px;
+		font-size:20px;
+	}

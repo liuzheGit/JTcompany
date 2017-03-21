@@ -1,0 +1,67 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	background: url(../../images/erweimaBG.png) no-repeat 0 0;
+	background-size:100% 100%;
+	position:relative;
+	overflow: auto;
+}
+.coach-list-cont{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position:relative;
+}
+#list-box{
+	height:auto;
+}
+.share-bottom{
+	width: 200px;
+	height:200px;
+	border: 1px solid #ccc;
+	margin:400px auto 0;
+	background: #fff;
+}
+.cont-box{
+	width:100%;
+	text-align: center;
+	font-size:22px;
+	line-height:40px;
+	color:#FACA32;
+}
+/*以下是使用攻略*/
+.how-use{
+	position:absolute;
+	right:30px;
+	top:180px;
+}
+.share-bg{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(83,80,80,.5);
+	z-index:3;
+	display:none;
+}
+.how-use-box{
+	width:80%;
+	height:auto;
+	min-height:400px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-40%;
+	margin-top:-400px;
+	background:#fff;
+	z-index:5;
+	box-sizing: border-box;
+	padding:10px;
+	line-height:45px;
+	font-size:22px;
+	border-radius: 20px;
+	display:none;
+}

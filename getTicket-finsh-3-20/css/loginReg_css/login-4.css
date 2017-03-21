@@ -1,0 +1,281 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+a{
+	color:#000;
+}
+
+.login-name{
+	font-size: 22px;color: #666666;width: 100%;line-height:30px;text-align: center;
+}
+.suer-user-tel{
+	float:left;
+	height:56px;
+	width:80%;
+	border:0;
+	margin-left:10px;
+	font-size:24px;
+}
+
+.reg-tel-box,.reg-pwd-box,.reg-code-box{
+	width:90%;
+	height:60px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border-bottom:1px solid #ccc;
+	padding-left:10px;
+	
+}
+.login-user-pic,.login-pwd-pic,.reg-user-pic{
+	width: 40px;
+	height: 40px;margin: 10px;
+	float:left;
+}
+#login-user-pwd{
+	float:left;
+	height:56px;
+	width:75%;
+	border:0;
+	margin-left:10px;
+	font-size:24px;
+}
+.reg-btn-box{
+	width:90%;
+	height:60px;
+	margin:0 auto;
+	border-radius: 10px;
+	/*border:1px solid #F1A653;*/
+	background: #f6aa24;
+}
+
+#reg-btn{
+	width:100%;
+	height:60px;
+	/*background:#f8b92e;*/
+	background:none;
+	color:#fff;
+	font-size:30px;
+	letter-spacing: 5px;
+	border:0;
+	
+}
+/*以上是新增*/
+.login-box{
+	display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	-webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    position:relative;
+}
+.login-header{
+	width:100%;
+	height:120px;
+	/*text-align: center;*/
+	box-sizing: border-box;
+	
+	margin:120px 0 20px 0;
+}
+.login-header img{
+	width:120px;
+	height: 120px;
+	margin: 0 auto;
+	display: block;
+}
+/*以下是中间部分*/
+.login-cont-box{
+	box-flex:1;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	flex:1;
+	-webkit-flex:1;
+}
+.user-tel-box,.user-pwd-box{
+	width:90%;
+	height:60px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border:1px solid #ccc;
+	padding-left:10px;
+	border-radius: 10px;
+}
+
+#login-user-tel,#reg-user-pwd,#reset-user-tel,#reset-user-pwd,#reset-user-phone,#reset-user-pass{
+	float:left;
+	height:56px;
+	width:80%;
+	border:0;
+	margin-left:10px;
+	font-size:24px;
+}
+#reg-user-tel{
+	height:50px;
+	width:80%;
+	font-size:24px;
+	display:block;border:1px solid #ccc;margin: 0 auto;
+}
+.error-box{
+	width:90%;
+	height:40px;
+	margin:0 auto;
+	font-size:22px;
+	color:red;
+	text-align: center;
+	line-height:40px;
+}
+
+.login-btn-box,.login-other-box,.reg-other-box,.reg-deal-box{
+	width:90%;
+	height:60px;
+	margin:0 auto;
+}
+#login-btn,#reset-btn,#user-reset-btn{
+	width:100%;
+	height:60px;
+	background:#F1A653;
+	color:#fff;
+	font-size:36px;
+	letter-spacing: 5px;
+	border:0;
+	border-radius: 20px;
+}
+.login-other-box{
+	line-height:60px;
+	font-size:22px;
+}
+.no-reg{
+	float:left;
+	margin-left:20px;
+}
+.forget-pwd{
+	float:right;
+	margin-right:20px;
+}
+/*是否显示密码*/
+.show-pwd-box{
+	width:90%;
+	height:40px;
+	margin:0 auto;
+	line-height: 40px;
+	box-sizing: border-box;
+	padding-left:20px;
+	font-size:22px;
+	margin-top: 20px;
+}
+.show-pwd-box span{
+	float:left;
+	line-height: 40px;
+	height:40px;
+}
+#show-pwd{
+	float:left;
+	width:25px;
+	height:25px;
+	margin:8px 10px 0;
+}
+/*以下是注册部分*/
+#reg-user-code,#reset-user-code{
+	float:left;
+	height:56px;
+	width:60%;
+	border:0;
+	margin-left:10px;
+	font-size:24px;
+}
+.code-abled{
+	float:right;
+	height:57px;
+	background:#F5A521;
+	border:0;
+	width:25%;
+	border-radius: 10px;
+	font-size:24px;
+	color:#fff;
+	font-weight:bold;
+}
+
+.reg-other-box{
+	text-align: right;
+	box-sizing: border-box;
+	padding-right:20px;
+	line-height:60px;
+	font-size:24px;
+	margin-top:40px;
+}
+.for-login{
+	color:#F5A521;
+	font-weight:bold;
+}
+.reg-deal-box{
+	box-sizing: border-box;
+	padding-left:60px;
+}
+#agree-box{
+	float:left;
+	width:30px;
+	height:30px;
+	margin-top:15px;
+	margin-right:10px;
+}
+#deal-cont{
+	float:left;
+	height:60px;
+	line-height: 60px;
+}
+.code-disabled{
+	background:#cecece;
+}
+/*以下是注册弹出框*/
+.deal-bg{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(91,90,90,.8);
+	display:none;
+}
+.deal-box{
+	width:600px;
+	height:100%;
+	position:absolute;
+	left:20px;
+	top:0;
+	box-sizing: border-box;
+	border:2px solid #D36F6F;
+	background:#fff;
+	border-radius: 20px;
+	padding:10px;
+	display:none;
+}
+#wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow: hidden;
+}
+.deal-cont{
+	height:auto;
+}
+.data-main-cont p{
+	font-size:22px;
+	line-height:50px;
+}
+#agree-btn{
+	width:300px;
+	height:50px;
+	border:0;
+	background:#F5A521;
+	color:#fff;
+	font-size:26px;
+	margin:20px 0 0 150px;
+	border-radius: 10px;
+	letter-spacing: 5px;
+}

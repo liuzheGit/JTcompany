@@ -1,0 +1,45 @@
+.pay-box{
+	width:100%;
+	height:auto;
+}
+.pay-info{
+	width:80%;
+	margin:0 auto;
+	margin-top:50px; 
+}
+.order-pic{
+	width:100%;
+	height:300px;
+	box-sizing: border-box;
+	border:1px solid #F5A521;
+	padding:10px;
+}
+.order-pic img{
+	width:100%;
+	height:280px;
+}
+.order-cont{
+	margin-top:20px;
+	line-height:60px;
+	padding-left:20px;
+	font-size:26px;
+}
+.order-diff{
+	font-weight: bold;
+	color:#F5A521;
+	font-size:30px;
+}
+#pay-btn{
+	position:absolute;
+	left:0;
+	bottom:0;
+	display:block;
+	width:100%;
+	height:70px;
+	border:0;
+	background:#F5A521;
+	color:#fff;
+	border-radius: 20px;
+	font-size:40px;
+	letter-spacing: 5px;
+}

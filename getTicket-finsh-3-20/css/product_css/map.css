@@ -1,0 +1,152 @@
+html,body{
+	width:16rem;
+	height:100%;
+	box-sizing: border-box;
+}
+body{
+	position:relative;
+}
+.s2{
+	width:16rem;
+	height:100%;
+	overflow: hidden;
+	margin:0;
+	padding:0;
+}
+/*以下是头部*/
+.map-info-icon{
+	width:16rem;
+	height:2rem;
+	background:rgb(255,255,255);
+	box-sizing: border-box;
+	position: relative;
+	box-shadow: 2px 2px 2px 2px #000;
+	z-index:99999;
+}
+.user-add-box{
+	width:7rem;
+	height:2rem;
+	font-size:0.9rem;
+	line-height:2rem;
+	color:#F1A653;
+	font-weight:bold;
+	box-sizing: border-box;
+	float:left;
+}
+.user-add-box img{
+	width:0.6rem;
+	float:left;
+	margin:0.6rem 0.2rem 0;
+}
+.user-add-box .sanjiao{
+	margin-top:0.8rem;
+}
+.user-add{
+	float:left;
+	width:5rem;
+	height:2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.user-search-box{
+	width:9rem;
+	height:2rem;
+	line-height:2rem;
+	float:left;
+}
+.user-search-txt{
+	width:6.5rem;
+	height:1rem;
+	float:left;
+	border:1px solid #F6AA24;
+	margin-top:0.5rem;
+	box-sizing: border-box;
+	padding-left:0.3rem;
+	font-size:0.9rem;
+}
+#user-search-btn{
+	width:2rem;
+	height:1rem;
+	float:left;
+	background:#F5A521;
+	color:#fff;
+	border:0;
+	margin-top:0.5rem;
+	font-size:0.9rem;
+	border-radius: 0px 10px 10px 0;
+}
+#map{
+	width:15rem;
+	height:8rem;
+	margin:0 auto;
+}
+.anchorBL{display:none}
+.add-detail{
+	position:absolute;
+	z-index:999999999;
+	width:16rem;
+	height:auto;
+	line-height:1rem;
+	top:2rem;
+	left:0;
+	background:rgba(0,0,0,.5);
+	display:none;
+	box-sizing: border-box;
+	padding-left:0.5rem;
+	color:#fff;
+}
+/*以下是列表*/
+.box{
+	width:16rem;
+	height:15rem;
+	overflow: hidden;
+	position:relative;
+}
+.map-list-info{
+	height:auto;
+	overflow: hidden;
+}
+.school-around-list{
+	width:16rem;
+	height:7rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ddd;
+	margin-bottom:0.5rem;
+	background:#fff;
+}
+.school-img{
+	float:left;
+	width:6rem;
+	height:7rem;
+	box-sizing: border-box;
+	padding:0.5rem;
+}
+.school-img img{
+	width:5rem;
+	height:6rem;
+	text-align: center;
+	box-sizing: border-box;
+}
+.school-info{
+	float:right;
+	width:10rem;
+	height:7rem;
+	box-sizing: border-box;
+	padding:0.5rem;
+}
+.school-info div{
+	line-height:1rem;
+	font-size:24px;
+}
+.no-num-box{
+	width:100%;
+	height:4rem;
+	line-height:1rem;
+	text-align: center;
+	font-size:1rem;
+	margin-top:2rem;
+}
+.other-school{
+	color:red;
+}

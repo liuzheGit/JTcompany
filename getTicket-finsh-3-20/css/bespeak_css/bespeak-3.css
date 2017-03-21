@@ -1,0 +1,217 @@
+body,html{
+	width: 100%;
+	height: 100%;	
+}
+body{	
+	display: -moz-box; 
+    display: -webkit-box; 
+    display: box; 
+	-moz-box-orient:vertical; 
+    -webkit-box-orient:vertical; 
+    box-orient:vertical;
+    position:relative;
+    overflow: hidden;
+}
+/*以下预约头部*/
+.header{
+	width: 100%;
+	height: 280px;
+	font-size: 16px;	
+}
+.yuyue-header{
+	width: 100%;
+	height: 160px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.yuyue-tit{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 36px;
+}
+.header-common{
+	height: 50px;
+	line-height: 50px;	
+}
+.header-common img{
+	width: 30px;
+	height: 20px;
+	float: left;	
+	margin:15px 10px 0 10px;	
+}
+.header-common p{
+	width: 80%;
+	float: left;
+	font-size: 26px;
+}
+/*以下是培训预约*/
+.be-times{
+	width: 100%;
+	
+}
+.be-times .yuyue-tit{
+	border-top:1px solid #ccc;
+}
+.car-class{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;	
+	padding:10px 0 0 20px;
+	box-sizing: border-box;
+}
+.car-class img{
+	width: 30px;
+	height: 20px;
+	float: left;
+	margin:10px 10px 0 10px;
+}
+.car-class p{
+	float: left;
+	font-size: 26px;
+}
+.be-car{
+	width:60%;	
+	height: 40px;
+	line-height: 40px;
+	float:left;
+	border-right: 2px solid #ccc;
+	position:relative;
+}
+.carDetal{
+	width: 50%;
+	float: left;
+	height: 40px;
+	margin-top: 5px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 26px;
+}
+.carDetal-list{
+	position: absolute;
+	border: 1px solid #ccc;
+	width: 50%;
+	height: auto;
+	overflow: hidden;
+	border-top: 0;
+	left: 34.5%;
+	top: 47px;
+	z-index: 2;
+	background: #eee;
+	display: none;
+	font-size: 26px;
+}
+.carDetal-list li{
+	text-align: center;
+}
+.be-class{
+	width:35%;	
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	margin-left: 10px;
+}
+.beDetail{
+	box-flex:1;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	margin:10px auto;
+	box-sizing: border-box;
+	border: 1px solid #CCCCCC;	
+	overflow: hidden;
+	position: relative;
+}
+.iscoll{
+	height: auto;
+}
+.class-Msg{
+	width: 50%;
+	height: 80px;
+	line-height: 80px;
+	color: red;
+	display: none;
+	margin-left: 30%;
+	margin-top: 30%;
+	font-size: 30px;
+}
+.times{
+	width: 97%;
+	height: 120px;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	overflow: hidden;
+}
+.times-msg{
+	width:70%;
+	float: left;
+	height: 120px;
+}
+.times-msg p{
+	height: 40px;
+	line-height: 40px;
+	font-size: 26px;
+}
+.times-msg p span{
+	margin-left: 5px;
+}
+.times-btn{
+	width: 30%;
+	float:left;
+		
+}
+.yuyueBtn{
+	width: 130px;
+	height: 55px;
+	font-size: 28px;
+	font-weight: 900;
+	line-height: 55px;
+	text-align: center;
+	background: #F5A521;
+	border: 1px solid #CCCCCC;
+	border-radius: 30px;
+	margin-left: 10px;
+	margin-top: 38px;
+}
+.be-bottom{
+	width: 100%;
+	height: 78px;
+	line-height: 80px;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-bottom: 0;	
+	font-size: 28px;	
+}
+.date{
+	float: left;
+}
+.dateBefore{
+	width: 20%;
+	border-right: 1px solid #ccc;	
+}
+.dateMou{
+	width: 58%;
+	border-right: 1px solid #ccc;
+}
+.dateMou p{
+	float: left;
+	margin-left: 20px;
+}
+.dateMou .form{
+	float: left;
+	width: 50%;
+	margin-left: 20px;
+}
+.select{
+	width: 100%;
+	height: 44px;
+	border: 0;
+	font-size: 26px;
+	border: 1px solid #ccc;	
+}
+.dateLater{
+	width: 21%;
+	border-right: 1px solid #ccc;	
+}

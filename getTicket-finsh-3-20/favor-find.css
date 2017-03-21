@@ -1,0 +1,85 @@
+body,div,p,ul,li{
+	margin: 0;
+}
+.find-top{
+	width: 100%;
+}
+.find-top-ul{
+	width: 100%;
+}
+.find-top-ul li{
+	/*list-style-type: none;*/
+	float: left;
+	width: 33.3%;
+	line-height: 2em;
+	font-size: 1em;
+	text-align: center;
+	color: #404040;
+	padding-bottom: 0.5em;
+	border-bottom: 0.2em solid transparent;
+}
+li.li-act{
+	color: #F8BA2A;
+	border-bottom: 0.2em solid #FDBB22;
+}
+.youhui-act b{
+	font-size:12px;
+	color:#f00;
+}
+.youhui-act{
+	width: 100%;
+}
+.youhui-act ul{
+	display: none;
+}
+.youhui-act ul.ul-act{
+	display: block;
+}
+.youhui-act>ul{
+	width: 100%;
+}
+.youhui-act ul li{
+	display: block;
+	position: relative;
+	width: 98%;
+	margin: 0.5em;
+	margin-left: 1%;
+}
+.youhui-act ul li img{
+	width: 100%;
+	height: auto;
+}
+.xinxi-tp{
+	position: absolute;
+	top: 9%;
+	left: 16%;
+	width: 80%;
+	color: #fff;
+}
+.tp-lf{
+	float: left;
+	font-size: 1.2em;
+}
+.tp-rt{
+	float: right;
+	font-size: 1.8em;
+}
+.youxiao-tm{
+	position: absolute;
+	width:90%;
+	top: 70%;
+	left: 5%;
+	color: #404040;
+	font-size: 0.8em;
+}
+.youxiao-tm a{
+	float: right;
+	color: #fff;
+	background: #F5A71F;
+	line-height: 2em;
+	border-radius: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+

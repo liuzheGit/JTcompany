@@ -1,0 +1,108 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+body{	
+    position:relative;
+}
+.coach-list-cont{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position:relative;
+}
+#list-box{
+	height:auto;	
+}
+/*以下是头部*/
+.headdatebox{
+	width: 100%;
+	height: 300px;
+	background:#F5A521;
+	padding:40px 30px;
+	box-sizing: border-box;
+}
+.uptubox{
+	width: 100%;
+	height: 50%;
+	margin-bottom:20px;
+}
+.updatebox{
+	width:100%;
+	height: 50px;
+	padding: 40px 0 0 30px;
+}
+.updatebox p{
+	font-size:26px;
+	color:#fff;
+}
+.updatebox span{
+	height: 40px;
+	line-height:40px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+}
+
+.otherdate{
+	width: 100%;
+	height:140px;
+	margin-top: 20px;
+}
+.otherdate div{
+	width: 49%;
+	height: 100px;
+	float: left;
+	text-align: center;
+}
+.otherdate div p{
+	width:100%;
+	text-align:center;
+	height: 50px;
+	line-height:50px;
+	font-size: 30px;
+	color:#fff;
+}
+.otherline{
+	width: 1px;
+	height: 100px;
+	float: left;
+	display: block;
+	background-color: white;
+}
+/*以下是模块部分*/
+.person-bottom{
+	width: 100%;
+	background: #ccc;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	-moz-box-flex: 1; 
+    -webkit-box-flex: 1; 
+    box-flex:1; 
+}
+.person-list{
+	margin-top: 20px;
+	background: #fff;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.person-list li{
+	width: 33%;
+	height: 140px;
+	float: left;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding-top: 50px;
+}
+.person-list li p{
+	font-size: 28px;
+	color: #000;
+	line-height: 70px;
+}
+.person-list li:nth-child(3),.person-list li:nth-child(6){
+	border-right: 0;
+	width: 33%;
+}

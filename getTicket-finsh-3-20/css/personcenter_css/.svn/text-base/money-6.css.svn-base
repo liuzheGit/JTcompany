@@ -1,0 +1,166 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	-webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    position:relative;
+    background:url(../../images/hb_bg.png) no-repeat 0 0;
+    background-size:100% 100%;
+}
+.money-header{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	margin: 30px 0;
+	background: #fff;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 26px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.money-header b{
+	color: red;
+}
+.money-header i{
+	display: block;
+	width: 160px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	margin-top: 10px;
+	background: #bbb;
+	border: 1px ssolid #bbb;
+	border-radius: 10px;
+	font-style: normal;
+	float: right;
+	margin-right: 10%;
+}
+.money-tit{
+	width: 100%;
+	height: 80px;
+	background:rgba(0,0,0,.2);
+	border-bottom: 1px solid #ccc;
+	font-size: 30px;
+	line-height: 80px;
+	text-align: center;
+	color:#fff;
+	font-weight:bold;	
+}
+.money-total{
+	margin:0 8px;
+}
+/*钱包交易记录*/
+.coach-list-cont{
+	box-flex:1;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	flex:1;
+	-webkit-flex:1;
+    position:relative;
+    overflow: hidden;
+}
+#list-box{
+	height:auto;
+	background:rgba(0,0,0,.2);
+}
+.moneyDetail{
+	width: 100%;
+	height: auto;
+}
+.none-msg{
+	width: 450px;
+	height: 80px;
+	line-height: 80px;
+	margin: 40px auto;
+	font-size: 30px;
+	font-weight: 900;
+	display: none;
+}
+.moneyList{
+	width: 100%;
+	height:150px;
+	font-size: 30px;
+	padding: 30px 30px 0;
+	box-sizing: border-box;
+	margin-bottom:20px;
+	border-bottom:1px dotted #fff;
+}
+.listMsg{
+	color:#fff;
+}
+.listMsg p{
+	line-height: 50px;
+}
+
+.hieedn{
+	display:none;
+}
+/*以下是提现功能*/
+.money-bg{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:rgba(83,79,79,.8);
+	display:none;
+}
+.how-much-box{
+	width:80%;
+	height:300px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left:-40%;
+	margin-top:-150px;
+	background:#fff;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding:20px;
+	display:none;
+}
+.much-tit{
+	text-align: left;
+	line-height:50px;
+	font-size:28px;
+	color:red;
+	font-weight:bold;
+}
+.much-txt{
+	width:80%;
+	height:50px;
+	display:block;
+	margin:10px auto;
+	box-sizing: border-box;
+	padding-left:20px;
+	font-size:26px;
+	border:1px solid #000;
+	border-radius: 10px;
+}
+.much-btn{
+	width:100%;
+	margin:0 auto;
+	margin-top:50px;
+}
+.draw-btn{
+	width:150px;
+	height:50px;
+	margin:0 40px;
+	font-size:26px;
+	background:0;
+	border-radius: 10px;
+	border:1px solid #F1A653;
+	color:#F1A653;
+}

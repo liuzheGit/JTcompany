@@ -1,0 +1,132 @@
+body,html{
+	width:100%;
+	height:100%;
+}
+body{
+	background:#f7f7f7;
+	position:relative;
+}
+.order-list-box{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	position:relative;
+}
+.order-list-cont{
+	height:auto;
+}
+.order-list{
+	width:100%;
+	height:auto;
+	background:#fff;
+	margin-bottom:20px;
+}
+/*以下是订单内容的样式*/
+.order-school-info{
+	width:100%;
+	height:80px;
+	border-bottom:1px solid #ccc;
+	line-height:80px;
+	box-sizing: border-box;
+	padding:0 20px;
+	font-size:26px;
+	font-weight: bold;
+}
+.school-name{
+	float:left;	
+}
+.order-time{
+	float:right;
+}
+.order-tit{
+	line-height:60px;
+	box-sizing: border-box;
+	padding:0 20px;
+	font-size:24px;
+}
+.despeak-status{
+	color:red;
+}
+.hidden{
+	display:none;
+}
+.order-btn{
+	width:100%;
+	height:80px;
+	box-sizing: border-box;
+	padding-left:150px;
+}
+.order-btn input{
+	width:180px;
+	height:50px;
+	background:0;
+	border:1px solid #F5A521;
+	font-size:24px;
+	color:#F5A521;
+	margin:0 20px;
+	border-radius: 10px;
+	display:none;
+	float:right;
+}
+#no-bespeak{
+	display:none;
+	width:100%;
+	height:100%;
+	text-align: center;
+	line-height:50px;
+	font-size:28px;
+	box-sizing: border-box;
+	padding-top:200px;
+}
+#no-bespeak a{
+	color:red;
+}
+/*以下是弹出框*/
+.bg{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:rgba(90,90,90,.5);
+	display:none;
+}
+.worn-box{
+	width:70%;
+	height:250px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-35%;
+	margin-top:-124px;
+	background:#fff;
+	border-radius: 15px;
+	display:none;
+	box-sizing: border-box;
+	padding:20px;
+}
+.result-box{
+	line-height:50px;
+	font-size:26px;
+	color:#F5A521;
+	font-weight:bold;
+	text-align: center;
+}
+#sure-btn{
+	width:200px;
+	height:50px;
+	background:0;
+	border:1px solid #F5A521;
+	font-size:26px;
+	display:block;
+	margin:0 auto;
+	margin-top:20px;
+	color:red;
+	border-radius: 10px;
+}
+.eva-info{
+	display:none;
+}
+.eva-info span{
+	color:red;
+}
