@@ -1,0 +1,227 @@
+
+.countbg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99;display:none;}
+.countbg img{width:100%;height:100%;}
+.timebox{width:100%;height:120px;padding:5px 0;position:absolute;top:38%;left:0;background-color:black;background:rgba(0,0,0,0.3);}
+.timebox div{font-weight:500;margin:auto;width:100%;text-align:center;color:white;opacity:0.9;}
+.countuptext{font-size:22px;line-height:40px;}
+#timedate{font-size:30px;line-height:60px;}
+.actrulebox{width: 100%;height: auto;margin-top:20px;position: absolute;top:50%;left:0;}
+.actrulebox li{color: white;line-height:40px;height: auto;width: 85%;text-align:left;font-size: 20px;padding: 0 5% 0 10%;}
+	
+.actrulebox1{width: 100%;height: auto;margin-top:20px;}
+.actrulebox1 li{color: #666666;line-height:40px;height: auto;width: 85%;text-align:left;font-size: 20px;padding: 0 5% 0 10%;}
+			
+
+/*个人中心和分享码*/
+.Loytime_box{width: 100%;height: 90px;background:rgba(255,255,255,.5);position: fixed;left: 0;top:0;z-index: 1000;}
+.lottext{float: left;line-height: 90px;width: auto;font-size: 20px;color: #666666;text-align: center;margin:0px 30px 0 30px;}
+.share2w,.winlog{float: left;width: 104px;height: 70px;}
+
+.Loytime_box div img{width: 50px;height: 50px;margin:20px 32px;}
+
+.onlinepep{width: auto;height: 90px;float: left;margin:0 30px;}
+.onlinepep span{display: block;float: left;line-height: 90px;font-size: 20px;color: #666666;}
+					
+.winner-list{
+	width:90%;
+	height:30%;
+	margin:0 5%;
+	overflow: hidden;
+}
+.list-tit{
+	width:76%;
+	height:40px;
+	text-align: center;
+	line-height:40px;
+	background:rgba(132,96,55,.5);
+	font-size:20px;
+	color:#fff;
+	border-radius: 10px;
+	font-family: "宋体";
+	margin: 0 auto;
+}
+.infolist ul li{
+	width: 76%;
+	list-style:none;
+	height:35px;
+	line-height:35px;
+	box-sizing: border-box;
+	padding:0 10px;	
+	font-size:16px;
+	color:red;
+	margin:0 auto;
+}
+.infolist ul li:nth-of-type(odd){
+	background:rgba(255,255,255,.5);
+	border-radius: 10px;
+} 
+.winner-tel{
+	float:left;	
+}
+.winner-money{
+	float:right;
+}
+.infocontent{
+	width:100%;
+	height:140px;
+	overflow:hidden;
+	box-sizing: border-box;
+}
+/*以下是显示中奖金额*/
+.win-money{
+	width: 500px;
+	height:500px;
+	/*background: url(../img/winbg.png) no-repeat center center;*/
+	background-size: cover;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -300px;
+	border-radius: 4px;
+	display: none;
+}
+/*以下是我要参与*/
+.for-login{
+	position:fixed;
+	top:0;
+	right:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.6);
+	z-index: 2000;
+}
+.start-box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:90%;
+	height:auto;
+	margin-left:-45%;
+	margin-top:-350px;
+	background:#fff;
+	border-radius: 10px;
+}
+.diff-img{
+	display: block;
+	width:95%;
+	height: auto;
+	margin:0 auto;
+	padding-left:5% ;
+}
+#join-btn{
+	width:70%;
+	height:50px;
+	display: block;
+	margin:0 auto;
+	margin-top:30px;
+	/*background:linear-gradient(to bottom,#fff 0%,#f00 100%);*/
+	background: #f92a30;
+	border:none;
+	font-size:25px;
+	color:#fff;
+	font-weight:bold;
+	border-radius:10px;
+	line-height:20px;
+}
+.no-winner{
+	display:none;
+	width:100%;
+	height:140px;
+	overflow:hidden;
+	box-sizing: border-box;
+	text-align: center;
+	line-height:140px;
+	font-weight:bold;
+	color:red;
+}
+.win-info{
+	display:block;
+	width:100%;
+	line-height:40px;
+	margin-top:30px;
+	font-size:25px;
+	color:#fff;
+	/*text-shadow: 2px 2px 0px #DA81B7;*/
+	font-weight: bold;
+	height:auto;
+	text-align: center;
+}
+/*以下是登录部分*/
+html,body{
+	width:100%;
+	height:100%;
+}
+a{
+	color:#000;
+}
+.login-cont-box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:90%;
+	height:440px;
+	margin-left:-45%;
+	margin-top:-220px;
+	background:#fff;
+	border-radius: 10px;
+	display:none;
+	z-index:999;
+	
+}
+.user-tel-box,.user-pwd-box,.reg-tel-box,.reg-code-box,.reg-pwd-box{
+	width:80%;
+	height:45px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border:1px solid #FDAB4A;
+	padding-left:10px;
+	border-radius: 10px;
+}
+.login-user-pic{
+	float:left;
+	margin:5px 0 0 4px;
+	width:30px;
+	height:30px;
+}
+#login-user-tel,#login-user-pwd,#reg-user-tel,#reg-user-pwd,#reset-user-tel,#reset-user-pwd,#reset-user-phone,#reset-user-pass{
+	float:left;
+	height:38px;
+	width:70%;
+	border:0;
+	margin-left:10px;
+	font-size:16px;
+	outline: 0;
+}
+.error-box{
+	width:90%;
+	height:30px;
+	margin:0 auto;
+	font-size:18px;
+	color:red;
+	text-align: center;
+	line-height:30px;
+}
+.login-pwd-pic{
+	float:left;
+	width:26px;
+	height:30px;
+	margin:5px 0 0 4px;
+}
+.login-btn-box,.login-other-box,.reg-btn-box,.reg-other-box,.reg-deal-box{
+	width:80%;
+	height:40px;
+	margin:0 auto;
+}
+#login-btn,#reg-btn,#reset-btn,#user-reset-btn{
+	width:100%;
+	height:40px;
+	background:#F1A653;
+	color:#fff;
+	font-size:16px;
+	letter-spacing: 5px;
+	border:0;
+	border-radius: 20px;
+	margin:0 auto;
+	display:block;
+}

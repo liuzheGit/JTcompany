@@ -1,0 +1,287 @@
+input:focus {
+    outline:none;
+}
+
+#faceimg{width: 400px;height: 400px;}
+.countbg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99;display:none;}
+.countbg img{width:100%;height:100%;}
+.timebox{width:100%;height:150px;padding:5px 0;position:absolute;top:20%;left:0;background-color:black;background:rgba(0,0,0,0.3);}
+/*.timebox div{font-weight:500;margin:0 auto;width:100%;text-align:center;color:white;opacity:0.9;}*/
+
+.countuptext{font-weight:500;margin:5px auto;width:100%;text-align:center;color:white;font-size:26px;line-height:40px;}
+#timedate{font-size:32px;margin:0 15px;}
+.actrulebox{width: 100%;height: auto;margin-top:20px;position: absolute;top:38%;left:0;}
+.actrulebox li{color: white;line-height:40px;height: auto;width: 85%;text-align:left;font-size: 20px;padding: 0 5% 0 10%;}
+	
+.actrulebox1{width: 100%;height: auto;margin-top:20px;}
+.actrulebox1 li{color: #666666;line-height:40px;height: auto;width: 85%;text-align:left;font-size: 20px;padding: 0 5% 0 10%;}
+			
+
+/*个人中心和分享码*/
+.Loytime_box{width: 100%;height: 90px;background:rgba(255,255,255,.5);position: fixed;left: 0;top:0;z-index: 1000;}
+.lottext{float: left;line-height: 90px;width: auto;font-size: 20px;color: #666666;text-align: center;margin:0px 20px;}
+.share2w,.winlog{float: left;width: 104px;height: 70px;}
+
+.Loytime_box div img{width: 50px;height: 50px;margin:20px 20px;}
+
+.onlinepep{width: auto;height: 90px;float: left;margin:0 20px;}
+.onlinepep span{display: block;float: left;line-height: 90px;font-size: 20px;color: #666666;}
+
+/*倒计时显示信息*/
+.numredbox,.numpepbox{width: 100%;height: 35px;line-height: 35px;font-size: 20px;text-align: center;color: #333333;margin-top:18px;}
+.numredbox span,.numpepbox span{color:red;font-size: 22px;margin:0 10px;}
+.numpepbox{margin-top:0;}
+.countleijirenshu,.countnumredbox,.countnumpepbox{font-weight:300;width: 100%;height: 30px;line-height: 30px;font-size: 14px;text-align: center;color: white;opacity:0.8;}
+.countleijirenshu span,.countnumredbox span,.countnumpepbox span{font-size: 22px;margin:0 10px;}
+		
+#passshow{width: 50px;height:50px;float: left;margin:5px 0 0 16px;}
+					
+.winner-list{
+	width:90%;
+	height:30%;
+	margin:0 5%;
+	overflow: hidden;
+}
+.list-tit{
+	width:76%;
+	height:40px;
+	text-align: center;
+	line-height:40px;
+	background:rgba(132,96,55,.5);
+	font-size:20px;
+	color:#fff;
+	border-radius: 10px;
+	font-family: "宋体";
+	margin:0 auto;
+}
+
+.infolist ul{
+	padding: 0;
+	margin: 0;
+}
+
+.infolist ul li{
+	width: 55%;
+	list-style:none;
+	height:36px;
+	line-height:36px;
+	box-sizing: border-box;
+	padding:0 10px;	
+	font-size:20px;
+	color:red;
+	margin:0 auto;
+}
+.infolist ul li:nth-of-type(even){
+	background:rgba(255,255,255,.5);
+	border-radius: 10px;
+} 
+.winner-tel{
+	float:left;	
+}
+.winner-money{
+	float:right;
+}
+.infocontent{
+	width:100%;
+	height:144px;
+	overflow:hidden;
+	box-sizing: border-box;
+}
+/*以下是显示中奖金额*/
+.win-money{
+	width: 500px;
+	height:500px;
+	/*background: url(../img/winbg.png) no-repeat center center;*/
+	background-size: cover;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -300px;
+	border-radius: 4px;
+	display: none;
+}
+/*以下是我要参与*/
+.for-login{
+	position:fixed;
+	top:0;
+	right:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.6);
+	z-index: 2000;
+}
+.start-box{
+	position:absolute;
+	left:50%;
+	top:90px;
+	width:90%;
+	height:auto;
+	margin-left:-45%;
+	background:#fff;
+	border-radius: 10px;
+}
+.diff-img{
+	display: block;
+	width:95%;
+	height: auto;
+	margin:0 auto;
+	padding-left:5% ;
+}
+#join-btn{
+	width:70%;
+	height:50px;
+	display: block;
+	margin:0 auto;
+	margin-top:30px;
+	/*background:linear-gradient(to bottom,#fff 0%,#f00 100%);*/
+	background: #f92a30;
+	border:none;
+	font-size:25px;
+	color:#fff;
+	font-weight:bold;
+	border-radius:10px;
+	line-height:20px;
+}
+.no-winner{
+	display:none;
+	width:100%;
+	height:140px;
+	overflow:hidden;
+	box-sizing: border-box;
+	text-align: center;
+	line-height:140px;
+	font-weight:bold;
+	color:red;
+}
+.win-info{
+	display:block;
+	width:100%;
+	line-height:40px;
+	margin-top:30px;
+	font-size:25px;
+	color:#fff;
+	/*text-shadow: 2px 2px 0px #DA81B7;*/
+	font-weight: bold;
+	height:auto;
+	text-align: center;
+}
+/*以下是登录部分*/
+html,body{
+	width:100%;
+	height:100%;
+}
+a{
+	color:#000;
+}
+.login-cont-box{
+	position:absolute;
+	left:50%;
+	top:20%;
+	width:90%;
+	height:auto;
+	margin-left:-45%;
+	/*margin-top:-240px;*/
+	background:#fff;
+	border-radius: 8px;
+	display:none;
+	z-index:999;
+	
+}
+
+.reg-tel-box,.reg-code-box,.reg-pwd-box{
+	width:80%;
+	height:45px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border:1px solid #FDAB4A;
+	padding-left:10px;
+	border-radius: 10px;
+}
+
+.user-tel-box,.user-pwd-box{
+	width:90%;
+	height:62px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border-bottom:1px solid #cccccc;
+	/*padding-left:10px;
+	border-radius: 10px;*/
+}
+.login-user-pic{
+	float:left;
+	margin:10px 10px;
+	width:40px;
+	height:40px;
+}
+#login-user-tel,#login-user-pwd_hide,#login-user-pwd_show{
+	padding:0;margin:4px 0;float: left;width:70%;min-width: 200px;
+	height:50px;border: none;background-color: none;font-size: 20px;
+	text-align: left;outline: none;display: block;line-height: 50px;
+}
+#login-user-tel,#login-user-pwd{
+	padding:0;
+}
+
+#reg-user-tel,#reg-user-pwd,#reset-user-tel,#reset-user-pwd,#reset-user-phone,#reset-user-pass{
+	float:left;
+	height:38px;
+	width:70%;
+	border:0;
+	margin-left:10px;
+	font-size:16px;
+	outline: 0;
+}
+.error-box{
+	width:100%;
+	height:24px;
+	margin:5px auto 5px auto;
+	font-size:14px;
+	color:red;
+	text-align: center;
+	line-height:24px;
+}
+.login-pwd-pic{
+	float:left;
+	width:36px;
+	height:40px;
+	/*margin:10px 11px 14px 13px;*/
+	margin:8px 11px 10px 13px;
+}
+.login-btn-box{
+	width: 90%;margin:10px auto 30px auto;height: 60px;border-radius: 8px;border:1px solid #CCCCCC;
+}
+#login-btn{
+	width:300px;color:#333333;background:none;font-size:20px;padding:0;line-height: 50px;text-align: center;border: none;display: block;margin: 0 auto;height: 60px;
+}
+.login-other-box,.reg-btn-box,.reg-other-box,.reg-deal-box{
+	width:80%;
+	height:40px;
+	margin:0 auto;
+}
+#reg-btn,#reset-btn,#user-reset-btn{
+	width:100%;
+	height:40px;
+	background:#F1A653;
+	color:#fff;
+	font-size:16px;
+	letter-spacing: 5px;
+	border:0;
+	border-radius: 20px;
+	margin:0 auto;
+	display:block;
+}
+/*新的3月22*/
+#rule{
+	display: none;
+	position: fixed;
+	top:0;
+	right:0;
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,.6);
+	z-index: 2000;
+}
+#rule .start-box{
+	z-index: 1000;
+}

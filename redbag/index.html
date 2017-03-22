@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+    <title>抢红包啦</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/rain.css"/>
+    <link rel="stylesheet" href="css/index.css?v=20161221"/>
+    <script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="commonjs/jquery.js"></script>
+    <script type="text/javascript" src="commonjs/zepto-1.1.6.min.js"></script>
+    <script type="text/javascript" src="commonjs/touch.js"></script>
+    <script type="text/javascript" src="js/index1212.js?v=20161221"></script>
+    <!--<script type="text/javascript" src="js/main.js"></script>-->
+    <script type="text/javascript" src="js/avoid_share.js"></script>
+    <script type="text/javascript" src="commonjs/md5-min.js"></script>
+</head>
+<body>
+<div class="countbg">
+    <img src="img/countbg.png">
+    <div class="timebox">
+        <div class="countuptext">还有<span id="timedate"></span>开抢</div>
+        <div class="countleijirenshu" id="countleijirenshu">本活动已有<span id="leijinum"></span>人参加</div>
+        <div class="countnumredbox" id="countnumredbox">已累计发放<span id="numred"></span>个红包</div>
+        <div class="countnumpepbox" id="countnumpepbox">已注册会员<span id="numpep"></span>人</div>
+    </div>
+    <ul class="actrulebox">
+        <li class="actrule_tit" style="font-size:26px;">活动规则</li>
+        <li>1 抢红包机会 关注乖乖学车并成功注册会员，即可有一次机会;每推荐两人关注并注册，可奖励一次机会</li>
+        <li>2 只要不中奖，中奖机会仍然有效</li>
+        <li>3 奖金以微信红包的形式发放</li>
+        <li>4 每次活动每人只有一次中奖机会</li>
+        <li>5 每个微信账号只能绑定一个会员信息</li>
+        <li>6 活动时间：每天上午8点开始</li>
+        <!--<li>7 活动截止日期：2016年12月31日</li>-->
+        <li>7 目前本活动只限河南手机用户参加</li>
+    </ul>
+</div>
+<!--规则top 3月22-->
+<div id="rule">
+    <div class="start-box">
+        <img src="img/title-1.png" class="diff-img">
+        <ul class="actrulebox1">
+            <li class="actrule_tit" style="font-size:26px;">活动规则</li>
+            <li>1 抢红包机会 关注乖乖学车并成功注册会员，即可有一次机会;每推荐两人关注并注册，可奖励一次机会</li>
+            <li>2 只要不中奖，中奖机会仍然有效</li>
+            <li>3 奖金以微信红包的形式发放</li>
+            <li>4 每次活动每人只有一次中奖机会</li>
+            <li>5 每个微信账号只能绑定一个会员信息</li>
+            <li>6 活动时间：每天上午8点开始</li>
+            <!--<li>7 活动截止日期：2016年12月31日</li>-->
+            <li>7 目前本活动只限河南手机用户参加</li>
+            <br>
+            <br>
+            <li style="color:red;font-size: 28px">点击屏幕退出规则提示</li>
+        </ul>
+    </div>
+</div>
+<!--规则bottom-->
+<div class="page_rain bg_1">
+    <div class="div"></div>
+    <!--蒙层-->
+    <div class="chuai_box" style="display: none;">
+        <div class="chuai">
+            <p>乖乖学车分享红包</p>
+        </div>
+        <div class="win-money">
+            <span class="win-info"></span>
+        </div>
+    </div>
+
+    <!--<div class="winner-list" style="display: none;">-->
+    <div class="winner-list">
+        <div class="list-tit">
+            <h3>幸运用户名单</h3>
+        </div>
+        <div class="list-info">
+            <div id="content" class="infocontent">
+                <div id="top" class="infolist">
+                    <ul></ul>
+                </div>
+                <div id="bottom" class="infolist"></div>
+            </div>
+        </div>
+        <div class="no-winner">还没有人抢到红包！</div>
+        <div class="numredbox" id="numredbox">已累计发放<span id="knumred"></span>个红包</div>
+        <div class="numpepbox" id="numpepbox">注册会员数量达<span id="knumpep"></span>人</div>
+        <!--规则按钮-->
+        <div id="ruleBtn"
+             style="border-radius: 8px;width:70px;height: 38px;text-align:center;line-height: 38px;background-color: gray;color: white;position: fixed;bottom: 7%;right: 16%">
+            <b>规则</b></div>
+    </div>
+    <div class="for-login">
+        <div class="start-box">
+            <img src="img/title-1.png" class="diff-img">
+            <input type="button" value="立刻参与" id="join-btn">
+            <ul class="actrulebox1">
+                <li class="actrule_tit" style="font-size:26px;">活动规则</li>
+                <li>1 抢红包机会 关注乖乖学车并成功注册会员，即可有一次机会;每推荐两人关注并注册，可奖励一次机会</li>
+                <li>2 只要不中奖，中奖机会仍然有效</li>
+                <li>3 奖金以微信红包的形式发放</li>
+                <li>4 每次活动每人只有一次中奖机会</li>
+                <li>5 每个微信账号只能绑定一个会员信息</li>
+                <li>6 活动时间：每天上午8点开始</li>
+                <!--<li>7 活动截止日期：2016年12月31日</li>-->
+                <li>7 目前本活动只限河南手机用户参加</li>
+            </ul>
+        </div>
+        <!--登录-->
+        <div class="login-cont-box">
+            <img src="img/shareguaiguaitop.png"
+                 style="display:block;width:100px;height:100px;margin:80px auto 30px auto;">
+            <div class='hinttext'
+                 style="width:100%;text-align:center;margin:0 auto;font-size:20px;padding:5px 0;line-height:22px;color: #666666;">
+                您还未登录，请登录
+            </div>
+            <p class="error-box"></p>
+            <div class="user-tel-box">
+                <img src="img/usernameicon.png" class="login-user-pic">
+                <input type="text" placeholder="请输入您的手机号" id="login-user-tel"/>
+            </div>
+            <p class="error-box"></p>
+            <div class="user-pwd-box">
+                <img src="img/passwordicon.png" class="login-pwd-pic">
+                <input type="password" placeholder="请输入您的密码" id="login-user-pwd_hide"/>
+                <input type="text" placeholder="请输入您的密码" id="login-user-pwd_show" style="display: none;"/>
+                <img src="img/passwordshow.png" id="passshow">
+            </div>
+            <p class="error-box"></p>
+            <div class="login-btn-box">
+                <input type="button" value="登录" id="login-btn"/>
+            </div>
+            <style>
+                .loginbutton {
+                    color: #f5a722;
+                    font-size: 22px;
+                    width: 100%;
+                    text-align: center;
+                    line-height: 36px;
+                    display: block;
+                    padding: 40px 0;
+                }
+            </style>
+            <a class="loginbutton" href="html/reg.html">点我快速注册</a>
+        </div>
+        <!--登录结束-->
+    </div>
+
+    <!-- 个人中心和分享码 -->
+    <div class="Loytime_box">
+        <div class="lottext">还剩<span class="remaintime"
+                                     style="color: #f33b23;font-size: 25px;margin: 0 10px;"></span><span>次</span></div>
+        <div class="onlinepep">
+            <span>累计参加人数</span>
+            <span id="onlinepepnum" style="color: #f33b23;font-size: 25px;margin: 0 10px;"></span>
+        </div>
+        <div class="share2w" id="share2w"><!--路径要改-->
+            <img src="img/share.png"/>
+        </div>
+        <a href="html/money.html">
+            <div class="winlog">
+                <img src="img/hongbao.png"/>
+            </div>
+        </a>
+    </div>
+    <!--可以加的地方-->
+    <div style="color: #ff4081;margin-top: -1px;text-align: center;position: fixed;top: 90px;font-size:30px;left:0px;width: 100%">
+        <b>戳红包，赢现金</b></div>
+</div>
+</body>
+</html>
