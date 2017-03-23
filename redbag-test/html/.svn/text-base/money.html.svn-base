@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>红包记录</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="../css/money-6.css?v=20161201">
+	<link rel="stylesheet" href="../commoncss/reset.css">
+	<script type="text/javascript" src="../commonjs/md5-min.js"></script>
+	<script type="text/javascript" src="../commonjs/jquery.js"></script>
+	<script type="text/javascript" src="../commonjs/zepto-1.1.6.min.js"></script>
+	<script type="text/javascript" src="../commonjs/touch.js"></script>
+	<script type="text/javascript" src="../commonjs/iscroll.js"></script>
+	<script type="text/javascript" src="../commonjs/main.js"></script>
+	<script type="text/javascript" src="../commonjs/money-9.js"></script>
+</head>
+<body>
+	<div class="money-tit">红包发放记录</div>
+	<div class="coach-list-cont" id="wrapper">
+		<div class="coach-list-box" id="list-box">
+			<p class="none-msg" style="text-align: center;">没有红包记录！</p>
+		</div>
+	</div>
+	<div id="money-list" class="hidden">
+		<!--<div class="moneyList">
+			<div class="listMsg">
+				<p>来源：<span class="money-home"></span><span>(<datamoney>元)</span></p>
+				<p>时间：<span><datadateime></span></p>
+			</div>
+		</div>-->
+	</div>
+	<div class="money-bg"></div>
+	<div class="how-much-box">
+		<p class="much-tit">提现金额：</p>
+		<div class="much-box">
+			<input type="text" placeholder="请输入您的提现金额" class="much-txt">
+		</div>
+		<div class="much-btn">
+			<input type="button" value="确定" class="draw-btn" id="sure">
+			<input type="button" value="取消" class="draw-btn" id="quit">
+		</div>
+	</div>
+</body>
+</html>

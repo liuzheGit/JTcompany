@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的二维码</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=320, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="../css/sharecss/sharecss.css?v=20161201" rel="stylesheet" type="text/css">
+    <script src="../js/sharejs/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/sharejs/syhhidc.js" type="text/javascript"></script>
+    <script src="../js/sharejs/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../commonjs/main.js"></script>
+</head>
+<body>
+	<div class="guanzhu dingwei">
+        <div class="toptextbox">
+	        <img src="../img/shareguaiguaitop.png">
+	        <div class="toptext">
+	          	<b>我是乖乖</b> 
+	           	<span>欢迎关注乖乖学车</span>
+	        </div>
+	        <!--<a href="http://mp.weixin.qq.com/s/AXYJDsd4xZH4SInBaXT4gw">点击关注</a>-->
+	        <a href="http://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI0NTQyMzMwOA==#wechat_redirect">点击关注</a>
+	       
+	    </div>
+    </div>
+        <div class="topmargin"></div>
+ 
+    <div class="sharebg">
+    	<div class="sharename">
+            <h2>乖乖学车</h2>
+    	</div>
+    	<div class="sharelogo">
+        	<kbd>
+            	<img id="userimg" src="../img/shareimg/Avatar.png" ></kbd>
+            	<span>我是<b id="username" style="color:#fc1414;margin: 0 5px;"></b><br>
+                	我为<b style="font-size:12px;color:#fc1414;margin: 0 5px">乖乖学车</b>代言！ 
+            	</span>
+    	</div>
+    	<img class="sharebgimg" src="../img/shareimg/sharebg.png" width="640" height="310">
+    </div>
+<div class="nymain">
+    	<div class="shareqrtitle">
+                               乖乖学车&nbsp;&nbsp;消费变投资
+        </div>
+        <div class="shareqrword">
+        	<div class="share-bottom" id="qrcode"></div>
+            <div class="leftnoqr left" id="imagQrDiv">您还未注册乖乖学车，无法生成个人二维码</div>
+            <div class="right textright" >
+                <img src="../img/shareimg/share.png">
+            </div>
+        </div>
+        <div class="shareqrtips">
+            长按此图 <b>识别图中二维码 搞定！</b><br>
+关注--乖乖学车！分享朋友能赚钱！
+        </div>
+        <div class="qrbz">
+            <img src="../img/shareimg/sharebottom.png" width="616" height="262"></div>
+</div>
+    <script type="text/javascript" src="../js/sharejs/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="../commonjs/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="../js/sharejs/sharenew.js"></script>
+
+</body>
+</html>
