@@ -1,0 +1,1091 @@
+img{
+	vertical-align: bottom;
+}
+.gg-content{
+    padding: 25px 0 30px;
+    background-color: #EEEEEE;
+}
+
+/*--------------------------------------------------appointment-------------------------------------------------------------*/
+
+.gg-content.appointment .coach-info{
+    color: #616161;
+    width: 740px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #FFF;
+    display: flex;
+    align-items: stretch;
+}
+
+.gg-content.appointment .coach-info .avatar{
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.gg-content.appointment .coach-info .text-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gg-content.appointment .coach-info .text-field .name-info{
+    font-size: 24px;
+}
+.gg-content.appointment .coach-info .text-field .name-info .name{
+    font-size: 48px;
+    margin-right: 24px;
+}
+
+.gg-content.appointment .coach-info .text-field .phone{
+    font-size: 36px;
+}
+
+.gg-content.appointment .coach-info .text-field .driving-school{
+    font-size: 18px;
+}
+.gg-content.appointment .coach-info .text-field .add{
+    font-size: 18px;
+}
+
+.gg-content.appointment .coach-info .text-field .info-card{
+    display: flex;
+    margin-top: 10px;
+}
+
+.gg-content.appointment .coach-info .text-field .info-card .item{
+    background-color: #F9C337;
+    width: 220px;
+    height: 60px;
+    padding: 5px;
+    font-size: 24px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.gg-content.appointment .coach-info .text-field .info-card .item span{
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    display: block;
+    font-weight: 200;
+    border: 1px solid #FFF;
+}
+
+.gg-content.appointment .symbol-info{
+    padding: 20px 10px 5px;
+    width: 740px;
+    margin: 20px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #FFF;
+    display: flex;
+}
+.gg-content.appointment .date-point{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+    width: 220px;
+    margin: 0 10px 15px;
+    border-radius: 2px;
+    color: #FFF;
+    transition: all .2s;
+}
+.gg-content.appointment .date-point.unable{
+    background-color: #9B9B9B;
+}
+.gg-content.appointment .date-point.able{
+    background-color: #9DDEAA;
+}
+.gg-content.appointment .date-point.used{
+    background-color: #F9BB29;
+}
+.gg-content.appointment .date-form .date-point.able:hover{
+    background-color: #CDEDD4;
+    box-shadow: 0 4px 4px rgba(0,0,0,.24);
+    color: #616161;
+}
+
+.gg-content.appointment .date-form{
+    width: 740px;
+    margin: 0 auto;
+    padding: 15px 10px 5px;
+    background-color: #FFF;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+}
+
+.gg-content.appointment .date-form .day-col{
+    text-align: center;
+}
+
+.gg-content.appointment .date-form .day-col .date{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+/*--------------------------------------------------member----------------------------------------------------------*/
+
+.gg-content.member .content-wrapper{
+    min-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: stretch;
+}
+.gg-content.member .content-wrapper .member-side-nav{
+    /*width: 220px;*/
+    min-height: 700px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #FFF;
+}
+.gg-content.member .content-wrapper .member-side-nav .header{
+    border-bottom: 1px dashed #9e9e9e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 200;
+    vertical-align: middle;
+}
+.gg-content.member .content-wrapper .member-side-nav .header img{
+    margin-right: 10px;
+}
+
+.gg-content.member .content-wrapper .member-side-nav .item{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 15px;
+    color: #616161;
+}
+.gg-content.member .content-wrapper .member-side-nav .item.active{
+     color: #FFF;
+     background-color: #F8BA2A;
+     border-radius: 2px;
+}
+.gg-content.member .content-wrapper .member-side-nav .item:hover{
+    border: 1px solid #F8BA2A;
+    border-radius: 2px;
+}
+.gg-content.member .content-wrapper .member-side-nav .item .member-icon{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    display: block;
+    content: "";
+    background: no-repeat center;
+    background-size: contain;
+}
+
+.gg-content.member .content-wrapper .member-side-nav .item .member-icon.app{
+    background-image: url("../../Images/member/appointment-icon-b.svg");
+}
+
+.gg-content.member .content-wrapper .member-side-nav .item.active .member-icon.app{
+    background-image: url("../../Images/member/appointment-icon.svg");
+}
+
+.gg-content.member .content-wrapper .member-side-nav .item .member-icon.sign-up{
+    background-image: url("../../Images/member/sign-up-icon-b.svg");
+}
+
+.gg-content.member .content-wrapper .member-side-nav .item.active .member-icon.sign-up{
+    background-image: url("../../Images/member/sign-up-icon.svg");
+}
+
+.gg-content.member .content-wrapper .main-content{
+    position: relative;
+    /*width: 1180px;*/
+    min-height: 700px;
+    margin-left: 20px;
+    background-color: #FFF;
+    padding: 0 10px 50px;
+    border-radius: 4px;
+}
+.gg-content.member .content-wrapper .main-content .app-item{
+    border: 1px solid #bdbdbd;
+    font-weight: 200;
+    color: #616161;
+    margin: 10px 0;
+}
+.gg-content.member .content-wrapper .main-content .app-item .header{
+    height: 40px;
+    background-color: #FEF1D4;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.gg-content.member .content-wrapper .main-content .app-item .content{
+    position: relative;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-pic{
+    width: 100px;
+    height: 140px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-pic img{
+    max-width: 98px;
+    max-height: 138px;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-info .name-plate{
+    display: flex;
+    align-items: center;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-info .name-plate .name{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-info .name-plate .plate{
+    height: 24px;
+    padding: 0 10px;
+    line-height: 24px;
+    font-size: 16px;
+    border-radius: 2px;
+    background-color: #FBCC37;
+    color: #FFF;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-info .project{
+    color: #FBCC37;
+}
+
+.gg-content.member .content-wrapper .main-content .app-item .content .coach-info .add{
+    font-size: 14px;
+}
+
+.gg-content.member .content-wrapper .main-content .app-item .content .status-and-btn{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+}
+.gg-content.member .content-wrapper .main-content .app-item .content .status-and-btn .status{
+    color: #FBCC37;
+    margin-right: 30px;
+}
+.gg-content.member .content-wrapper .main-content .mem-btn{
+    color: #616161;
+    border: 1px solid #9e9e9e;
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.gg-content.member .content-wrapper .main-content .mem-btn:hover{
+    background-color: #eee;
+}
+
+.gg-content.member .member-pagination{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.gg-content.member .member-pagination a{
+    width: 30px;
+    height: 30px;
+    color: #616161;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+}
+.gg-content.member .member-pagination a.active{
+    background-color: #FBCC37;
+    color: #FFF;
+}
+
+.gg-content.member .member-pagination input{
+    width: 40px;
+    height: 30px;
+    margin: 0 5px;
+    border: 1px solid #616161;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-header{
+    height: 40px;
+    background-color: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-item{
+    border: 1px solid #bdbdbd;
+    font-weight: 200;
+    color: #616161;
+    margin: 10px 0;
+}
+.gg-content.member .content-wrapper .main-content .sign-up-item .header{
+    height: 40px;
+    display: flex;
+    background-color: #FEF1D4;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+.gg-content.member .content-wrapper .main-content .sign-up-item .header .order-time{
+    margin-right: 40px;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-item .content{
+    display: flex;
+    align-items: center;
+    height: 120px;
+    font-size: 18px;
+	margin-bottom: 0;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-item .content .product{
+    color: #FBCC37;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-item .content .status{
+    color: #FBCC37;
+}
+
+.gg-content.member .content-wrapper .main-content .sign-up-item .content .actions{
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------------------------------------video-------------------------------------------------------------*/
+.gg-content.video{
+    padding: 15px 0 10px;
+}
+
+.gg-content.video .gg-subnav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gg-subnav .subnav-title{
+    margin-right: 20px;
+}
+
+.gg-subnav .subnav-bar .item{
+    color: #616161;
+    width: 100px;
+    height: 60px;
+    margin: 0 30px;
+    font-size: 16px;
+    font-weight: 200;
+    transition: color .5s;
+}
+.gg-subnav .subnav-bar .item:hover{
+    color: #F39800;
+}
+
+.gg-subnav .subnav-bar .item.active{
+    color: #F39800;
+    height: 56px;
+    padding: 10px 10px;
+    border-bottom: 2px solid #F39800;
+}
+
+.gg-subnav .slogon{
+    position: absolute;
+    right: 10px;
+}
+
+.gg-content.video .content-wrapper{
+    width: 1100px;
+    margin: 0 auto;
+    min-height: 500px;
+    overflow: hidden;
+}
+.gg-content.video .content-wrapper .video-a{
+	margin: 15px 10px 0;
+	float: left;
+    position: relative;
+}
+/*图片*/
+.gg-content.video .video-a .main-img {
+    width: 255px;
+    height: 135px;
+}
+/*first 图片*/
+.gg-content.video .video-a.first-a .main-img {
+    width: 530px;
+    height: 320px;
+}
+/*图标文字*/
+.gg-content.video .video-a .cover{
+    position: absolute;
+    width: 255px;
+    height: 135px;
+    background-color: rgba(0,0,0,.3);
+    opacity: 0;
+    top: 0px;
+    left:0px;
+    color: #fff;
+    transition: all .5s;
+}
+/*first 图标文字 */
+.gg-content.video .video-a.first-a .cover {
+    width: 530px;
+    height: 320px;
+}
+
+.gg-content.video .video-a .cover:hover{
+    opacity: 1;
+}
+
+.gg-content.video .video-a .cover .play-icon{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
+    height: 50px;
+}
+.gg-content.video .video-a.first-a .cover .play-icon{
+    width: 161px;
+    height: 161px;
+}
+
+.gg-content.video .video-a .cover .play-count {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-weight: 200;
+}
+
+.gg-content.video .video-a .cover .play-count img{
+    width: 25px;
+    height: 20px;
+    margin-right: 6px;
+}
+.gg-content.video .text-field {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 200;
+    color: #595757;
+    margin-top: 6px;
+    line-height: 31px;
+}
+.gg-content.video .text-field .dru{
+    color: #9E9E9E;
+}
+
+/*----------------------------------------------driving-school-list--------------------------------------------------------*/
+
+.gg-content.driving-school-list{
+    padding: 15px 0 10px;
+}
+
+.gg-content.driving-school-list .gg-subnav{
+    /*width: 1440px;*/
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gg-subnav .slogon{
+    position: absolute;
+    right: 10px;
+}
+
+
+.gg-content.driving-school-list .content-wrapper{
+    /*width: 1200px;*/
+   	width: 97%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+.gg-content.driving-school-list .driving-school-outline{
+    width: 32%;
+    /*height: 540px;*/
+    border: solid 1px #F5A81F;
+    border-radius: 2px;
+    background-color: #fff;
+    font-weight: 200;
+    padding: 20px 20px 15px;
+    margin: 10px 0.6666%;
+}
+
+.gg-content.driving-school-list .card-pic{
+    position: relative;
+}
+.gg-content.driving-school-list .card-pic img{
+	width: 100%;
+}
+
+.gg-content.driving-school-list .card-pic .school-name{
+    position: absolute;
+    left: 14px;
+    bottom: 10px;
+    text-align: left;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 2px 6px rgba(0,0,0,.5);
+}
+
+.gg-content.driving-school-list .evaluate{
+    display: flex;
+    align-items: center;
+    /*width: 340px;*/
+    height: 40px;
+    border: solid 1px #e0e0e0;
+    border-radius: 2px;
+    margin-top: 20px;
+}
+
+.gg-content.driving-school-list .name{
+	display: inline-block;
+	width: 56px;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #9E9E9E;
+}
+
+.gg-content.driving-school-list .text{
+    color: #616161;
+    padding-left: 0;
+}
+
+.gg-content.driving-school-list .star{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../../Images/school_img/star-icon.png") no-repeat center;
+    background-size: cover;
+    margin-right: 5px;
+
+}
+
+.gg-content.driving-school-list .contact{
+    display: flex;
+    align-items: center;
+    /*width: 340px;*/
+    height: 40px;
+    border: solid 1px #e0e0e0;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+
+
+.gg-content.driving-school-list .address{
+    display: flex;
+    position: relative;
+    /*width: 340px;*/
+    height: 100px;
+    padding: 10px 0;
+    border: solid 1px #e0e0e0;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+.gg-content.driving-school-list .address .text{
+    /*width: 260px;*/
+	position: absolute;
+	left: 76px;
+	text-align: left;
+}
+
+.gg-content.driving-school-list .driving-school-list-btn{
+    /*width: 340px;*/
+    height: 50px;
+    background-color: #F8BA2A;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+/*---------------------------------------------driving-school-detail----------------------------------------------------*/
+
+.gg-content.driving-school-detail{
+    padding-top: 0;
+}
+
+.gg-content.driving-school-detail .banner{
+    width: 100%;
+    position: relative;
+}
+.gg-content.driving-school-detail .banner img{
+	width: 100%;
+}
+
+.gg-content.driving-school-detail .caption{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0,0,0,.6);
+    top: 50%;
+    padding: 30px;
+}
+
+.gg-content.driving-school-detail .caption-text{
+    display: block;
+    width: 100%;
+    /*max-width: 1440px;*/
+    text-align: right;
+    font-size: 60px;
+    color: #fff;
+    margin: 50px auto 0;
+}
+
+.gg-content.driving-school-detail .subnav{
+    width: 100%;
+    height: 40px;
+    background-color: #F9BB29;
+}
+
+.gg-content.driving-school-detail .subnav ul{
+	width: 1100px;
+	margin: 0 auto;
+	height: 40px;
+	background: #F9BB29;
+}
+.gg-content.driving-school-detail .subnav ul .item{
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(255,255,255,.8);
+    margin: 0 10px;
+    transition: color 0.5s;
+	padding: 0;
+}
+				/*驾校列表 详情 导航栏*/
+.gg-content.driving-school-detail .subnav .item.active{
+    background-color: #F39800;
+    color: #000;
+}
+/*.gg-content.driving-school-detail .subnav .item.active{
+	background: linear-gradient(#F9BB29 10%,#EEEEEE);
+	background: -webkit-linear-gradient(#F9BB29 10%,#EEEEEE);
+	background: -o-linear-gradient(#F9BB29 10%,#EEEEEE );
+	background: -moz-linear-gradient(#F9BB29 10%,#EEEEEE);
+}*/
+
+.gg-content.driving-school-detail .content{
+    width: 1100px;
+    margin: 20px auto 0;
+    border: solid 1px #BDBDBD;
+    background-color: #fff;
+    font-weight: 200;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.gg-content.driving-school-detail .content.detail-text{
+    padding: 30px 140px 0;
+}
+
+.gg-content.driving-school-detail .content.detail-text .list{
+    margin-bottom: 50px;
+}
+
+.gg-content.driving-school-detail .content.detail-text .list .title{
+    font-size: 36px;
+    color: #757575;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.gg-content.driving-school-detail .content.detail-text .list .text{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 20px;
+}
+
+/*---------------------------------------------driving-school-product---------------------------------------------------*/
+
+.gg-content.driving-school-detail .content.sign-up-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half{
+    display: flex;
+    flex-wrap: wrap;
+    width: 520px;
+    border: solid 1px #F5A81F;
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 18px;
+    color: #616161;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .type-icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .price{
+    margin-right: 18px;
+    width: 230px;
+    height: 64px;
+    border: solid 1px #BDBDBD;
+    border-radius: 2px;
+    padding: 20px 15px;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .payment{
+    width: 230px;
+    height: 64px;
+    border: solid 1px #BDBDBD;
+    border-radius: 2px;
+    padding: 20px 15px;
+    /*margin-left: 20px;*/
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .number{
+    width: 100%;
+    height: 64px;
+    border: solid 1px #BDBDBD;
+    border-radius: 2px;
+    padding: 20px 15px;
+    margin-top: 20px;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .number .text{
+    /*margin-left: 160px;*/
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .text-field{
+    width: 540px;
+    height: 175px;
+    border: solid 1px #BDBDBD;
+    border-radius: 2px;
+    padding: 20px 15px;
+    margin-top: 20px;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .text-field .text-field-half{
+    /*width: 160px;*/
+    /*float: left;*/
+    /*margin-right: 80px;*/
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .text-field .text{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .text-field .dot{
+    width: 12px;
+    height: 12px;
+    background-color: #616161;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.gg-content.driving-school-detail .content.sign-up-info .info-half .sign-up-btn{
+    width: 100%;
+    height: 54px;
+    background-color: #F8BA2A;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/*---------------------------------------------driving-school-coach---------------------------------------------------*/
+
+.gg-content.driving-school-detail .content.coach-text{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 9px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .coach-wrapper{
+    margin: 15px 10px;
+    width: 196px;
+    height: 400px;
+    position: relative;
+}
+
+.gg-content.driving-school-detail .content.coach-text .coach-info .photo{
+    width: 170px;
+    height: 210px;
+    border: solid 1px #BDBDBD;
+    padding: 4px;
+    position: absolute;
+    left: 12px;
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.gg-content.driving-school-detail .content.coach-text .coach-info .photo img{
+    width: 160px;
+    height: 200px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field{
+    width: 195px;
+    height: 300px;
+    border: solid 1px #BDBDBD;
+    position: absolute;
+    bottom: 0;
+    padding: 125px 10px 20px;
+    font-size: 14px;
+    color: #575757;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field .basic-info{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field .name{
+    margin-left: 5px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field .item.skill{
+    margin-top: 20px;
+}
+
+.gg-content.driving-school-detail .star{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../../Images/school_img/fill-star-icon.svg") no-repeat center;
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.gg-content.driving-school-detail .content.coach-text .text-field .item .title{
+    margin-right: 10px;
+}
+
+
+/*---------------------------------------------driving-school-gallery------------------------------------------------*/
+
+.gg-content.driving-school-detail .content.gallery-text{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 9px;
+}
+
+.gg-content.driving-school-detail .content.gallery-text .coach-car{
+    width: 250px;
+    background-color: #EEEEEE;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-content.driving-school-detail .content.gallery-text .coach-car .title{
+    font-size: 14px;
+    color: #575757;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.gg-content.driving-school-detail .page-part{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    position: relative;
+}
+
+.gg-content.driving-school-detail .page-wrapper{
+    position: absolute;
+    height: 30px;
+    right: 0;
+    display: flex;
+}
+
+.gg-content.driving-school-detail .page-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+    color: #575757;
+    font-size: 14px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-content.driving-school-detail .page-btn.selected{
+    background-color: #F8BA2A;
+    color: #fff;
+}
+/*4-1日注释*/
+/*.gg-content.driving-school-detail .page-btn .next img{
+	margin-bottom: 1px;
+}*/
+
+.gg-content.driving-school-detail .skip{
+    color: #575757;
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.gg-content.driving-school-detail .search{
+    width: 30px;
+    height: 28px;
+    border: solid 1px #B5B5B5 !important;
+    padding: 0 5px;
+    margin-right: 14px;
+    margin-bottom: 0;
+}
+.gg-content.driving-school-detail .search:focus{
+    box-shadow: none !important;
+}
+
+
+/*---------------------------------------------driving-school-evaluate------------------------------------------------*/
+.gg-content.driving-school-detail .content.evaluate-text{
+    width: 1180px;
+    padding: 0 20px 20px;
+}
+
+
+.gg-content.driving-school-detail .content.evaluate-text .evaluate{
+    width: 1140px;
+    border-bottom: solid 1px #BDBDBD;
+    display: flex;
+    font-size: 14px;
+    color: #575757;
+    font-weight: 200;
+    padding: 20px 0;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .evaluate .avatar{
+    margin-right: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .evaluate .avatar img{
+    width: 100%;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .evaluate .text-field{
+    width: 1020px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .text{
+    width: 100%;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .pics{
+    margin: 20px 0 10px;
+    display: flex;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .pics .pic-wrapper{
+    width: 72px;
+    height: 72px;
+    margin-right: 10px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .date-type{
+    width: 100%;
+    display: flex;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .time{
+    margin-left: 20px;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .text-field .date{
+    margin-right: 220px;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .page-part{
+    margin: 20px 0 0;
+}
+
+.gg-content.driving-school-detail .content.evaluate-text .page-part .page-btn.go{
+    margin-right: 0;
+}
+

@@ -1,0 +1,52 @@
+.exam-act{
+	height: 710px;
+	padding-top: 20px;
+}
+.exam-act-mn{
+	font-size: 2.6em;
+	margin: 0 0.5em 0 1em;
+}
+ul.km li a.active{
+	border-bottom: 2px solid #F9BB29;
+}
+.exam-act-tckm{
+	height: 600px;
+	text-align: center;
+}
+.exam-act-tckm a{
+	display: inline-block;
+	border: 2px solid #999;
+	padding: 50px;
+	font-size: 12px;
+	margin: 30px;
+	margin-top: 150px;
+	cursor: pointer;
+}
+.exam-act-tckm a:hover{
+	border: 2px solid #F5B934;
+}
+.exam-act-tckm a img{
+	vertical-align: bottom;
+}
+/*** 弹出开始链接***/
+.exam-tcks{
+	width: 440px;
+	height: 460px;
+	padding: 20px 50px;
+	top: 20% !important;
+}
+.exam-tcks p{
+	margin: 20px 0;
+}
+.exam-tcks ul li{
+	height: 54px;
+	border: 1px solid #ddd;
+	padding: 15px 20px 10px 20px;
+}
+.exam-tcks a{
+	display: block;
+	line-height:48px;
+	width: 100%;
+	border-radius: 3px;
+	margin-top: 30px;
+}

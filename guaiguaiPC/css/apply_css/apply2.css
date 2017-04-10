@@ -1,0 +1,38 @@
+.pay2-act{
+	height: 700px;
+	padding: 50px 0;
+}
+.zf-smk{
+	height: 600px;
+	border:1px solid #CCC;
+	display: none;
+}
+.zf-ewm{
+	border: 1px solid #999;
+	padding: 6px;
+	margin: 1em 0;
+}
+.zf-text{
+	font-size: 20px;
+}
+.zf-rt{
+	margin: 0 !important;
+}
+.zf-cg{
+	height: 600px;
+	border:1px solid #CCC;
+	position: absolute;
+	z-index: 999;
+	padding-top: 75px !important;
+	display: none;
+}
+.zf-cg p{
+	margin: 30px auto;
+	width: 360px;
+	padding: 25px 13px;
+	font-size: 22px;
+	border: 1px dashed #CCC;
+}
+.zf-blk{
+	display: flex;
+}

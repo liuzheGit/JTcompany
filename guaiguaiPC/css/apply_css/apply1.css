@@ -1,0 +1,46 @@
+.pay1-act{		/*主页面样式调整*/
+	height: 700px;
+	padding: 30px;
+}
+.pay1-act-zfk{
+	position: relative;
+	width: 380px;
+	margin: 160px auto;
+	padding-top: 80px;
+}
+.go-pay{
+	display: inline-block;
+	width: 200px;
+	border-radius: 2px;
+	line-height: 45px;
+	margin: 20px;
+}
+.pay1-act-zfk img{
+	position: absolute;
+	top: -100px;
+	left: 74px;
+	border: 1px solid #999;
+	padding: 5px;
+}
+						/***支付弹出框***/
+#pay-way{
+	top: 25% !important;
+	width: 470px;
+}
+#pay-way img{
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	padding: 3px;
+	margin: 25px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+#pay-way a{
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 35px;
+	width: 120px;
+	border-radius: 2px;
+	margin: 30px auto 0;
+}
