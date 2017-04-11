@@ -1,0 +1,222 @@
+/*头部 底部*/
+body,div,p{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100%;	
+}
+a{
+	color: #666;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+.gg-header,.log-act,.gg-footer,.gg-content{
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	min-width: 1140px;
+}
+.gg-header .top-bar{
+    height: 40px;
+    line-height: 40px;
+    background-color: #3D1B09;
+    display: flex;
+    padding: 0 20px;
+    color: #F39800;
+}
+
+.gg-header .top-bar .area{
+    width: 80px;
+}
+
+.gg-header .top-bar .area .select-wrapper{
+    height: 40px;
+    line-height: 40px;
+}
+.gg-header .top-bar .area .select-wrapper input{
+    height: 40px !important;
+    line-height: 40px !important;
+    margin: 0 !important;
+    border-bottom: none;
+}
+.gg-header .top-bar .area .select-wrapper ul{
+    background-color: #89431D;
+}
+.gg-header .top-bar .area .select-wrapper ul li span{
+    color: #F39800;
+}
+
+.gg-header .top-bar .area .select-wrapper .caret{
+    color: #F39800;
+}
+
+.gg-header .top-bar .phone{
+    position: absolute;
+    left: 25%;
+    display: flex;
+    align-items: center;
+}
+.gg-header .top-bar .phone img{
+    margin-right: 10px;
+}
+#timutype{
+	padding: 0 10px;
+	border-radius: 2px;
+	margin-top: 4px;
+}
+#toast-container{
+	top: 50%;
+	right: 50%;
+	margin-right: -50px;
+}
+
+.gg-header .top-bar .login-reg{
+    position: absolute;
+    right: 20px;
+}
+
+.gg-header .top-bar .login-reg a{
+    color: #F39800;
+}
+
+.gg-header .bottom-bar{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gg-header .bottom-bar .logo{
+    margin-right: 80px;
+}
+.gg-header .bottom-bar .nav-bar{
+    height: 100px;
+    display: flex;
+}
+.gg-header .bottom-bar .nav-bar .item{
+    color: #616161;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    transition: color .5s;
+}
+.gg-header .bottom-bar .nav-bar .item:hover{
+    color: #F39800;
+}
+
+.gg-header .bottom-bar .nav-bar .item.active{
+    color: #F39800;
+    height: 96px;
+    margin-top: 4px;
+    border-bottom: 4px solid #F39800;
+}
+.gg-header .bottom-bar .nav-bar .item .zh{
+    font-size: 18px;
+}
+.gg-header .bottom-bar .nav-bar .item .en{
+    font-size: 10px;
+}
+.gg-header .bottom-bar .title{
+    font-size: 24px;
+    font-weight: 200;
+    color: #757575;
+}
+.gg-header .bottom-bar .quick-link{
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #9e9e9e;
+    color: #616161;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+}
+.gg-header .bottom-bar .quick-link:hover{
+    background-color: #e0e0e0;
+}
+
+.gg-header .bottom-bar .quick-link ul{
+    position: absolute;
+    left: 0;
+    top:32px;
+    width: 100%;
+    margin: 0;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    background-color: #fff;
+    display: none;
+    z-index: 99;
+}
+.gg-header .bottom-bar .quick-link:hover ul{
+    display: block;
+}
+.gg-header .bottom-bar .quick-link ul li{
+    text-align: center;
+}
+
+.gg-header .bottom-bar .quick-link ul li a{
+    margin: 5px 0;
+    padding: 10px 0;
+    display: block;
+    color: #616161;
+}
+.gg-header .bottom-bar .quick-link ul li a:hover{
+    background-color: #e0e0e0;
+}
+
+
+.gg-footer{
+    /*width: 100%;*/
+    padding: 30px 0 25px;
+    background-color: #424242;
+    color: #e0e0e0;
+    font-weight: 200;
+    text-align: center;
+}
+
+.gg-footer .friend-link{
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto 25px;
+    text-align: left;
+}
+
+.gg-footer .friend-link .title{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.gg-footer .friend-link .links{
+    padding: 5px 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.gg-footer .friend-link .links .links-row{
+    margin: 10px 0;
+}
+
+.gg-footer .friend-link .links .links-row .name{
+    font-weight: 600;
+    margin-right: 25px;
+}
+
+.gg-footer .friend-link .links .links-row a{
+    color: #e0e0e0;
+    margin-right: 25px;
+}
+
+.gg-footer .friend-link .links .links-row a:hover{
+    color: #FFF;
+}
+
+.gg-footer .copyright{
+    font-size: 12px;
+}

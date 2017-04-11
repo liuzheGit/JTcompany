@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>乖乖学车</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../css/1/materialize.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/guaiguaixueche.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/dl-zc.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/exam_css/km-module.css"/>
+	</head>
+	<body>
+		<!--header-->
+		<div class="gg-header">
+	        <div class="top-bar">
+	            <div class="area">
+	                <select>
+	                    <option value="" disabled selected>地区</option>
+	                    <option value="1">郑州</option>
+	                    <option value="2">开封</option>
+	                </select>
+	            </div>
+	            <div class="phone"><img src="../../images/phone-icon.svg">969690</div>
+	            <div class="login-reg"><a href="#log-dl">登录</a> | <a href="#log-zc">注册</a></div>
+	        </div>
+	        <div class="bottom-bar">
+	            <div class="logo"><a href="../../index.html"><img src="../../Images/header-logo.png"/></a></div>
+	            <div class="nav-bar">
+	                <a href="../../index.html" class="item">
+	                    <div class="zh">首页</div>
+	                    <div class="en">Home</div>
+	                </a>
+	                <a href="../school_html/school-list.html" class="item">
+	                    <div class="zh">合作驾校</div>
+	                    <div class="en">Driving School</div>
+	                </a>
+	                <a href="../appointment_html/appointment.html" class="item">
+	                    <div class="zh">培训预约</div>
+	                    <div class="en">Appointment</div>
+	                </a>
+	                <a href="exam.html" class="item active">
+	                    <div class="zh">理论模拟</div>
+	                    <div class="en">Theory</div>
+	                </a>
+	                <a href="../video_html/video.html" class="item">
+	                    <div class="zh">乖乖视频</div>
+	                    <div class="en">Video</div>
+	                </a>
+	            </div>
+	            <div class="quick-link">
+	                快捷入口
+	                <ul>
+	                    <li><a href="">入口一</a></li>
+	                    <li><a href="">入口二</a></li>
+	                </ul>
+	            </div>
+	        </div>
+		</div>	
+		<!-- header end -->
+		
+		
+		
+		<!--理论模拟主页面-->
+		<div class="gg-content row exam-act grey lighten-3">
+			<div class="left grey-text text-darken-2">
+				<span class="exam-act-mn">理论模拟</span>video
+			</div>
+			<ul class="tabs col s9 grey lighten-3 km">
+				<li class="tab disabled"><a>科目一</a></li>
+				<li class="tab"><a class="active" href="exam.html">科目四</a></li>
+			</ul>
+			<!--理论模拟框-->
+			<div class="row col s10 offset-l1 white km-llmn">
+				<!--顶部信息-->
+				<p class="km-llmn-top">
+					<b>顺序练习</b>
+					<span>车型 : 小车</span>
+					<span>科目 : 科目四</span>
+				</p>
+				
+				<!--答题内容-->
+				<div class="row km-llmn-ct">
+					<!--侧栏-->
+					<div class="col s2">
+						<div id="timutype" class="right white-text orange">单选</div>
+					</div>
+					<!--题目内容-->
+					<div class="col s10">
+						<div class="right qsion">
+							<img class="materialboxed" src="../../Images/login_img/login_02.png">
+						</div>
+						<p class="quession">1.行车遇抢救伤员的救护车从本车道逆向驶来时，要怎么做？</p>
+						<ul class="answer">
+							<li>A : 靠边减速或停车让行</li>
+							<li>B : 招用其他查到行驶</li>
+							<li>C : 加速变更车道避让</li>
+							<li>D : 在原车道内继续行驶</li>
+						</ul>
+						<!--按钮框-->
+						<div class="col l10 km-llmn-btn">
+							<a class="white-text last-ti">上一题</a>
+							<a class="white-text next-ti">下一题</a>
+							<a href="#jies-tanc" class="white grey-text text-darken-3 btn-jie">本题解释</a>
+							<a href="#car-tanc" class="white grey-text text-darken-3 btn-car">答题卡</a>
+						</div>
+					</div>
+				</div>
+				
+				<!--底部信息-->
+				<div class="row col s10 offset-s2 grey-text text-darken-3 km-llmn-ft">
+					<span class="col l3 left">
+						<input type="checkbox" name="tiao" id="zi-tiao"/> 自动跳转到下一题
+					</span>
+					<span class="col l2 left">答对 : 
+						<span class="answer-rig">1</span>题
+					</span>
+					<span class="col l2 left">答错 : 
+						<span class="answer-err">1</span>题
+					</span>
+					<span class="col l2 left">正确率 : 
+						<span class="answer-accur">100</span>%
+					</span>
+					<span>共
+						<span>1126</span>题 转到
+						<input type="text" id="shou-tiao"/> 题
+					</span>
+				</div>
+				
+				<!--本题解释弹出框-->
+				<div id="jies-tanc" class="modal modal-fixed-footer">
+					<div class="modal-content">
+						<h6 class="teal-text text-darken-1">本题解释</h6>
+						<p>有动画可知，前方有行人横穿道路，此时应当注意避让，采取减速的方式，必要时停车让行。</p>
+					</div>
+					<div class="modal-footer">
+						<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">明白了</a>
+					</div>
+				</div>
+				
+				
+				<!--答题卡  弹出-->
+				<div id="car-tanc" class="modal">
+					<!-- 弹出框 -->
+					<div class="row modal-content">
+						<p class="col l12 center-align">答题卡</p>
+						<div class="col l4  red-text text-darken-1">
+							<div class="center-align">007<br />错误</div>
+						</div>
+						<div class="col l4 yellow-text text-darken-3">
+							<div class="center-align">004<br />正确</div>
+						</div>
+						<div class="col l4 grey-text">
+							<div class="center-align">1228<br />未做的题</div>
+						</div>
+						<hr class="col l12"/>
+						<div class="col l12 car-cont">
+							<div class="car-tihao ti-wrong">1</div>
+							<div class="car-tihao ti-right">2</div>
+							<div class="car-tihao ">3</div>
+							<div class="car-tihao ">4</div>
+							<div class="car-tihao ">5</div>
+							<div class="car-tihao ">6</div>
+							<div class="car-tihao ">7</div>
+							<div class="car-tihao ">8</div>
+							<div class="car-tihao ">3</div>
+							<div class="car-tihao ">4</div>
+							<div class="car-tihao ">5</div>
+							<div class="car-tihao ">6</div>
+							<div class="car-tihao ">7</div>
+							<div class="car-tihao ">8</div>
+							<div class="car-tihao ">4</div>
+							<div class="car-tihao ">5</div>
+							<div class="car-tihao ">6</div>
+							<div class="car-tihao ">7</div>
+							<div class="car-tihao ">1128</div>
+						</div>
+					</div>
+					<!--弹出框 end-->
+				</div>
+				<!--答题卡 end-->
+			</div>
+			<!--理论模拟框 end-->
+		</div>
+		<!--主页面 end -->
+		
+		
+		<!--底部-->
+	<div class="gg-footer">
+        <div class="friend-link">
+            <div class="title">友情链接</div>
+            <div class="links">
+                <div class="links-row">
+                    <span class="name">合作媒体</span>
+                    <a href="">河南电视台法制频道</a>
+                    <a href="">河南交通广播电台</a>
+                </div>
+                
+                <div class="links-row">
+                    <span class="name">合作驾校</span>
+                    <a href="">郑州中原驾校</a>
+                    <a href="">郑州汇通驾校</a>
+                    <a href="">新密矿区驾校</a>
+                    <a href="">郑州指南针驾校</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            河南炯途网络科技有限公司 版权所有 © 2016 Powered by Jiongtukeji.com<br>
+            豫公网安备 41010702002010号 豫ICP备16016024号-2
+        </div>
+    </div>
+
+
+
+
+
+
+<script type="text/javascript" src="../../commonjs/1/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../commonjs/1/materialize.js"></script>
+<script type="text/javascript" src="../../js/dl-zc.js"></script>
+<script type="text/javascript" src="../../js/exam_js/module.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+        $('.modal').modal();
+    });
+</script>
+	</body>
+</html>
+

@@ -1,0 +1,180 @@
+ul{ 
+ 	list-style: outside none none; 
+ 	margin: 0;
+}
+img{
+	vertical-align: bottom;
+}
+/*主页轮播大图*/
+.slider{
+    position: relative;
+    z-index: 98;
+}
+
+.slider .indicators {
+    bottom: 0;
+    z-index: 99;
+}
+
+.slider .indicators .indicator-item {
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+    background-color: #f99;
+    transition: all .3s;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #f00;
+    height: 24px;
+    width: 24px;
+}
+/*轮播定位二维码 logo 30秒*/
+.index-logo,.index-find,.index-ewm{
+	position: absolute;
+	z-index: 101;
+}
+.index-ewm{
+	top: 40px;
+	right: 120px;
+	font-size: 2em;
+}
+.index-logo{
+	bottom: -130px;
+	left: 70px;
+	width: 300px;
+}
+.index-find{
+	bottom: -50px;
+	right: 100px;
+	width: 420px;
+}
+/*轮播end*/
+
+/*content1 开始*/
+.log-act .content1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+.content1 .content1-cont{
+    width: 700px;
+    position: absolute;
+    right:2%;
+    top:15%;
+    overflow: hidden;
+}
+.content1-cont .content1-title{
+    font-size: 50px;
+    color:#A0A0A0;
+    letter-spacing:2px;
+}
+.content1-cont .bigFont {
+    font-size: 65px;
+    color: #A0A0A0;
+}
+.content1-cont .En{
+    color:gray;
+}
+.options .item {
+    display: inline-block;
+    width:290px;
+    height: 180px;
+    margin-right: 50px;
+    font-size: 12px;
+}
+.options .fixed{
+    position: relative;
+}
+.item.chaozhi{
+    right: -350px;
+}
+.options .changed{
+    position: absolute;
+}
+.item .name{
+    font-size: 22px;
+}
+.item .line{
+    width:100%;
+    position: relative;
+}
+.line span{
+    color: #F9BB28;
+}
+.line .redLine{
+    display: inline-block;
+    border:1px solid red;
+    width: 65%;
+    position: absolute;
+    top:7px;
+    right: 5px;
+}
+.item li{
+    display: inline-block;
+    margin-right: 3px;
+    color: white;
+    padding: 2px;
+    background-color: #717171;
+}
+.item .button{
+    display: inline-block;
+    background-color: #5A5657;
+    box-shadow: 2px 2px 4px #888888;;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 5px;
+    right: 1px;
+    text-align: center;
+}
+/*content1 结束*/
+
+/*index txt*/
+
+.row{
+	margin-bottom: 0 !important;
+}
+/*斜——img*/
+.xie_img{
+	width: 100%;
+	margin-top: -120px;
+}
+
+.xie_img img,.idx-big-img,.idx-big-img img{
+	width: 100%;
+}
+
+/*index 页面底部*/
+.index-foot{
+	height: 350px;
+}
+.idxft-textop{
+	font-size: 2em;
+}
+.idxft-rt-text .idx-eg{
+	font-size: 2em;
+	font-weight: 900;
+}
+.idx-zh{
+	display: inline-block;
+	font-size: 1.5em;
+}
+.idx-egt{
+	display: inline-block;
+	width: 186px;
+	table-layout:fixed; 
+	word-break: break-all;
+}
+.phone-img{
+	margin-top: -140px;
+	margin-left: 50px;
+}
+
+
+
+

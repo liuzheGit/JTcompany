@@ -1,0 +1,335 @@
+/*********登录弹出框***********/
+/*修改框架中的默认input样式*/
+input:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/*遮罩层*/
+#log-dl {
+    width: 400px;
+    height: 550px;
+    min-height: 550px;
+    top: 20% !important;
+}
+
+#log-zc {
+    width: 400px;
+    height: 610px;
+    min-height: 610px;
+    top: 20% !important;
+}
+
+#reset-pwd {
+    width: 400px;
+    height: 550px;
+    min-height: 550px;
+    top: 20% !important;
+}
+
+.gg-login-lost-pw a {
+    float: right;
+    margin-right: 60px;
+    line-height: 30px;
+}
+.login-reg .logged{
+    color: #fff;
+}
+#exit{
+    color: #f8b92e;
+    cursor: pointer;
+}
+/*重置*/
+.reset-form-p {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.reset-header, .reset-word {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.reset-tel-box {
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /*border-bottom: 1px solid #ccc;*/
+    padding-left: 10px;
+}
+
+#reset-tel {
+    height: 30px;
+    width: 80%;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: block;
+    /*border: 1px solid #ccc;*/
+    margin: 0 auto;
+    outline: 0;
+}
+.error-box{
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: red;
+    text-align: center;
+    line-height: 40px;
+}
+.reset-btn-box{
+    text-align: center;
+}
+#reset-btn{
+    width: 80%;
+    height: 40px;
+    background: #f8b92e;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 5px;
+    border: 0;
+}
+.hint-box {
+    color: #999999;
+    margin: 10px auto;
+    width: 80%;
+    line-height: 26px;
+    font-size: 12px;
+    display: block;
+    height: auto;
+}
+
+/*.login-form {*/
+/*padding: 0 !important;*/
+/*position: relative;*/
+/*}*/
+
+.login-form-p {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+/*.login-form form {*/
+/*margin: 0 auto;*/
+/*width: 60%;*/
+/*margin-top: 35px;*/
+/*}*/
+
+/*.login-form input {*/
+/*padding-left: 25px;*/
+/*width: 210px;*/
+/*height: 2rem;*/
+/*border: 1px solid #666;*/
+/*}*/
+
+/*.login-form button {*/
+/*width: 100%;*/
+/*line-height: 35px;*/
+/*font-size: 18px;*/
+/*margin: 30px 0;*/
+/*}*/
+
+/*.login-form div p {*/
+/*margin: 5px;*/
+/*}*/
+
+/*.login-form > img {*/
+/*position: absolute;*/
+/*top: 50%;*/
+/*left: 50%;*/
+/*}*/
+
+/*.login-form-img1 {*/
+/*margin: -154px 0 0 -110px;*/
+/*}*/
+
+/*.login-form-img2 {*/
+/*margin: -100px 0 0 -110px;*/
+/*}*/
+
+/*****注册弹出框*****/
+/*#log-zc span{*/
+/*margin: 5px;*/
+/*}*/
+/*#log-zc span>a{*/
+/*cursor:pointer;*/
+/*}*/
+/*.login-form .login-form-yzm{*/
+/*width: 50%;*/
+/*}*/
+/*.zck input{*/
+/*margin-bottom: 5px;*/
+/*}*/
+/*#tyxy{*/
+/*width: 16px;*/
+/*height: 18px;*/
+/*margin: 0;*/
+/*vertical-align:text-bottom;*/
+/*}*/
+/*.zck button{*/
+/*margin: 15px 0;*/
+/*}*/
+/*input.login-form-hqyzm{*/
+/*position: absolute;*/
+/*top: 112px;*/
+/*right: 83px;*/
+/*width: 82px;*/
+/*line-height: 2rem;*/
+/*font-size: 13px;*/
+/*margin: 0;*/
+/*border: 0;*/
+/*}*/
+/*.login-form-img3{*/
+/*margin: -160px 0 0 -113px;*/
+/*}*/
+/*.login-form-img4{*/
+/*margin: -122px 0 0 -113px;*/
+/*}*/
+/*.login-form-img5{*/
+/*margin: -84px 0 0 -113px;*/
+/*}*/
+/*.login-form-img6{*/
+/*margin: -48px 0 0 -113px;*/
+/*}*/
+.rule {
+    color: #039be5;
+}
+
+.reghintbox {
+    color: red;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+}
+
+.hintbox, .gg-login-input {
+    margin: 0;
+}
+
+.hintbox {
+    color: red;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    margin-left: 60px;
+}
+
+.gg-login-btn.solid, .gg-login-btn.hollow {
+    cursor: pointer;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+/*引用微信*/
+#log-zc p {
+    margin: 0;
+    padding: 0;
+}
+
+.gg-login-input {
+    height: 40px;
+    width: 70%;
+    margin-left: 15%;
+    border: 1px solid #BDBDBD;
+    /*margin-top: 24px;*/
+}
+
+#log-zc .reghintbox {
+    margin-left: 60px;
+}
+
+#log-zc .hasReg {
+    width: 100%;
+}
+
+.gg-login-input-img {
+    width: 40px;
+    height: 39px;
+    margin-right: 8px;
+    text-align: center;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.gg-login-input input {
+    width: calc(100% - 48px);
+    display: inline-block;
+    height: 40px;
+    margin: 0;
+    border-bottom: 0;
+    vertical-align: top;
+}
+
+.gg-login-btn {
+    display: inline-block;
+    width: 70%;
+    height: 48px;
+    /*margin: 0 auto 16px;*/
+}
+
+.gg-login-btn.solid {
+    background-color: #F8BA2A;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+}
+
+.gg-login-btn.hollow {
+    background-color: #fff;
+    border: solid 1px #F8BA2A;
+    color: #F8BA2A;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+}
+
+.gg-login-input.auth-code input {
+    width: calc(100% - 48px - 96px);
+}
+
+.gg-login-input.auth-code .auth-code-btn {
+    float: right;
+    display: block;
+    width: 96px;
+    height: 38px;
+    background-color: #F8BA2A;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+.gg-login-btn.reg {
+    /*margin-top: 26px;*/
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 15%;
+    cursor: pointer;
+}
+
+.gg-login-readme {
+    text-align: center;
+    color: #616161;
+}
+
+#codebtn {
+    border: none;
+    outline: none;
+}
+
+.QRcode {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.QRcode .markWords {
+    text-align: center;
+    color: #F8BA2A;
+    margin-top: 10px;
+    height: 40px;
+    line-height: 40px;;
+}

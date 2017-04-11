@@ -1,0 +1,112 @@
+
+			/* 主题添加样式*/
+.exam-act{
+	min-height: 710px;
+	padding-top: 20px;
+}
+.exam-act-mn{
+	font-size: 2.6em;
+	margin: 0 0.3em 0 0.6em;
+}
+ul.km li a.active{
+	border-bottom: 2px solid #F9BB29;
+}
+		/*理论模拟中心框*/
+.km-llmn{
+	min-height: 600px;
+}
+	/*练习题 信息  样式 调整*/
+.km-llmn-top{
+	margin: 10px 0;
+}
+.km-llmn-top b{
+	font-size: 20px;
+	border-left: 2px solid #E9BA50;
+	padding-left: 10px;
+}
+.km-llmn-top span{
+	display: inline-block;
+	margin-left: 20px;
+}
+	/*答题区  样式修改*/
+.km-llmn-ct{
+	position: relative;
+	border: 2px solid #E5E5E5;
+	padding: 10px 0 55px 0;
+	min-height: 510px;
+	margin: 0;
+}
+			/*题目 问题答案样式修改*/
+.qsion{
+	width: 300px;
+	height: 200px;
+	margin: 10px;
+	overflow: hidden;
+}
+.qsion img{
+	width: 100%;
+}
+.quession{
+	line-height: 30px;
+}
+.answer{
+	display: inline-block;
+}
+.answer li{
+	cursor: pointer;
+	padding: 0.5em 1em;
+}
+			/*按钮框 位置调整*/
+.km-llmn-btn{
+	position: absolute;
+	bottom: 15px;
+}
+.km-llmn-btn a{
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	line-height: 35px;
+	width: 110px;
+	margin-right: 3%;
+}
+
+.btn-paper{
+	float: right;
+	border: 1px solid #BDBDBD !important;
+}
+.next-ti,.last-ti{
+	background: #F8BA2B;
+}
+				/*最后一题 添加class 'disabled end-ti' */
+.end-ti{
+	background: #D8D8D8;
+}
+
+				/*答题内容底部信息样式调整*/
+.km-llmn-ft{
+	font-size: 12px;
+	margin-top: 13px;
+	margin-bottom: 20px;
+}
+#zi-tiao{
+	vertical-align: bottom;
+	height: 16px;
+}
+					/*成绩单-弹出框*/
+#jiao-tanc{
+	top: 25% !important;
+	width: 500px;
+	height: 280px;
+}
+.j-tanc-ft{
+	border: 0 !important;
+}
+.j-tanc-ft a{
+	display: inline-block;
+	border: 1px solid #ffab00;
+	line-height: 2em;
+	width: 6em;
+	margin: 0 1em;
+}
+
