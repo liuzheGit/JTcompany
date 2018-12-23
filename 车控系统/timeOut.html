@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="js/base64.js"></script>
+<script>
+    var reg = /<OK>/;
+    var Base64 = new Base64();
+    var ok = '<OK>';
+    console.log('编码后的ok：'+Base64.encode(ok));
+    console.log(ok);
+    var ok2 = 'PE9LPg0k';
+    console.log('解码后的ok2：'+Base64.decode(ok2));
+    console.log(ok2);
+    if(reg.test(Base64.decode(ok2))){
+        debugger;
+    }
+</script>

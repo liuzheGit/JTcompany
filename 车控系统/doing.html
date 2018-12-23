@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乖乖学车</title>
+    <!--<meta name="viewport" content="width=device-width,user-scalable=no">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .doTitle {
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            padding-top: 5%;
+        }
+
+        .myClock {
+            width: 70%;
+            height: 270px;
+            margin: 10% auto;
+            border: 1px solid #1E2832;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .myClock img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .clockRun {
+            font-size: 30px;
+        }
+
+        .clockHint {
+            /*margin: 80px auto;*/
+            margin: 35% auto;
+        }
+
+        .clockHint p {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .startTimeDiv {
+            width: 100%;
+            /*margin-top: 10%;*/
+            text-align: center;
+            color: white;
+            position: fixed;
+            bottom: 25%;
+        }
+
+        .startTimeDiv p {
+            height: 33px;
+            line-height: 33px;
+        }
+
+        .startTimeDiv .startTime {
+            font-size: 18px;
+        }
+
+        .btnStyle {
+            width: 86%;
+            margin-left: 6%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            background-color: #F7B52B;
+            position: fixed;
+            bottom: 10%;
+        }
+
+        .audioHiden {
+            display: none;
+        }
+
+        .debugDiv {
+            position: fixed;
+            top: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .debugDiv li {
+            display: inline-block;
+            background-color: #D1D5DC;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/base64.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/scanFn.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+<div class="doTitle">正在练习</div>
+<div class="content">
+    <div class="myClock">
+        <img src="images/timeOut.png">
+        <div class="clockHint">
+            <p>剩余时间</p>
+            <p class="clockRun">
+                <span class="date_h">00</span>:
+                <span class="date_m">00</span>:
+                <span class="date_s">00</span>
+            </p>
+        </div>
+    </div>
+    <div class="startTimeDiv">
+        <p>开始时间</p>
+        <p class="startTime">
+            <span class="cur_h"></span>:
+            <span class="cur_m"></span>:
+            <span class="cur_s"></span>
+        </p>
+    </div>
+    <div class="endBtn btnStyle">立即结束</div>
+</div>
+<div class="debugDiv">
+    <ul>
+        <li id="bug1"></li>
+        <li id="bug2"></li>
+        <li id="bug3"></li>
+        <li id="bug4"></li>
+        <li id="bug5"></li>
+        <li id="bug6"></li>
+        <li id="bug7"></li>
+        <li id="bug8"></li>
+        <li id="bug9"></li>
+    </ul>
+</div>
+
+<div class="audioHiden">
+    <audio id="endAudio" src="res/endidi.mp3"></audio>
+</div>
+</body>
+</html>
+<script>
+    var Base64 = new Base64();
+    $(function () {
+        FastClick.attach(document.body);
+        var openid = localStorage.getItem('ggcs_openid');
+        var savedDeviceid = localStorage.getItem('ggcs_deviceid');
+//蓝牙配置
+        var isOk = false;
+        var retbind;
+        var retconnect;
+        var onSend;
+        var blueOpen = false;
+        var closeReg = /<OK>/;
+        var toConnect;
+        var startSuccess;
+        var isSend = false;
+        wx.ready(function () {
+            wx.hideMenuItems({
+                menuList: ['menuItem:share:appMessage',
+                    'menuItem:share:timeline',
+                    'menuItem:share:qq',
+                    'menuItem:share:weiboApp',
+                    'menuItem:share:facebook',
+                    'menuItem:share:QZone',
+                    'menuItem:copyUrl',
+                    'menuItem:openWithQQBrowser',
+                    'menuItem:openWithSafari']
+            });
+            var isDoing = localStorage.getItem('isDoing');
+            wx.invoke('openWXDeviceLib', {'connType': 'blue'}, function (res) {
+                if (res.err_msg == 'openWXDeviceLib:ok') {
+                    if (res.bluetoothState == 'off') {
+                        eflower_alert.show('亲,使用前请先打开手机蓝牙！', '乖乖学车', function () {
+                        });
+                    }
+                    if (res.bluetoothState == 'unauthorized') {
+                        eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                        });
+                    }
+                    if (res.bluetoothState == 'on') {
+                        blueOpen = true;
+                    }
+                } else {
+                    eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                    });
+                }
+            });
+
+            WeixinJSBridge.on('onReceiveDataFromWXDevice', function (res) {
+                clearTimeout(onSend);
+                if (closeReg.test(Base64.decode(res.base64Data))) {
+                    $('#bug8').css('background', '#ff8a00');
+                    clearInterval(myInterval);
+                    isDoing = false;
+                    isOk = true;
+                    localStorage.setItem('isDoing', isDoing);
+                    $('#endAudio')[0].play();
+                    $('.endBtn').text('已结束').css('background', 'gray').removeClass('endBtn').off();
+                    disConnect();
+                    unBound();
+                    sendToServer2();
+                } else {
+                    //返回失败调用
+                    $('#bug8').css('background', 'red');
+                    myBack();
+                }
+                endClick = false;
+            });
+
+            //监听蓝牙状态，当从
+            WeixinJSBridge.on('onWXDeviceBluetoothStateChange', function (res) {
+                if (res.state == 'on') {
+                    blueOpen = true;
+                } else {
+                    blueOpen = false;
+                    eflower_alert.show('请打开蓝牙，否则无法正常关闭', function () {
+                    });
+                }
+            });
+
+            //监听绑定状态
+            WeixinJSBridge.on('onWXDeviceBindStateChange', function (res) {
+                if (res.deviceId == savedDeviceid && res.state == 'bind') {
+                    clearTimeout(retbind);
+                    $('#bug4').css('background', '#ff8a00');
+                    retconnect = setTimeout(connectfail, 10000);
+                    connectBle();
+                    toConnect = setInterval(myConnect, 5000);
+                } else if (res.deviceId == savedDeviceid && res.state == 'unbind') {
+                    //解绑后关闭页面
+                    $('#bug9').css('background', '#ff8a00');
+                    if(isOk == true){
+                        closeLib();
+                    }else {
+                        myClose();
+                    }
+                }
+
+            });
+
+            WeixinJSBridge.on('onScanWXDeviceResult', function (res) {
+                for (var i = 0; i < res.devices.length; i++) {
+                    if (res.devices[i].deviceId == savedDeviceid) {
+                        clearTimeout(startSuccess);
+                        $('#bug2').css('background', '#ff8a00');
+                        stopScan();
+                        break
+                    }
+                }
+            });
+
+            //连接成功，发送数据给ble
+            WeixinJSBridge.on('onWXDeviceStateChange', function (res) {
+                $('#bug6').css('background', '#ff8a00');
+                if (res.state == 'connected' && isSend == false) {
+                    //连接成功，清除连接超时的计时器，发送给设备指令
+                    $('#bug6').css('background', 'green');
+                    clearInterval(toConnect);
+                    clearTimeout(retconnect);
+                    setTimeout(sendToBle, 500);
+                }
+            });
+
+            var t = Number(localStorage.getItem('totalTime'));
+
+            function GetRTime() {
+                var h;
+                var m;
+                var s;
+                var curDate = new Date();
+                curDate = curDate.getTime();
+                var times = (t - curDate) / 1000;
+                if (times > 0) {
+                    localStorage.setItem('totalTime', t);
+                    h = Math.floor(times / 3600);
+                    m = Math.floor(Math.floor(times % 3600) / 60);
+                    s = Math.floor(times % 60);
+                    h = h < 10 ? '0' + h : h;
+                    m = m < 10 ? '0' + m : m;
+                    s = s < 10 ? '0' + s : s;
+                    $('.clockRun .date_h').html(h);
+                    $('.clockRun .date_m').html(m);
+                    $('.clockRun .date_s').html(s);
+                } else {
+                    clearInterval(myInterval);
+                    isDoing = false;
+                    localStorage.setItem('isDoing', isDoing);
+                    $('.endBtn').text('已结束').css('background', 'gray').off();
+                }
+
+            }
+
+            if (isDoing == 'true') {
+                var myInterval = setInterval(GetRTime, 1000);
+            } else {
+                $('.endBtn').text('已结束').css('background', 'gray').removeClass('endBtn');
+            }
+
+
+            $('.startTime .cur_h').html(localStorage.getItem('cur_H'));
+            $('.startTime .cur_m').html(localStorage.getItem('cur_M'));
+            $('.startTime .cur_s').html(localStorage.getItem('cur_S'));
+
+            var endClick = false;
+            $('.endBtn').on('click', function () {
+                if (endClick == false && blueOpen == true) {
+                    endClick = true;
+                    eflower_alert.show('提前结束会导致车辆立即熄火,请确保车辆已停在安全位置！', '你确定要提前结束?', function () {
+                        wx.invoke('getWXDeviceInfos', {'connType': 'blue'}, function (res) {
+                            var isfound = false;
+                            for (var i = 0; i < res.deviceInfos.length; i++) {
+                                if (res.deviceInfos[i].deviceId == savedDeviceid) {
+                                    $('#bug1').css('background', 'green');
+                                    isfound = true;
+                                    //找到设备且未连接，走去连接
+                                    if (res.deviceInfos[i].state == 'connected') {
+                                        sendToBle();
+                                    } else {
+                                        connectBle();
+                                    }
+                                }
+                            }
+                            if (isfound == false) {
+                                startScan();
+                            }
+                        });
+
+                    }, function () {
+                        endClick = false;
+                    });
+                } else if (blueOpen == false) {
+                    eflower_alert.show('请打开蓝牙后再手动关闭！', '乖乖学车', function () {
+                    });
+                }
+            });
+
+            //开始扫描
+            function startScan() {
+                wx.invoke('startScanWXDevice', {'connType': 'blue', 'btVersion': 'ble'}, function (res) {
+                    $('#bug1').css('background', '#ff8a00');
+                    if (res.err_msg != 'startScanWXDevice:ok') {
+                        myClose();
+                    } else {
+                        startSuccess = setTimeout(myClose, 10000);
+                    }
+                });
+            }
+
+            //关闭扫描
+            function stopScan() {
+                //停止扫描设备
+                wx.invoke('stopScanWXDevice', {'connType': 'blue', 'btVersion': 'ble'}, function (res) {
+                    if (res.err_msg != 'stopScanWXDevice:ok') {
+                        myClose();
+                    }
+                });
+                setTimeout(binddevice, 500);
+                //添加绑定的计时器
+                retbind = setTimeout(bindfail, 10000);
+            }
+
+
+            function bindfail() {
+                myClose();
+            }
+
+            function connectfail() {
+                clearInterval(toConnect);
+                myBack();
+            }
+
+            function sendToBle() {
+                var sendData = '$o2*';
+                var sendOut = setTimeout(myConnect, 1000);
+                var data = {
+                    'deviceId': savedDeviceid,
+                    'base64Data': Base64.encode(sendData),
+                    'connType': 'blue'
+                };
+                //发送命令
+                wx.invoke('sendDataToWXDevice', data, function (res) {
+                    clearTimeout(sendOut);
+                    isSend = true;
+                    $('#bug7').css('background', '#ff8a00');
+                    //发送失败
+                    if (res.err_msg != 'sendDataToWXDevice:ok') {
+                        $('#bug7').css('background', 'red');
+                        myBack();
+                    } else {
+                        onSend = setTimeout(myBack, 5000);
+                    }
+                });
+            }
+
+            //断开退出
+            function myBack() {
+                disConnect();
+                unBound();
+//                myClose();
+            }
+            //重新设备
+            function myConnect() {
+                $('#bug5').css('background', '#fff');
+                disConnect();
+                connectBle();
+            }
+            //连接
+            function connectBle() {
+                wx.invoke('connectWXDevice', {'deviceId': savedDeviceid, 'connType': 'blue'}, function (res) {
+                    $('#bug5').css('background', '#ff8a00');
+                })
+            }
+            //断开连接
+            function disConnect() {
+                wx.invoke('disconnectWXDevice', {'deviceId': savedDeviceid, 'connType': 'blue'}, function (res) {
+                });
+            }
+            //绑定
+            function binddevice() {
+                $('#bug3').css('background', '#ff8a00');
+                //获取操作凭证
+                wx.invoke('getWXDeviceTicket', {
+                    'deviceId': savedDeviceid,
+                    'type': '1',
+                    'connType': 'blue'
+                }, function (res) {
+                    //绑定设备
+                    if (res.err_msg == 'getWXDeviceTicket:ok') {
+                        bound(savedDeviceid, openid, res.ticket, 1);
+                    } else {
+                        binddevice();
+                    }
+                });
+            }
+            //解除绑定
+            function unBound() {
+                wx.invoke('getWXDeviceTicket', {
+                    'deviceId': savedDeviceid,
+                    'type': '2',
+                    'connType': 'blue'
+                }, function (res) {
+                    if (res.err_msg == 'getWXDeviceTicket:ok') {
+                        bound(savedDeviceid, openid, res.ticket, 0);
+                    } else {
+                        unBound();
+                    }
+                });
+            }
+            //错误
+            function myClose() {
+                closeLib();
+                eflower_alert.show('关锁失败,刷新后重试!', '乖乖学车', function () {
+                    window.location.reload();
+                });
+            }
+
+            function closeLib(){
+                wx.invoke('closeWXDeviceLib', {'connType':'blue'}, function(res) {
+                });
+            }
+
+            //发送通知服务器
+            function sendToServer2() {
+                var serviceid = localStorage.getItem('ggcs_serviceid');
+                var dataid = localStorage.getItem('ggcs_dataid');
+                var openid = localStorage.getItem('ggcs_openid');
+                var stype = localStorage.getItem('ggcs_stype');
+                var sentData = {
+                    serviceid: serviceid,
+                    dataid: dataid,
+                    openid: openid,
+                    stype: stype,
+                    state: 2  //解除锁定
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "https://guaiguaixueche.com/ggyc/appointment/unlock",
+                    data: JSON.stringify(sentData),
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (data) {
+                        if (data.code == 0) {
+                        //$('#debug720').append('<p>成功关闭，发送数据成功</p>');
+                        } else {
+                        //$('#debug720').append('<p>成功关闭，发送数据失败</p>');
+                        }
+                    }
+                });
+            }
+
+        });
+    });
+</script>

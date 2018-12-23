@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="endBtn">点我</div>
+<a href="timeoutTest.html">12321321</a>
+</body>
+</html>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script>
+    var mydate = new Date();
+    var dateA = Number(mydate.getTime() + 10000);
+    localStorage.setItem('totalTime', dateA);
+    var times = 880;
+    h = Math.floor(times / 3600);
+    m = Math.floor(Math.floor(times % 3600) / 60);
+//    m = Math.floor(times % 3600);
+    s = Math.floor(times % 60);
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+
+    console.log(h+':'+m+':'+s);
+</script>

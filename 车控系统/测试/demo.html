@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="base64js.min.js"></script>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script>
+    var a = [
+        {'name':12},
+        {'name':15},
+        {'name':17},
+        {'name':18},
+        {'name':19},
+        {'name':10}
+    ];
+    var scan = false;
+    for(var i = 0;i< a.length;i++){
+        if(a[i].name == '100'){
+            console.log('1');
+            scan = true;
+            break;
+        }
+    }
+    if(scan == false){
+        console.log('0')
+    }
+</script>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开锁中</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .blockIcon {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            margin: 0 auto 50px;
+            padding-top: 160px;
+        }
+
+        .blockIcon img {
+            width: 82px;
+            height: 82px;
+        }
+
+        .effect {
+            width: 100%;
+            text-align: center;
+        }
+
+        .effect .progress {
+            margin: 0 auto;
+            background-color: #F7B52B;
+            width: 280px;
+            height: 8px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .effect p {
+            color: white;
+            font-size: 18px;
+        }
+
+        /*控制定位遮罩的left  越大 进度越大*/
+        .progress .subTab {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 300px;
+            height: 10px;
+            background-color: #626971;
+        }
+
+        .audioHiden {
+            display: none;
+        }
+
+        .debugDiv {
+            position: fixed;
+            top: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .debugDiv li {
+            display: inline-block;
+            background-color: #D1D5DC;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="js/base64.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/scanFn.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="blockIcon">
+        <img src="images/unbocking.png">
+    </div>
+    <div class="effect">
+        <div class="progress">
+            <span class="subTab"></span>
+        </div>
+        <p>开锁中<span class="percent">0</span>%</p>
+    </div>
+</div>
+<!--<div id="debug720" style="width: 100%;height: 200px;background: #eee;position: absolute;bottom: 0;overflow: auto;">-->
+
+<!--</div>-->
+<div class="debugDiv">
+    <ul>
+        <li id="bug1"></li>
+        <li id="bug2"></li>
+        <li id="bug3"></li>
+        <li id="bug4"></li>
+        <li id="bug5"></li>
+        <li id="bug6"></li>
+        <li id="bug7"></li>
+        <li id="bug8"></li>
+        <li id="bug9"></li>
+        <li id="bug10"></li>
+    </ul>
+</div>
+
+<div class="audioHiden">
+    <audio id="didiAudio" src="res/didi.mp3"></audio>
+</div>
+</body>
+</html>
+<script>
+    var Base64 = new Base64();
+    var isunbind = false;
+    $(function () {
+        var stype = localStorage.getItem('ggcs_stype');
+        var leftime = localStorage.getItem('ggcs_leftime');
+        var sentLeftime = parseInt((parseInt(leftime) + 60) / 60);
+        var saveLeftime = parseInt(sentLeftime * 60 * 1000);
+        var savedDeviceid = localStorage.getItem('ggcs_deviceid');
+        var openid = localStorage.getItem('ggcs_openid');
+        function add5() {
+            $('#didiAudio')[0].play();
+            var mydate = new Date();
+            var dateA = Number(mydate.getTime() + saveLeftime);
+            localStorage.setItem('totalTime', dateA);
+            var curDate = new Date();
+            var start_H = curDate.getHours();
+            var start_M = curDate.getMinutes();
+            var start_S = curDate.getSeconds();
+            start_H = start_H < 10 ? '0' + start_H : start_H;
+            start_M = start_M < 10 ? '0' + start_M : start_M;
+            start_S = start_S < 10 ? '0' + start_S : start_S;
+            localStorage.setItem('cur_H', start_H);
+            localStorage.setItem('cur_M', start_M);
+            localStorage.setItem('cur_S', start_S);
+        }
+
+        function addX(b, e) {
+            var schedule = setInterval(function () {
+                b++;
+                if (b == e) {
+                    clearInterval(schedule);
+                }
+                $('.progress .subTab').css('left', b + "%");
+                $('.effect .percent').html(b);
+            }, 40);
+        }
+
+//蓝牙配置
+        var blueOpen = false;
+        var retbind;
+        var retconnect;
+        var onSend;
+        var startSuccess;
+        var resReg = /<OK>/;
+        var retstr;
+        var toConnect;
+        var correctBlock = false;
+        var isSend = false;
+        wx.ready(function () {
+            wx.hideMenuItems({
+                menuList: ['menuItem:share:appMessage',
+                    'menuItem:share:timeline',
+                    'menuItem:share:qq',
+                    'menuItem:share:weiboApp',
+                    'menuItem:share:facebook',
+                    'menuItem:share:QZone',
+                    'menuItem:copyUrl',
+                    'menuItem:openWithQQBrowser',
+                    'menuItem:openWithSafari']
+            });
+//        校验蓝牙环境并提示打开蓝牙和授权
+            wx.invoke('openWXDeviceLib', {'connType': 'blue'}, function (res) {
+                if (res.err_msg == 'openWXDeviceLib:ok') {
+                    if (res.bluetoothState == 'off') {
+                        eflower_alert.show('亲,使用前请先打开手机蓝牙！', '乖乖学车', function () {
+                        });
+                    }
+                    if (res.bluetoothState == 'unauthorized') {
+                        eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                        });
+                    }
+                    if (res.bluetoothState == 'on') {
+                        blueOpen = true;
+                    }
+                } else {
+                    eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                        window.history.back();
+                    });
+                }
+            });
+
+            WeixinJSBridge.on('onReceiveDataFromWXDevice', function (res) {
+                clearTimeout(onSend);
+                retstr = Base64.decode(res.base64Data);
+//                var obj = JSON.stringify(res);
+//                $('#debug720').append('<p>data:' + obj + '</p>');
+//                $('#debug720').append('<p>data:' + res.base64Data + '</p>');
+//                $('#debug720').append('<p>设备返回:' + JSON.stringify({data: retstr}) + '</p>');
+                if (resReg.test(retstr)) {
+                    addX(80, 100);
+                    $('#bug8').css('background', '#ff8a00');
+                    correctBlock = true;
+                    //断开设备连接
+                    disConnect();
+                    //解除绑定
+                    unBound();
+                    sendToServer();
+                    add5();
+                } else {
+                    //返回失败调用
+                    $('#bug8').css('background', 'red');
+                    myBack();
+                }
+            });
+            //监听蓝牙状态，当从
+            WeixinJSBridge.on('onWXDeviceBluetoothStateChange', function (res) {
+                blueOpen = (res.state == 'on');
+                if (blueOpen) {
+                    window.location.reload();
+                }
+            });
+            //绑定设备状态发生变化时 进行下一步操作比较稳妥
+            WeixinJSBridge.on('onWXDeviceBindStateChange', function (res) {
+                if (res.deviceId == savedDeviceid && res.state == 'bind') {
+                    $('#bug4').css('background', '#ff8a00');
+                    clearTimeout(retbind);
+                    retconnect = setTimeout(connectfail, 10000);
+                    connectBle();
+                    toConnect = setInterval(myConnect, 5000);
+                } else if (res.deviceId == savedDeviceid && res.state == 'unbind') {
+                    //解绑后关闭页面
+                    $('#bug9').css('background', '#ff8a00');
+//                    $('#debug720').append('<p>解绑后5S将关闭当前页面1</p>');
+                    isunbind = true;
+                    myBack();
+                }
+            });
+//         扫描结果
+            WeixinJSBridge.on('onScanWXDeviceResult', function (res) {
+                addX(20, 80);
+                var scanResult = false;
+                for (var i = 0; i <= res.devices.length - 1; i++) {
+//                    $('#debug720').append('<p>Scan:' + res.devices[i].deviceId + '</p>');
+                    if (res.devices[i].deviceId == savedDeviceid) {
+                        clearTimeout(startSuccess);
+                        $('#bug2').css('background', '#ff8a00');
+                        scanResult = true;
+                        stopScan();
+                        break
+                    }
+                }
+                if (scanResult == false) {
+                    myclose();
+                }
+            });
+//          连接改变时
+            WeixinJSBridge.on('onWXDeviceStateChange', function (res) {
+                $('#bug6').css('background', '#ff8a00');
+//                $('#debug720').append('<p>4->连接状态' + gettime() + ' ' + res.state + '</p>');
+                if (res.state == 'connected' && isSend == false) {
+                    $('#bug6').css('background', 'green');
+                    clearInterval(toConnect);
+                    clearTimeout(retconnect);
+                    setTimeout(sendToBle, 500);
+                }
+            });
+
+//            $('#debug720').append('<p>id->' + savedDeviceid + '</p>');
+            addX(0, 20);
+            wx.invoke('getWXDeviceInfos', {'connType': 'blue'}, function (res) {
+                var isfound = false;
+                for(var i=0; i<res.deviceInfos.length;i++){
+                    if(res.deviceInfos[i].deviceId==savedDeviceid){
+                        $('#bug1').css('background', 'green');
+                        isfound = true;
+                        //找到设备且未连接，走去连接
+                        if(res.deviceInfos[i].state =='connected'){
+                            sendToBle();
+                        }else{
+                            connectBle();
+                        }
+                    }
+                }
+                if (isfound == false){
+                    startScan();
+                }
+            });
+
+            function startScan(){
+                wx.invoke('startScanWXDevice', {'connType': 'blue', 'btVersion': 'ble'}, function (res) {
+                    $('#bug1').css('background', '#ff8a00');
+                    if (res.err_msg != 'startScanWXDevice:ok') {
+                        myclose();
+                    }else{
+                        startSuccess = setTimeout(myclose,10000);
+                    }
+                });
+            }
+
+            function stopScan() {
+                wx.invoke('stopScanWXDevice', {'connType': 'blue', 'btVersion': 'ble'}, function (res) {
+                    if (res.err_msg != 'stopScanWXDevice:ok') {
+                        myclose();
+                    }
+                });
+                setTimeout(binddevice, 500);
+                retbind = setTimeout(bindfail, 10000);
+            }
+            //绑定超时
+            function bindfail() {
+                myclose();
+            }
+            //连接超时
+            function connectfail(){
+                clearInterval(toConnect);
+                disConnect();
+                unBound();
+                myclose();
+            }
+
+
+            //发送数据
+            function sendToBle() {
+                var sendData = '$r' + sentLeftime + '*';
+                //测试
+                var sendOut = setTimeout(myConnect, 1000);
+                var data = {
+                    'deviceId': savedDeviceid,
+                    'base64Data': Base64.encode(sendData),
+                    'connType': 'blue'
+                };
+                wx.invoke('sendDataToWXDevice', data, function (res) {
+                    isSend = true;
+                    $('#bug7').css('background', '#ff8a00');
+                    clearTimeout(sendOut);
+                    if (res.err_msg != 'sendDataToWXDevice:ok') {
+                        $('#bug7').css('background', 'red');
+                        myBack();
+                    } else {
+                        onSend = setTimeout(myBack, 5000);
+                    }
+                });
+            }
+
+            //返回处理
+            function myBack() {
+                if (!isunbind) {
+                    disConnect();
+                    unBound();
+                }
+                myclose();
+            }
+
+            //重连
+            function myConnect() {
+                $('#bug5').css('background', '#fff');
+                disConnect();
+                connectBle();
+            }
+
+//            连接
+            function connectBle(){
+                wx.invoke('connectWXDevice', {'deviceId': savedDeviceid, 'connType': 'blue'}, function (res) {
+                    $('#bug5').css('background', '#ff8a00');
+
+                })
+
+            }
+//            断开连接
+            function disConnect(){
+                wx.invoke('disconnectWXDevice', {'deviceId': savedDeviceid, 'connType': 'blue'}, function (res) {
+                });
+            }
+
+
+            //去绑定
+            function binddevice() {
+                $('#bug3').css('background', '#ff8a00');
+                wx.invoke('getWXDeviceTicket', {'deviceId': savedDeviceid, 'type': '1', 'connType': 'blue'}, function (res) {
+                    //绑定设备
+                    if(res.err_msg == 'getWXDeviceTicket:ok'){
+                        bound(savedDeviceid, openid, res.ticket, 1);
+                    }else {
+                        binddevice();
+                    }
+                });
+            }
+
+//            解除绑定
+            function unBound(){
+                wx.invoke('getWXDeviceTicket', {'deviceId': savedDeviceid, 'type': '2', 'connType': 'blue'}, function (res) {
+                    if(res.err_msg == 'getWXDeviceTicket:ok'){
+                        bound(savedDeviceid, openid, res.ticket, 0);
+                    }else{
+                        unBound();
+                    }
+                });
+            }
+
+            function myclose() {
+                $('#bug10').css('background', '#ff8a00');
+                closeLib();
+                if(correctBlock == true && stype == 2){
+                    eflower_alert.show('教练开锁成功', '乖乖学车', function () {
+                        localStorage.setItem('isDoing', false);
+                        window.history.back();
+                    });
+                }else if (correctBlock == true && stype == 1) {
+                    window.location.replace('doing.html');
+                    var isDoing = true;
+                    localStorage.setItem('isDoing', isDoing);
+                } else {
+                    eflower_alert.show('开锁超时', '乖乖学车', function () {
+                        localStorage.setItem('isDoing', false);
+                        window.history.back();
+                    });
+                }
+            }
+
+            function closeLib(){
+                wx.invoke('closeWXDeviceLib', {'connType':'blue'}, function(res) {
+                });
+            }
+            function sendToServer() {
+//                $('#debug720').append('<p>11:开锁成功，通知服务器</p>');
+                var serviceid = localStorage.getItem('ggcs_serviceid');
+                var dataid = localStorage.getItem('ggcs_dataid');
+                var openid = localStorage.getItem('ggcs_openid');
+                var stype = localStorage.getItem('ggcs_stype');
+                var sentData = {
+                    serviceid: serviceid,
+                    dataid: dataid,
+                    openid: openid,
+                    stype: stype,
+                    state: 1
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "https://guaiguaixueche.com/ggyc/appointment/unlock",
+                    data: JSON.stringify(sentData),
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (data) {
+                        if (data.code == 0) {
+//                            $('#debug720').append('<p>成功解锁，发送数据成功</p>');
+                        } else {
+//                            $('#debug720').append('<p>成功解锁，发送数据失败</p>');
+                        }
+                    }
+                });
+            }
+        });
+
+    });
+</script>

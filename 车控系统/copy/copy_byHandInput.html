@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入二维码编号</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .inputHint {
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /*11:41*/
+        .myInput {
+            padding-top: 80px;
+            padding-bottom: 30px;
+            width: 80%;
+            margin: 0 10%;
+            height: 50px;
+            /*border:1px solid red;*/
+            text-align: center;
+        }
+
+        .myInput .myCase {
+            text-align: center;
+            /*width: 48px;*/
+            width: 19%;
+            height: 55px;
+            float: left;
+            border: 1px solid white;
+            display: inline-block;
+            line-height: 55px;
+            font-size: 23px;
+            color: #ffffff;
+            vertical-align: top;
+        }
+
+        .keyBoard {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 38%;
+            color: black;
+            background: #F0F0F0;
+        }
+
+        .keyBoard .btnDiv {
+            display: inline-block;
+            height: 80%;
+            margin-top: 8%;
+            vertical-align: top;
+        }
+
+        .keyBoard .numDiv {
+            width: 75%;
+            margin-left: 10%;
+            /*border:1px solid green;*/
+        }
+
+        .keyBoard .ensureDiv {
+            height: 78%;
+            width: 12%;
+            color: #ffffff;
+            /*border: 1px solid red;*/
+            text-align: center;
+            border-radius: 3px;
+            background-color: #808080;
+            position: relative;
+        }
+
+        .ensureDiv .btnText {
+            position: absolute;
+            top: 42%;
+            left: 35%;
+        }
+
+        .keyBoard .boardLine {
+            width: 100%;
+            height: 22%;
+            margin-bottom: 2%;
+        }
+
+        .boardLine div {
+            display: inline-block;
+            width: 30%;
+            margin-left: 1%;
+            height: 100%;
+            line-height: 200%;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 22px;
+            background: #ffffff;
+            vertical-align: top;
+        }
+
+        #delete {
+            line-height: 150%;
+        }
+
+        #delete img {
+            width: 30px;
+            height: 22px;
+        }
+
+        .num.clicking {
+            background: #D1D5DC;
+        }
+
+        #delete.deling {
+            background: #f4f4f5;
+        }
+
+        .ensureDiv.enter {
+            background-color: #F7B52B;
+        }
+    </style>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/scanFn.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="myInput">
+        <div class="myCase"></div>
+        <div class="myCase"></div>
+        <div class="myCase"></div>
+        <div class="myCase"></div>
+        <div class="myCase"></div>
+    </div>
+    <div class="inputHint">
+        请确认您输入了正确的设备编号
+    </div>
+    <!--<div class="yesBtn">-->
+    <!--确认-->
+    <!--</div>-->
+</div>
+<!--<div class="keyBoard">-->
+<!--<div class="boardLine">-->
+<!--<div class="num">1</div>-->
+<!--<div class="myCenter num">2</div>-->
+<!--<div class="num">3</div>-->
+<!--</div>-->
+<!--<div class="boardLine">-->
+<!--<div class="num">4</div>-->
+<!--<div class="myCenter num">5</div>-->
+<!--<div class="num">6</div>-->
+<!--</div>-->
+<!--<div class="boardLine">-->
+<!--<div class="num">7</div>-->
+<!--<div class="myCenter num">8</div>-->
+<!--<div class="num">9</div>-->
+<!--</div>-->
+<!--<div class="boardLine">-->
+<!--<div id="delete"><</div>-->
+<!--<div class="myCenter num">0</div>-->
+<!--<div id="yesBtn">确定</div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="keyBoard">
+    <div class="btnDiv numDiv">
+        <div class="boardLine">
+            <div class="num">1</div>
+            <div class="num">2</div>
+            <div class="num">3</div>
+        </div>
+        <div class="boardLine">
+            <div class="num">4</div>
+            <div class="num">5</div>
+            <div class="num">6</div>
+        </div>
+        <div class="boardLine">
+            <div class="num">7</div>
+            <div class="num">8</div>
+            <div class="num">9</div>
+        </div>
+        <div class="boardLine">
+            <div></div>
+            <div class="num">0</div>
+            <div id="delete">
+                <img src="images/deleteBtn.png">
+            </div>
+        </div>
+    </div>
+    <div class="btnDiv ensureDiv">
+        <div class="btnText">确<br>定</div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+
+//        输入
+        $('.boardLine .num').off().on('click', function () {
+//            监听最后一位
+
+            $(this).addClass('clicking');
+            var myThis = $(this);
+            setTimeout(function () {
+                $(myThis).removeClass('clicking');
+            }, 100);
+            var curNum = $(this).html();
+            var myIndex, q;
+            $('.myInput .myCase').each(function (i, y) {
+                myIndex = 5;
+                if ($(y).html() == '') {
+                    myIndex = i;
+                    return false;
+                }
+            });
+            q = myIndex;
+            $('.myInput .myCase:eq(' + q + ')').html(curNum);
+
+            var lastStr = $('.myInput .myCase:last').html();
+            if (/\d/.test(lastStr) == true) {
+                $('.ensureDiv').addClass('enter');
+            } else {
+                $('.ensureDiv').removeClass('enter');
+            }
+        });
+//    del
+        $('#delete').off().on('click', function () {
+            $(this).addClass('deling');
+            var myThis = $(this);
+            setTimeout(function () {
+                $(myThis).removeClass('deling');
+            }, 100);
+
+            var myIndex, q;
+            $('.myInput .myCase').each(function (i, y) {
+                myIndex = 5;
+                if ($(y).html() == '') {
+                    myIndex = i;
+                    return false;
+                }
+            });
+            q = myIndex - 1;
+            $('.myInput .myCase:eq(' + q + ')').html('');
+
+            var lastStr = $('.myInput .myCase:last').html();
+            if (/\d/.test(lastStr) == true) {
+                $('.ensureDiv').addClass('enter');
+            } else {
+                $('.ensureDiv').removeClass('enter');
+            }
+        });
+//添加微信配置
+        var signData = {};
+        var wxticket;
+        var windowHref = window.location.href;
+        $.ajax({
+            async: false,
+            type: 'post',
+            url: "https://guaiguaixueche.com/ggtools/wxsign",
+            data: JSON.stringify({url: windowHref}),
+            contentType: 'application/json;charset=utf-8',
+            success: function (data) {
+                signData = {
+                    "verifyAppId": 'wx31c78285677a7222',
+                    "verifyTimestamp": data.timestamp,
+                    "verifySignType": "sha1",
+                    "verifyNonceStr": data.nonceStr,
+                    "verifySignature": data.signature
+                };
+                wx.config({
+                    beta: true,
+                    debug: false,
+                    appId: 'wx31c78285677a7222',
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        "openWXDeviceLib",      //初始化设备库（只支持蓝牙设备）
+                        "closeWXDeviceLib",     //关闭设备库（只支持蓝牙设备）
+                        "getWXDeviceInfos",     //获取当前用户已绑定的蓝牙设备列表
+                        "sendDataToWXDevice",   //发送数据给设备
+                        "startScanWXDevice",    //扫描设备（无论绑定还是未被绑定的设备都会扫描到）
+                        "stopScanWXDevice",     //停止扫描设备
+                        "connectWXDevice",      //连接设备
+                        "disconnectWXDevice",   //断开设备连接
+                        "getWXDeviceTicket",    //获取绑定或解绑硬件的操作凭证
+                        //如果需要其他js api可继续添加
+
+                        //监听事件：
+                        "onWXDeviceBindStateChange",    //监听硬件设备绑定状态
+                        "onWXDeviceStateChange",        //监听连接状态，可以监听连接中、已连接、连接断开
+                        "onReceiveDataFromWXDevice",    //监听接收来自硬件设备的数据
+                        "onScanWXDeviceResult",         //监听扫描到的设备
+                        "onWXDeviceBluetoothStateChange"  //监听手机蓝牙打开或关闭
+                    ]
+                })
+            }
+        });
+
+
+        wx.ready(function () {
+            //ok
+            $('.btnDiv.ensureDiv').on('click', function () {
+                var serviceid = '';
+                $('.myInput .myCase').each(function (i, k) {
+                    serviceid += $(k).html();
+                });
+                if (serviceid.length == 5) {
+                    var openid = localStorage.getItem('ggcs_openid');
+                    var stype = localStorage.getItem('ggcs_stype');
+                    var schoolid;
+                    if (localStorage.getItem('schoolid')) {
+                        schoolid = localStorage.getItem('schoolid');
+                    }
+                    var sentData = {
+                        serviceid: serviceid,
+                        openid: openid,
+                        stype: stype,
+                        schoolid: schoolid
+                    };
+                    if (openid =='' || stype =='' || schoolid==''|| openid ==null || stype ==null || schoolid==null ||
+                            openid ==undefined || stype ==undefined || schoolid==undefined	){
+                        eflower_alert.show('没有系统授权或者手机没有在系统中绑定！', '乖乖学车', function () {
+                        });
+                    } else {
+                        $.ajax({
+                            type: 'POST',
+                            url: "https://guaiguaixueche.com/ggyc/appointment/verify",
+                            data: JSON.stringify(sentData),
+                            contentType: 'application/json;charset=utf-8',
+                            success: function (data) {
+                                if (data.code == 0) {
+
+                                    //绑定  	1发送后台	2通知微信公众平台
+                                    var deviceid = data.deviceid;
+                                    //alert(deviceid);
+
+                                    localStorage.setItem('ggcs_dataid', data.dataid);
+                                    localStorage.setItem('ggcs_leftime', data.leftime);
+                                    localStorage.setItem('ggcs_deviceid', data.deviceid);
+                                    localStorage.setItem('ggcs_serviceid', serviceid);
+                                    window.location.href = 'blocking.html';
+                                } else {
+                                    eflower_alert.show(data.msg, '乖乖学车', function () {
+                                    });
+                                }
+                            }
+                        });
+                    }
+                } else {
+                    eflower_alert.show('请输入正确的编号', '乖乖学车', function () {
+                    });
+                }
+            });
+        });
+    })
+
+
+</script>

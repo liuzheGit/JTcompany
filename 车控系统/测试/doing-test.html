@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乖乖学车</title>
+    <!--<meta name="viewport" content="width=device-width,user-scalable=no">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .doTitle {
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            padding-top: 5%;
+        }
+
+        .myClock {
+            width: 70%;
+            height: 270px;
+            margin: 10% auto;
+            border: 1px solid #1E2832;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .myClock img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .clockRun {
+            font-size: 30px;
+        }
+
+        .clockHint {
+            /*margin: 80px auto;*/
+            margin: 35% auto;
+        }
+
+        .clockHint p {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .startTimeDiv {
+            width: 100%;
+            /*margin-top: 10%;*/
+            text-align: center;
+            color: white;
+            position: fixed;
+            bottom: 25%;
+        }
+
+        .startTimeDiv p {
+            height: 33px;
+            line-height: 33px;
+        }
+
+        .startTimeDiv .startTime {
+            font-size: 18px;
+        }
+
+        .btnStyle {
+            width: 86%;
+            margin-left: 6%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            background-color: #F7B52B;
+            position: fixed;
+            bottom: 10%;
+        }
+
+        .audioHiden {
+            display: none;
+        }
+
+        .debugDiv {
+            position: fixed;
+            top: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .debugDiv li {
+            display: inline-block;
+            background-color: #D1D5DC;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/alert.js"></script>
+</head>
+<body>
+<div class="doTitle">正在练习</div>
+<div class="content">
+    <div class="myClock">
+        <img src="../images/timeOut.png">
+        <div class="clockHint">
+            <p>剩余时间</p>
+            <p class="clockRun">
+                <span class="date_h">00</span>:
+                <span class="date_m">00</span>:
+                <span class="date_s">00</span>
+            </p>
+        </div>
+    </div>
+    <div class="startTimeDiv">
+        <p>开始时间</p>
+        <p class="startTime">
+            <span class="cur_h"></span>:
+            <span class="cur_m"></span>:
+            <span class="cur_s"></span>
+        </p>
+    </div>
+    <div class="endBtn btnStyle">立即结束</div>
+</div>
+<div class="debugDiv">
+    <ul>
+        <li id="bug1"></li>
+        <li id="bug2"></li>
+        <li id="bug3"></li>
+        <li id="bug4"></li>
+        <li id="bug5"></li>
+        <li id="bug6"></li>
+        <li id="bug7"></li>
+        <li id="bug8"></li>
+        <li id="bug9"></li>
+    </ul>
+</div>
+
+<div class="audioHiden">
+    <audio id="endAudio" src="../res/endidi.mp3"></audio>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        var myInterval;
+
+        var t = Number(localStorage.getItem('totalTime'));
+
+        function GetRTime() {
+            var h;
+            var m;
+            var s;
+            var curDate = new Date();
+            curDate = curDate.getTime();
+            var times = t - curDate;
+            if (times > 0) {
+                localStorage.setItem('totalTime', t);
+                h = Math.floor(times / (60 * 1000 * 60));
+                m = Math.floor(times / (60 * 1000));
+                s = Math.floor(Math.floor(times % (60 * 1000) / 1000));
+                h = h < 10 ? '0' + h : h;
+                m = m < 10 ? '0' + m : m;
+                s = s < 10 ? '0' + s : s;
+                localStorage.setItem('run_h', h);
+                localStorage.setItem('run_m', m);
+                localStorage.setItem('run_s', s);
+                $('.clockRun .date_h').html(localStorage.getItem('run_h'));
+                $('.clockRun .date_m').html(localStorage.getItem('run_m'));
+                $('.clockRun .date_s').html(localStorage.getItem('run_s'));
+            } else {
+                $('.endBtn').text('已结束').css('background', 'gray').off();
+            }
+
+        }
+
+        var isDoing = localStorage.getItem('isDoing');
+        if (isDoing == 'true') {
+//            myInterval = setInterval(GetRTime, 1000);
+        } else {
+            $('.endBtn').text('已结束').css('background', 'gray').removeClass('endBtn');
+        }
+
+
+        $('.startTime .cur_h').html(localStorage.getItem('cur_H'));
+        $('.startTime .cur_m').html(localStorage.getItem('cur_M'));
+        $('.startTime .cur_s').html(localStorage.getItem('cur_S'));
+
+        var endClick = false;
+        $('.endBtn').on('click', function () {
+            if (endClick == false) {
+                endClick = true;
+                eflower_alert.show('提前结束会导致车辆立即熄火,请确保车辆已停在安全位置！', '你确定要提前结束?',function () {
+                    clearInterval(myInterval);
+                    $('.endBtn').text('已结束').css('background', 'gray').off();
+                    endClick = false;
+                }, function () {
+                    endClick = false;
+                });
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乖乖学车</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        .systemName {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            padding-top: 40px;
+            letter-spacing: 2px;
+        }
+        .content .lineDiv{
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .lineDiv .baseLine{
+            display: inline-block;
+            width: 60px;
+            border-top: 2px solid white;
+        }
+
+        .options {
+            width: 100%;
+            margin-top: 40px;
+        }
+        .options .option {
+            display: inline-block;
+            width: 96%;
+            margin: 4px 2%;
+        }
+        .option img {
+            width: 100%;
+        }
+        .serviceBtn {
+            width: 80px;
+            height: 80px;
+            border-radius: 0 0 0 40px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        .serviceBtn img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/scanFn.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+<div class="navTop">
+    <ul>
+        <li class="hintText">正在练习</li>
+        <li class="enterBtn"><a href="doing.html">点击进入</a></li>
+        <li>
+            <span class="date_h">00</span>:
+            <span class="date_m">00</span>:
+            <span class="date_s">00</span>
+        </li>
+    </ul>
+    <div class="downWard">
+        <img src="images/downWard.png">
+    </div>
+</div>
+<div class="content">
+    <div class="systemName">驾校培训车控系统</div>
+    <div class="lineDiv"><span class="baseLine"></span></div>
+    <div class="options">
+        <a class="option inputText">
+            <img src="images/index1.png">
+        </a>
+        <a class="option openLight">
+            <img src="images/index2.png">
+        </a>
+    </div>
+</div>
+<div class="serviceBtn">
+    <img src="images/indexSer.png">
+</div>
+
+<div class="diologBg"></div>
+<div class="diolog">
+    <div class="dioTitle">客户服务</div>
+    <div class="serBtn">
+        <a>
+            <img src="images/service1.png">
+            <p>开不了锁</p>
+        </a>
+        <a>
+            <img src="images/service3.png">
+            <p>故障报修</p>
+        </a>
+        <a>
+            <img src="images/service4.png">
+            <p>其他问题</p>
+        </a>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+//        处理服务点击
+        $('.serviceBtn').on('click',function(){
+            $('.diologBg,.diolog').css('display','block');
+        });
+        $('.diologBg').on('click',function(){
+            $('.diologBg,.diolog').css('display','none');
+        });
+        var isDoing = localStorage.getItem('isDoing');
+        if (isDoing == 'true') {
+            var t = Number(localStorage.getItem('totalTime'));
+            function autoPlay() {
+                var h, m, s;
+                var curDate = new Date();
+                curDate = curDate.getTime();
+                var times = t - curDate;
+                if (times > 0) {
+                    h = Math.floor(times / (60 * 1000 * 60));
+                    m = Math.floor(times / (60 * 1000));
+                    s = Math.floor(Math.floor(times % (60 * 1000) / 1000));
+                    h = h < 10 ? '0' + h : h;
+                    h = h == 0 ? '00' : h;
+                    m = m < 10 ? '0' + m : m;
+                    m = m == 0 ? '00' : m;
+                    s = s < 10 ? '0' + s : s;
+                    s = s == 0 ? '00' : s;
+
+                } else {
+                    clearInterval(autoClock);
+                    isDoing = false;
+                    localStorage.setItem('isDoing', isDoing);
+                    $('.navTop').css('display', 'none');
+                }
+                $('.navTop .date_h').html(h);
+                $('.navTop .date_m').html(m);
+                $('.navTop .date_s').html(s);
+            }
+
+            var autoClock = setInterval(autoPlay, 1000);
+
+            var myFinish = false;
+            if (myFinish == true) {
+                clearInterval(autoClock);
+                $('.navTop .date_h').html('00');
+                $('.navTop .date_m').html('00');
+                $('.navTop .date_s').html('00');
+            }
+
+        } else {
+            $('.navTop').css('display', 'none');
+        }
+
+//微信扫一扫配置
+        var windowHref = window.location.href;
+        $.ajax({
+            async: false,
+            type: 'post',
+            url: "https://guaiguaixueche.com/ggtools/wxsign",
+            data: JSON.stringify({url: windowHref}),
+            contentType: 'application/json;charset=utf-8',
+            success: function (data) {
+//            关于蓝牙
+                signData = {
+                    "verifyAppId": 'wx31c78285677a7222',
+                    "verifyTimestamp": data.timestamp,
+                    "verifySignType": "sha1",
+                    "verifyNonceStr": data.nonceStr,
+                    "verifySignature": data.signature
+                };
+                wx.config({
+                    beta: true,
+                    debug: false,
+                    appId: 'wx31c78285677a7222',
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        "openWXDeviceLib", //初始化库
+                        'scanQRCode',	//扫描二维码
+                        'onWXDeviceBluetoothStateChange',  //监听蓝牙状态的变化
+                        'getWXDeviceTicket'   //获取操作凭证
+                    ]
+                })
+            }
+        });
+        wx.ready(function () {
+            $('.options .inputText').on('click', function () {
+                if (isDoing == 'true') {
+                    eflower_alert.show('您正在练车，不能再次解锁其他车辆!', '乖乖学车', function () {});
+                } else {
+                    wx.invoke('openWXDeviceLib', {'connType': 'blue'}, function (res) {
+
+                        if (res.err_msg == 'openWXDeviceLib:ok') {
+                            if (res.bluetoothState == 'off') {
+                                eflower_alert.show('亲,使用前请先打开手机蓝牙！', '乖乖学车', function () {
+                                });
+                            }
+                            if (res.bluetoothState == 'unauthorized') {
+                                eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                                });
+                            }
+                            if (res.bluetoothState == 'on') {
+                                //当打开蓝牙的时候才会判断到底进入那个
+                                window.location.href = 'byHandInput.html';
+                            }
+
+                        } else {
+                            eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                            });
+                        }
+                    });
+
+                    WeixinJSBridge.on('onWXDeviceBluetoothStateChange', function (res) {
+                        if (res.state == 'on') {
+                            window.location.reload();
+                        } else {
+                            eflower_alert.show('亲,检测到您的蓝牙已关闭！为保证您的正常使用请再次打开蓝牙！', '乖乖学车', function () {
+                            });
+                        }
+                    });
+//-----------------------------------------------------
+                }
+
+            });
+
+            $('.options .openLight').on('click',function(){
+                if (isDoing == 'true') {
+                    eflower_alert.show('您正在练车，不能再次解锁其他车辆!', '乖乖学车', function () {});
+                } else {
+//-----------------------------------------------------
+                    wx.invoke('openWXDeviceLib', {'connType': 'blue'}, function (res) {
+                        if (res.err_msg == 'openWXDeviceLib:ok') {
+                            if (res.bluetoothState == 'off') {
+                                eflower_alert.show('亲,使用前请先打开手机蓝牙！', '乖乖学车', function () {
+                                });
+                            }
+                            if (res.bluetoothState == 'unauthorized') {
+                                eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                                });
+                            }
+                            if (res.bluetoothState == 'on') {
+//                                打开扫一扫
+                                wx.scanQRCode({
+                                    needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                                    scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                                    success: function (res) {
+                                        var serviceid = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                                        //如果返回的是正确则进入blocking页面
+                                        if(/^\d{5}$/.test(serviceid)){
+                                            var openid = localStorage.getItem('ggcs_openid');
+                                            var stype = localStorage.getItem('ggcs_stype');
+                                            var schoolid;
+                                            if(localStorage.getItem('schoolid') && stype == '2'){
+                                                schoolid = localStorage.getItem('schoolid');
+                                            }
+                                            var sentData = {
+                                                serviceid: serviceid,
+                                                openid:openid,
+                                                stype:stype,
+                                                schoolid:schoolid
+                                            };
+                                            //eflower_alert.show(openid+'\r\n'+serviceid+'\r\n'+stype+'\r\n'+schoolid);
+                                            if (openid =='' || stype =='' || schoolid==''|| openid ==null || stype ==null || schoolid==null ||
+                                                    openid ==undefined || stype ==undefined || schoolid==undefined	){
+                                                eflower_alert.show('没有系统授权或者手机没有在系统中绑定！', '乖乖学车', function () {
+                                                });
+                                            } else {
+                                                $.ajax({
+                                                    type:'POST',
+                                                    url: "https://guaiguaixueche.com/ggyc/appointment/verify",
+                                                    data: JSON.stringify(sentData),
+                                                    contentType: 'application/json;charset=utf-8',
+                                                    success: function (data) {
+                                                        if(data.code == 0){
+                                                            var deviceid = data.deviceid;
+
+                                                            localStorage.setItem('ggcs_dataid',data.dataid);
+                                                            localStorage.setItem('ggcs_leftime',data.leftime);
+                                                            localStorage.setItem('ggcs_deviceid',data.deviceid);
+                                                            localStorage.setItem('ggcs_serviceid',serviceid);
+                                                            window.location.href = 'blocking.html';
+                                                        }else{
+                                                            eflower_alert.show(data.msg, '乖乖学车', function (){});
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                        }else{
+                                            eflower_alert.show('汪星人来了！', '乖乖学车', function () {});
+                                        }
+                                    }
+                                });
+                            }
+
+                        } else {
+                            eflower_alert.show('亲,请授权微信蓝牙功能并打开蓝牙！', '乖乖学车', function () {
+                            });
+                        }
+                    });
+
+                    WeixinJSBridge.on('onWXDeviceBluetoothStateChange', function (res) {
+                        if (res.state == 'on') {
+                            window.location.reload();
+                        } else {
+                            eflower_alert.show('亲,检测到您的蓝牙已关闭！为保证您的正常使用请再次打开蓝牙！', '乖乖学车', function () {
+                            });
+                        }
+                    });
+//-----------------------------------------------------
+                }
+            })
+        });
+    });
+</script>

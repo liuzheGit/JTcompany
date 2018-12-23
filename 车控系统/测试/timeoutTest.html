@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p class="clockRun">
+    <span class="date_h">00</span>:
+    <span class="date_m">00</span>:
+    <span class="date_s">00</span>
+</p>
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script>
+    var t = Number(localStorage.getItem('totalTime'));
+    var curDate = new Date();
+    curDate = curDate.getTime();
+    var times = t - curDate;
+    times = parseInt(times/1000);
+    function GetRTime(){
+        var h;
+        var m;
+        var s;
+        if (times > 0){
+            times -= 1;
+            h = Math.floor(times/3600);
+            m = Math.floor( Math.floor(times%3600) / 60);
+            s = Math.floor(times % 60);
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+            $('.clockRun .date_h').html(h);
+            $('.clockRun .date_m').html(m);
+            $('.clockRun .date_s').html(s);
+        } else {
+            clearInterval(myInterval);
+        }
+    }
+    var myInterval = setInterval(GetRTime, 1000);
+</script>
