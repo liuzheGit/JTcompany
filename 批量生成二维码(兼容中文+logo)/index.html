@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>批量生成二维码并打包下载</title>
+	<script type="text/javascript" src="js/zip.js"></script>
+	<script type="text/javascript" src="js/mime-types.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/utf.js"></script>
+	<script type="text/javascript" src="js/jquery.qrcode.js"></script>
+	<script type="text/javascript" src="js/defalte.js"></script>
+	<script type="text/javascript" src="js/ZipArchive.js"></script>
+	<script>
+		zip.useWebWorkers = false;
+	</script>
+	<style>
+		body{
+			padding: 20px;
+			text-align: center;
+		}
+		.inputDiv{
+			display: inline-block;
+			margin: 0 30px;
+		}
+		input{
+			width: 100px;
+			margin-right: 30px;
+		}
+		#addLogo{
+			cursor: pointer;
+			width: 100px;
+			height: 110px;
+			border: 1px solid #ddd;
+			margin: 0 auto;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			display:flex;
+			justify-content:center;
+			align-items: center;
+		}
+		#logo{
+			display: none;
+		}
+
+		#qrcodeCanvas{
+			margin-top: 20px;
+			min-width: 1000px;
+		}
+		.qrDiv{
+			padding: 10px;
+			display: inline-block;
+			border: 1px solid teal;
+			margin: 10px;
+		}
+		.qrDiv p{
+			margin: 0;
+		}
+		#btn2,#reloadPage{
+			display: none;
+		}
+		.fireFoxTip{
+			color: #f00;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<p class="fireFoxTip">本工具在火狐浏览器下仅支持预览</p>
+</div>
+<div class="inputDiv">
+	<div id="addLogo" style="background-image: url(img/add-bg.png)"></div>
+	<span>选择logo</span>
+	<input type="file" value="" id="logo" accept="image/jpeg,image/png" onchange="imagePreview(this)"/>
+</div>
+<div class="inputDiv">
+	<span>开始数值</span>
+	<input type="text" id="text1" value="" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+	<br/><br/>
+	<span>截止数值</span>
+	<input type="text" id="text2" value="" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+	<br/>
+	<br/>
+	<br/>
+	<button id="btn1">生成二维码</button>
+	<button id="btn2">打包下载</button>
+	<button id="reloadPage" onclick="window.location.reload()">重新加载</button>
+</div>
+<div id="qrcodeCanvas"></div>
+<script type="text/javascript">
+	if(navigator.userAgent.indexOf("Firefox") > -1){
+		$('.fireFoxTip').css('display','inline-block');
+		alert('本工具在火狐浏览器下仅支持预览');
+	}
+	//点击div 触发input事件
+	$('#addLogo').on('click',function(){
+		return $('#logo').click();
+	});
+	var src1;
+	var z = new ZipArchive;
+	var beginNum,endNum;
+	function imagePreview(input){
+		var file = input.files[0];
+		//未选择文件
+		if( !(file)){ return ; }
+		//判断图片类型
+		var imageType = /^image\//;
+		if ( !imageType.test(file.type) ) {
+			$('#logo').val('');
+			alert("请选择图片类型");
+			return ;
+		}
+		//预览新添加的图片
+		var img = document.createElement("img");
+		img.classList.add("obj");
+		img.file = file;
+		img.style.height = "100%";
+		$('#addLogo').html(img);
+		var reader = new FileReader();
+		reader.onload = (function(aImg) {
+			return function(e) {
+				aImg.src = e.target.result;
+				src1 = e.target.result;
+			};
+		})(img);
+		reader.readAsDataURL(file);
+	}
+	$('#btn1').on('click',function(){
+		$('#qrcodeCanvas').html('');
+		beginNum = $('#text1').val();
+		endNum = $('#text2').val();
+		if(beginNum == ''){
+			alert('开始数值不能为空');
+			return ;
+		}
+		if(endNum == ''){
+			alert('截止数值不能为空');
+			return ;
+		}
+		beginNum = parseInt(beginNum);
+		endNum = parseInt(endNum);
+		if(endNum - beginNum >= 200){
+			alert('不能超过200个');
+			return ;
+		}
+		for(var i=beginNum; i<=endNum; i++){
+			add1(i);
+		}
+		$('#btn2').css('display','inline-block')
+	});
+	function add1(num){
+		var qrDiv = $('<div class="qrDiv"></div>');
+		$('#qrcodeCanvas').append(qrDiv);
+		qrDiv.qrcode({
+			render : "canvas",
+			text : ''+num,
+			width : "150",
+			height : "150",
+			background : "#ffffff",
+			foreground : "#000000",
+			src: src1
+		});
+		qrDiv.append('<p>'+num+'.png</p>');
+	}
+	$('#btn2').on('click',function(){
+		var startNum = parseInt($('#text1').val())-1 ;
+		var canvasArr = $('.qrDiv canvas');
+		for(var i=0; i<canvasArr.length; i++){
+			startNum++;
+			download('png',canvasArr[i],startNum);
+		}
+//		下载zip格式压缩包
+		z.export(beginNum+'-'+endNum);
+		setTimeout(function(){$('#btn1').css('display','none');$('#btn2').css('display','none');$('#reloadPage').css('display','inline-block')},2000)
+	});
+	//图片下载操作,指定图片类型，
+	function download(type,canvasI,pathName) {
+		var imgData = canvasI.toDataURL(type);
+		var filename = pathName + '.' + type;
+		var content = dataURLtoBlob(imgData);
+		z.addFile(filename,content);
+	}
+//	生成Blob格式的数据
+	function dataURLtoBlob(dataurl) {
+		var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+				bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+		while(n--){
+			u8arr[n] = bstr.charCodeAt(n);
+		}
+		return new Blob([u8arr], {type:mime});
+	}
+</script>
+</body>
+</html>
