@@ -1,0 +1,71 @@
+html,body,div,p,ul,li,a{
+    margin: 0;
+    padding: 0;
+    color: #666;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+    font-size: 12px;
+}
+img{
+    vertical-align: bottom;
+}
+.login-header{
+    width:120px;
+    height:155px;
+    margin:0 auto 20px;
+    padding-top: 120px;
+    box-sizing: initial;
+    font-size: 1.4em;
+}
+.login-header img{
+    width:100%;
+    margin-bottom: 10px;
+}
+.reg-tel-box{
+    width: 90%;
+    margin: 10px auto;
+}
+#reg-user-tel{
+    width:80%;
+    font-size:18px;
+    display:block;
+    border:1px solid #ccc;
+    margin: 0 auto;
+    padding-left: 10px;
+    background: #fff;
+}
+.error-box{
+    width:90%;
+    height:1.5em;
+    margin: 10px auto;
+    font-size:20px;
+    color:red;
+    text-align: center;
+    line-height: 1.5em;
+}
+.reg-btn-box{
+    width:80%;
+    margin: 16px auto;
+    border-radius: 5px;
+    background: #f6aa24;
+}
+#reg-btn{
+    width:100%;
+    height:2em;
+    line-height: 2em;
+    background:none;
+    color:#fff;
+    font-size:20px;
+    letter-spacing: 5px;
+    border:0;
+}
+
+.hint-box{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    color: #999;
+}

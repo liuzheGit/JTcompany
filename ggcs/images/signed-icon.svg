@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>signed-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.9835764,0 C24.8110487,0 31.9671527,7.15610408 31.9671527,15.9835764 C31.9671527,24.8110487 24.8110487,31.9671527 15.9835764,31.9671527 C7.15610408,31.9671527 0,24.8110487 0,15.9835764 C0,7.15610408 7.15610408,0 15.9835764,0 L15.9835764,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="31.9671527" height="31.9671527" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="教练界面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="教练界面" transform="translate(-24.000000, -432.000000)">
+            <g id="signed-icon" transform="translate(24.000000, 432.000000)">
+                <use id="Shape" stroke="#9E9E9E" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                <path d="M13.953365,20.8473144 C14.174903,21.0646029 14.4762716,21.0367104 14.686563,20.8473144 C14.8968544,20.6579184 23.46903,12.2099582 23.877221,11.8078022 C24.2853303,11.4056062 23.5816189,10.6994788 23.1439821,11.1394258 C22.7456063,11.5398986 14.3284296,19.7611927 14.3284296,19.7611927 C14.3284296,19.7611927 9.38719542,14.9343594 8.87205922,14.4310934 C8.35692301,13.9278274 7.7125529,14.7374693 8.13882033,15.1495239 C8.56512867,15.5616987 13.731827,20.6299458 13.953365,20.8473144 L13.953365,20.8473144 Z" id="Path" fill="#9E9E9E"></path>
+            </g>
+        </g>
+    </g>
+</svg>

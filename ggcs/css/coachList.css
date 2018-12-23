@@ -1,0 +1,66 @@
+body,html{
+    width: 100%;
+    background: #eeeeee;
+}
+/*头部导航*/
+.content-top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #eeeeee;
+}
+.content-top .tab{
+    background: #eeeeee;
+}
+/*教练标签*/
+.content-main{
+    width: 100%;
+    margin-top: 60px;
+}
+.content-main .main-item{
+    width: 100%;
+    background: #FFFFFF;
+}
+
+.main-item .item-top{
+    margin: 15px auto 0;
+    width: 92%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.item-top .coach-name{
+    float: left;
+    font-size: 22px;
+}
+
+.item-top .coach-km{
+    float: right;
+}
+
+.content-main .item-bottom{
+    width: 100%;
+}
+.item-bottom a {
+    display: inline-block;
+    width: 49%;
+    color: #000000;
+    height: 40px;
+    line-height: 40px;
+    /*border: 1px solid red;*/
+    text-align: center;
+}
+.item-bottom>:first-child{
+    border-right: 1px solid #cccccc;
+}
+.item-bottom img{
+    vertical-align: middle;
+    width:26px;
+}
+.item-bottom .text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}

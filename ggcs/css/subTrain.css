@@ -1,0 +1,183 @@
+body,html{
+    /*height: 100%;*/
+    width: 100%;
+    font-size: 13px;
+}
+body{
+    background: #F6F6F6;
+    margin-bottom: 50px;
+}
+.content-top{
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px 10px 0;
+    background: #FFFFFF;
+}
+.hint-text{
+    margin: 10px 3% 30px;
+    width: 94%;
+}
+.hint-text .text-red{
+    color: #DD3B45;
+}
+.hint-text .text-green{
+    color: #00C853;
+}
+/*头部上下两块*/
+.content-top .topDiv{
+    width: 100%;
+}
+
+.content-top .top-hint{
+    border-top: 1px solid #d6d6d6;
+    text-align: left;
+    padding: 10px;
+    height: 65px;
+    overflow: hidden;
+}
+/*头部上块*/
+.content-top .top-msg{
+    width: 100%;
+    padding-bottom: 12px;
+}
+/*上块里的div*/
+.top-msg .msgDiv{
+    display: inline-block;
+    vertical-align: middle;
+}
+/*头像和信息*/
+.top-msg .msg-left{
+    width: 78%;
+}
+.msg-main .coach-name{
+    font-weight: 400;
+    margin-right: 5px;
+}
+.msg-main .msg-km{
+    color: #707070;
+}
+/*电话图标*/
+.top-msg .msg-right{
+    width: 20%;
+    text-align: right;
+}
+.msg-left .mainDiv{
+    display: inline-block;
+    vertical-align: middle;
+}
+/*头像*/
+.msg-left .msg-avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    /*background: orange;*/
+    margin: 0 5px 0;
+    overflow: hidden;
+}
+.msg-avatar img{
+    width: 100%;
+}
+.msg-right img{
+    width: 36px;
+}
+/*头部下块的提示语*/
+.top-hint .hint-li{
+    margin-top: 2px;
+    display: block;
+    height: 25px;
+    line-height: 20px;
+}
+.hint-li .li-km{
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    background: #D50914;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-right: 6px;
+    text-align: center;
+}
+.hint-li .li-date{
+    margin-right: 5px;
+}
+.hint-li .li-class{
+    margin-right: 3px;
+}
+/*预约主体*/
+.content-main{
+    margin-top: 10px;
+    width: 100%;
+    background: #FFFFFF;
+}
+.content-main .not-data{
+    height: 30px;
+    line-height: 30px;
+    margin-left: 12px;
+}
+.content-main .tabs{
+    border-bottom:1px solid #d6d6d6;
+}
+/*.content-main .main-top{*/
+/*border-bottom:1px solid #d6d6d6;*/
+/*}*/
+.tabs .tab-date{
+    display: block;
+    height: 15px;
+    line-height: 15px;
+}
+.tabs .tab{
+    padding-top: 5px;
+    line-height: 25px;
+}
+.content-main .main{
+    /*width: 96%;*/
+    /*margin-left: 2%;*/
+}
+.main .items{
+    width: 100%;
+    padding-left: 5%;
+}
+.items .class-item{
+    text-align:center;
+    display: inline-block;
+    width: 29%;
+    margin: 0 1% 12px;
+    border-radius: 5px;
+    border: 1px solid #EEEEEE;
+    padding: 5px 0;
+}
+
+.content-bottom{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    font-size: 14px;
+}
+.content-bottom .bottomBtn{
+    float: left;
+    color: #FFFFFF;
+}
+.content-bottom .ok-btn{
+    width: 70%;
+    background: #FAC835;
+}
+.content-bottom .get-btn{
+    display: inline-block;
+    width:30%;
+    background: #1E2831;
+}
+
+/*三种状态*/
+.class-item.unable{
+    background: #F4F0F1;
+}
+.class-item.hasSub{
+    border: 1px solid #51fb51;
+    background: #e9ffe8;
+}
+.able.selected{
+    border: 1px solid #F8CB6A;
+}

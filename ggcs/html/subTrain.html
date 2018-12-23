@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>预约练车</title>
+    <link rel="stylesheet" href="../commonCss/reset.css">
+    <link rel="stylesheet" href="../commonCss/materialize.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/subTrain.css">
+</head>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../commonJs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../commonJs/alert.js"></script>
+<script type="text/javascript" src="../commonJs/materialize.min.js"></script>
+<script type="text/javascript" src="../js/ggcsFn.js"></script>
+<script type="text/javascript" src="../js/subTrain.js"></script>
+<body>
+<div class="content-top">
+    <div class="top-msg topDiv">
+        <div class="msg-left msgDiv">
+            <div class="msg-avatar mainDiv">
+                <img src="">
+            </div>
+            <div class="msg-main mainDiv">
+                <span class="coach-name"></span>
+                <span class="msg-km"></span><br>
+                <span class="coach-tel"></span>
+            </div>
+        </div>
+        <div class="msg-right msgDiv">
+            <a href="">
+                <img src="../images/1_09.png">
+            </a>
+        </div>
+    </div>
+    <div class="top-hint topDiv">
+        <div class="scrollDiv">
+
+        </div>
+        <!--<div class="hint-li">-->
+        <!--<span class="li-km">科目二</span>-->
+        <!--已安排您<span class="li-date">2017-02-28</span><span class="li-class">05:30:00</span><span class="li-KM">科目二</span>练习-->
+        <!--</div>-->
+        <!--<div class="hint-li">-->
+        <!--<span class="li-km">科目二</span>-->
+        <!--已安排您<span class="li-date">2017-02-28</span><span class="li-class">05:30:00</span><span class="li-KM">科目二</span>练习-->
+        <!--</div>-->
+    </div>
+</div>
+<div class="content-main">
+    <div class="row main-top">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col"><a href="#day1"><span class="tab-date"></span><span>今天</span></a></li>
+                <li class="tab col"><a href="#day2"><span class="tab-date"></span><span>明天</span></a></li>
+                <li class="tab col"><a href="#day3"><span class="tab-date"></span><span class="weekDay1"></span></a></li>
+                <li class="tab col"><a href="#day4"><span class="tab-date"></span><span class="weekDay2"></span></a></li>
+                <li class="tab col"><a href="#day5"><span class="tab-date"></span><span class="weekDay3"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col items" id="day1">
+            <!--<div class="class-item able">-->
+            <!--<p><span class="class-start">07:00</span>-<span class="class-end">08:00</span></p>-->
+            <!--<p class="class-pic">￥20</p>-->
+            <!--</div>-->
+            <!--<div class="class-item able selected">-->
+            <!--<p><span class="class-start">07:00</span>-<span class="class-end">08:00</span></p>-->
+            <!--<p class="class-pic">￥20</p>-->
+            <!--</div>-->
+            <!--<div class="class-item hasSub">-->
+            <!--<p><span class="class-start">07:00</span>-<span class="class-end">08:00</span></p>-->
+            <!--<p class="class-pic">￥20</p>-->
+            <!--</div>-->
+            <!--<div class="class-item able">-->
+            <!--<p><span class="class-start">07:00</span>-<span class="class-end">08:00</span></p>-->
+            <!--<p class="class-pic">￥20</p>-->
+            <!--</div>-->
+        </div>
+        <div class="col items" id="day2"></div>
+        <div class="col items" id="day3"></div>
+        <div class="col items" id="day4"></div>
+        <div class="col items" id="day5"></div>
+    </div>
+</div>
+<div class="hint-text">
+    <p class="text-red">点击你想预约的时间段，点击&lt;确认预约&gt;即可</p>
+    <p class="text-green">绿色代表已经预约的班次</p>
+</div>
+<div class="content-bottom">
+    <div class="ok-btn bottomBtn">确认预约</div>
+    <a href="subManage.html" class="get-btn bottomBtn">我的预约</a>
+</div>
+</body>
+</html>

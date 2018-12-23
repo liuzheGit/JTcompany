@@ -1,0 +1,83 @@
+body,html{
+    height: 100%;
+    /*width: 100%;*/
+}
+/*内容头部*/
+.content-top{
+    width: 100%;
+    background-color: #F7B52B;
+    position: relative;
+}
+/*内容头部背景*/
+.content-top .content-bg{
+    width: 100%;
+}
+/*手机号和学校展示*/
+.content-top .content-msg{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 36%;
+}
+/*手机号加粗*/
+.content-msg .stu-tel{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.content-msg p{
+    font-size: 16px;
+}
+
+/*内容主体（中间部分）*/
+.content-main{
+    position: relative;
+    background-color: #FFFFFF;
+    top: -30px;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+/*按键组的div*/
+.content-main .btn-group{
+    width: 88%;
+    /*border: 1px solid red;*/
+    margin: 30px auto;
+    text-align: center;
+}
+/*三个功能按键*/
+.btn-group a{
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    /*border: 1px solid greenyellow;*/
+    width: 22%;
+    text-align: center;
+}
+/*中间的按键*/
+.btn-group .my-center{
+    margin: 0 10%;
+}
+/*按键图标*/
+.btn-group img{
+    width: 40%;
+    margin-bottom: 6px;
+}
+
+.content-bottom{
+    width: 100%;
+}
+.content-bottom .order-btn{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url('../images/1_63.png');
+    background-size: 100% 100%;
+    line-height: 90px;
+    text-align: center;
+    font-size: 15px;
+}
+.order-btn a{
+    text-decoration: none;
+    color: #FFFFFF;
+}

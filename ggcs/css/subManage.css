@@ -1,0 +1,158 @@
+body,html{
+    width: 100%;
+}
+/*未预约提示*/
+#no-bespeak{
+    display: none;
+    width:100%;
+    text-align: center;
+    font-size:16px;
+    margin-top:200px;
+}
+#no-bespeak a{
+    color:red;
+}
+/*top*/
+.content-top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*background: #eeeeee;*/
+}
+.row .col {
+    padding: 0;
+}
+/*主体*/
+.content-main{
+    width: 100%;
+    margin-top: 60px;
+}
+/*订单*/
+.order{
+    width:100%;
+    box-shadow: 2px -2px 2px #d4d4d4;
+}
+/*订单上部主体*/
+.order .order-main{
+    width: 94%;
+    margin: 10px auto 0;
+    border-bottom: 1px solid #cccccc;
+    padding:8px 0 5px;
+}
+/*头像*/
+.order-main .coach-avatar{
+    display: inline-block;
+    width: 28%;
+    line-height: 120px;
+    max-height: 120px;
+    vertical-align: top;
+    /*background: gray;*/
+}
+.coach-avatar img{
+    width: 100%;
+}
+/*订单详情*/
+.order-main .order-info{
+    margin-left: 3%;
+    width: 65%;
+    display: inline-block;
+    height: 120px;
+    vertical-align: top;
+}
+
+/*姓名和状态*/
+.order-info .info-top{
+    width: 100%;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.info-top .coach-name{
+    display: inline-block;
+    float: left;
+    font-weight: 600;
+    font-size: 17px;
+}
+/*状态*/
+.info-top .info-status{
+    display: inline-block;
+    float: right;
+}
+/*状态1是 黑色  状态2是橘色*/
+.info-status.status2{
+    color: #FAC433;
+}
+.info-status.status1{
+    color: #5a5a5a;
+}
+
+/*info的主体*/
+.order-info .info-main{
+    width: 100%;
+}
+.info-main .info-div{
+    display: inline-block;
+    width: 48%;
+    margin-top: 10px;
+}
+
+.info-main .info-title{
+    color: #5a5a5a;
+}
+.info-main .info-val{
+    font-weight: 600;
+}
+
+/*order底部*/
+.order .order-bottom{
+    width: 100%;
+}
+.order-bottom .btn-group{
+    display: inline-block;
+    width: 96%;
+    text-align: right;
+    margin: 6px 0;
+}
+.btn-group div{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+}
+.btn-group .pay-btn{
+    color: #FFFFFF;
+    background: #FAC433;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+.btn-group .eval-btn{
+    display: inline-block;
+    border: 1px solid #DEDEDE;
+    color: #F6B72C;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+}
+.btn-group .train-btn{
+    color: #FFFFFF;
+    background: #D80C18;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+}
+.btn-group .lose-btn{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    width: 48px;
+    text-align: center;
+}
+
+

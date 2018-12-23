@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>乖乖学车</title>
+    <link rel="stylesheet" href="../commonCss/reset.css">
+    <link rel="stylesheet" href="../commonCss/materialize.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/stuHome.css">
+</head>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../commonJs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../commonJs/alert.js"></script>
+<script type="text/javascript" src="../commonJs/materialize.min.js"></script>
+<script type="text/javascript" src="../js/ggcsFn.js"></script>
+
+<body>
+<div class="content-top">
+    <img src="../images/1_06.png" class="content-bg">
+    <div class="content-msg">
+        <p class="stu-tel"></p>
+        <p class="stu-school"></p>
+    </div>
+</div>
+<div class="content-main">
+    <div class="btn-group">
+        <a href="subManage.html"><img src="../images/1_52.png"><div>预约管理</div></a>
+        <a href="changePwd.html?stype=1" class="my-center"><img src="../images/1_54.png"><div>修改密码</div></a>
+        <a id="logOut"><img src="../images/1_56.png"><div>注销登录</div></a>
+    </div>
+    <div class="content-bottom">
+        <div class="order-btn"><a href="coachList.html">预约练车</a></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        var personid = localStorage.getItem('ggcs_person_id');
+        if(personid){
+            var stu_tel = localStorage.getItem('ggcs_user_phone');
+            var stu_schoolName = localStorage.getItem('ggcs_user_schoolname');
+            $('.content-top .stu-tel').html(stu_tel);
+            $('.content-top .stu-school').html(stu_schoolName);
+            $('#logOut').on('click',logOut);
+            function logOut() {
+                localStorage.removeItem('ggcs_person_id');
+//            localStorage.removeItem('ggcs_user_phone');
+                localStorage.removeItem('ggcs_user_pwd');
+                localStorage.removeItem('ggcs_user_km');
+                localStorage.removeItem('ggcs_user_schoolid');
+                localStorage.removeItem('ggcs_user_schoolname');
+                localStorage.removeItem('ggcs_user_rnd');
+                localStorage.removeItem('ggcs_user_coach_id');
+                localStorage.removeItem('ggcs_user_class_type');
+                localStorage.removeItem('ggcs_user_product_name');
+                var tel = localStorage.getItem('ggcs_user_phone');
+                var openid = localStorage.getItem('ggcs_openid');
+                bingTel(tel,openid,0);
+                eflower_alert.show('注销成功', '乖乖约车', function () {
+                    window.open('login.html', '_self');
+                })
+            }
+        }else{
+            eflower_alert.show('您还未登录，请先登录！', '乖乖学车', function () {
+                window.open('login.html', '_self')
+            })
+        }
+    })
+</script>

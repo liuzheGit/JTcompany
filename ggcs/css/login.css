@@ -1,0 +1,106 @@
+body,html{
+    height: 100%;
+    /*width: 100%;*/
+}
+/*内容头部*/
+.content-top{
+    width: 100%;
+    background-color: #F7B52B;
+}
+/*头部标题*/
+.content-top .content-title{
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+}
+.content-top a{
+    margin-left: 10px;
+    color: #1E2831;
+}
+.content-title a{
+    color: #1E2831;
+}
+/*内容头部背景*/
+.content-top .content-bg{
+    width: 100%;
+}
+/*内容主体（中间部分）*/
+.content-main{
+    position: relative;
+    background-color: #FFFFFF;
+    top: -30px;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+/*输入框*/
+.user-input {
+    width: 94%;
+    margin: 30px auto 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    height: 50px;
+}
+/*输入框图片div*/
+.user-input .input-icon{
+    display: inline-block;
+    width: 15%;
+    border-right: 1px solid #cccccc;
+    vertical-align: top;
+    text-align: center;
+    height: 100%;
+}
+/*输入icon图片*/
+.input-icon img{
+    width: 50%;
+    margin-top: 10px;
+}
+/*输入框input*/
+.user-input .input-box{
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-bottom: 0;
+    margin: 0 0 0 15px;
+    padding: 0;
+    vertical-align: top;
+    font-size: 20px;
+    line-height: 50px;
+}
+/*忘记密码*/
+.content-main .forget-pwd{
+    width: 94%;
+    margin: 10px auto;
+    text-align: right;
+    font-size: 16px;
+    position: relative;
+}
+.forget-pwd a{
+    color: #1E2831;
+}
+.content-main .red-hint{
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-size: 18px;
+    color: red;
+}
+
+.content-bottom{
+    width: 100%;
+    margin: 15px auto;
+}
+.content-bottom .login-btn{
+    width: 94%;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F7B52B;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+}
